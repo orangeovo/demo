@@ -1,0 +1,15 @@
+<!--pages/result/result.wxml-->
+<view class="page" >
+    <image class="avatar" src="{{view.avatar}}"></image>
+    <view class="name">{{view.name}}</view>
+    <view class="purpose">用途:</view>
+    <view class="purpose-txt">{{view.purpose || '暂未填写'}}</view>
+    <view class="address">地点:</view>
+    <view class="address-txt">{{view.address || '暂未填写'}}</view>
+    <view class="join" wx:if="{{ num > 0 }}">已有{{name}}等{{num}}位成员加入</view>
+    <view class="join" wx:else>暂无成员加入</view>
+    <van-button round color="linear-gradient(0deg, #1B5EF3, #9FBDFF)" custom-class="btn" type="info" bindtap="confirm">确定加入</van-button>
+</view>
+
+
+<van-toast id="van-toast" />

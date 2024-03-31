@@ -1,0 +1,272 @@
+<!--pages/createcircle/createcircle.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="page">
+  <view class="circledetail-tip" wx:if="{{ isCreate == 0 }}">
+    <icon class="iconfont icon-tishi" style="margin-top: -10rpx;position: relative;right: 160rpx;"></icon>
+    非创建者,不可修改圈子信息
+  </view>
+  <!-- <view class="createcirclehead" style="margin-top: {{statusbarheight+116}}rpx;">
+        <view class="portraitbox" bindtap="uploadimg">
+            <image wx:if="{{avatar}}" class="createcircle-portraitbox-img" src="{{avatar}}"></image>
+            <icon wx:else class="createcircle-portraitbox-icon iconfont icon-haoyou"></icon>
+        </view>
+    </view> -->
+  <view class="personal_box" wx:if="{{id}}">
+    <image wx:if="{{avatar}}" src="{{avatar}}" class="avatar" />
+    <view wx:else class="avatar">{{view.name[0]}}</view>
+    <view class="personal_mes">
+
+      <view class="per_name">{{name}}</view>
+      <view class="per_about">
+        <view style="display: flex;">
+          <view class="haederTag">
+            圈主
+          </view>
+          程序员
+        </view>
+
+        <view>
+          {{createTime}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="add-box">
+    <view class="imageLogo" wx:if="{{!id}}">
+    <van-cell title="圈子封面" is-link bind:click="showPhotoPopup">
+      <!--  -->
+      <van-image src="{{phoneImg}}" wx:if="{{phoneImg}}"></van-image>
+      <van-image wx:else="" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+      <view class="tips-size">
+        推荐尺寸750*422
+      </view>
+    </van-cell>
+  </view>
+  <view class="qzName">
+    <van-field class="qzName" required="true" wx:if="{{!id}}" label-class="label" model:value="{{ name }}" label="圈子名称" placeholder="请输入圈子名称" maxlength="{{30}}" />
+    <!-- <text>*</text> -->
+  </view>
+
+<van-field wx:if="{{!id}}"  label-class="label" model:value="{{ purpose }}" label="圈子简介" type="textarea" autosize="{{ {minHeight: 50} }}" maxlength="{{100}}" show-word-limit="{{true}}" placeholder="请输入描述（100字以内）" />
+  </view>
+
+
+
+  <van-field wx:if="{{id}}" class="qz-textArea"  label-class="label" model:value="{{ purpose }}" label="圈子简介" type="textarea" autosize="{{ {minHeight: 50} }}" maxlength="{{100}}" show-word-limit="{{true}}" placeholder="请输入描述（100字以内）" />
+
+  <!-- <view class="portraittext">圈子信息</view> -->
+  <view class="createcircleinfo">
+
+
+    <van-field label-class="label" value="{{ selectCateStr }}" label="行业分类" readonly placeholder="请选择行业分类" bind:click-input="selectCate" />
+    <!-- <van-field label-class="label" value="{{ nowdate }}" label="创建时间" readonly /> -->
+    <view class="createcircleborder"></view>
+    <van-field
+                  readonly
+                  clickable
+                  name="area1"
+                  model:value="{{CreateAddress}}"
+                  label="创建地区"
+                  placeholder="点击选择省市区"
+                  bindtap="showCreateAddress"
+      ></van-field>
+      <van-popup show="{{ showAddress }}"  position="bottom" bind:close="onClose2">
+        <van-area bind:confirm="confirm1" bind:cancel="onClose2"  area-list="{{ areaList }}" />
+    </van-popup>
+    <!-- <van-field label-class="label" bindtap="showCreateAddress" model:value="{{ areaList }}" label="创建地区" placeholder="请选择创建地区" /> -->
+    <van-field label-class="label" model:value="{{ address }}" label="详细地址" placeholder="请输入详细地址" />
+    <!-- <van-field label-class="label" value="{{ address }}" label="创建地址" readonly placeholder="请选择创建地址">
+            <view slot="right-icon" bindtap="getLocation" class="address-icon iconfont icon-dizhi1"></view>
+        </van-field> -->
+    <van-cell title="是否审核" is-link value="{{isAudit}}" bindtap="isAuditShow" />
+    <!-- <van-cell custom-class="cell" title="进圈审核">
+    <van-switch slot="right-icon" checked="{{ isAudit }}"  size="34rpx" />
+  </van-cell> -->
+  </view>
+  <view class="examine-tips" wx:if="{{id==null}}">开启后，新成员加入需通过审核</view>
+  <!-- <view class="articlecover"> -->
+
+  <!-- <view class="label"> <text style="font-size: 28rpx;color: black;">标签</text></view>
+    <view class="labelCss">
+      <van-tag custom-class="tag" closeable bind:close="onCloseTag" wx:for="{{labelarray}}" data-index="{{index}}" round plain type="primary" size="medium">{{tools.zifulengt(item)}}</van-tag>
+      <van-tag custom-class="tag" round plain type="primary" size="medium" bindtap="createlabel">新增标签</van-tag>
+    </view> -->
+
+  <!-- </view> -->
+  <view class="label-box" wx:if="{{id==null}}">
+    <view class="basic-label" bindtap="createlabel"># 添加标签</view>
+    <view class="labels" wx:for="{{labelarray}}"  ># {{item}}
+      <text class="guanbi" data-index="{{index}}" bindtap="deleteLabel">x</text>
+    </view>
+  </view>
+  <view class="incircle" wx:if="{{id==null}}">
+    <!-- <view> <text style="font-size: 28rpx;color: black;">拉人入圈</text></view> -->
+    <view class="cardAva">
+      <view class="cardSelf">
+        <image src="{{cardavatar}}"></image>
+        <view class="creatuser">{{cardname}}</view>
+        <view class="create-qz">圈主</view>
+      </view>
+      <view class="cardSelf" wx:for="{{mypulldata}}" wx:key="index">
+        <image src="{{item.avatar}}" wx:if="{{item.avatar}}"></image>
+        <view wx:else class="avatar">
+          {{item.firstName}}
+        </view>
+        <view class="cardname">{{item.name}}</view>
+      </view>
+      <view class="cardSelf" bindtap="Intocircle">
+        <view class="vertical"></view>
+        <view class="transverse"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="upd" wx:if="{{id}}">
+    <van-cell value="{{examineNum}}" is-link link-type="navigateTo" url="/pages/auditList/auditList?id={{id}}" wx:if="{{ isCreate != 0 }}">
+
+      <view slot="title">
+        <view class="van-cell-text">审核列表</view>
+      </view>
+    </van-cell>
+    <!-- <view class="btn-group">
+      <van-button custom-class="btn" color="#EF3A0A" round type="info" bindtap="delCircle">退出圈子</van-button>
+      <van-button wx:if="{{ isCreate == 1 }}" custom-class="btn" color="#1559F3" round type="info" bindtap="createcircle">保存修改</van-button>
+    </view> -->
+    <!-- <view class="hint">提示：非创建者删除，退出圈子；创建者删除，解散圈子；</view> -->
+    <view wx:if="{{isCreate != 0}}">
+      <view class="savebtn" bindtap="createcircle">保存</view>
+      <view class="deletebtn">解散圈子</view>
+    </view>
+    <view wx:else class="deletebtn" bindtap="delCircle"> 
+      退出圈子
+    </view>
+  </view>
+
+  <view  wx:else  class="createcirclebtn-box">
+    <view class="createcirclebtn" bindtap="createcircle">确认创建</view>
+  </view>
+</view>
+<van-popup show="{{ timeflag }}" bind:close="onClose" position="bottom">
+  <van-datetime-picker type="datetime" value="{{ time }}" bind:confirm="onInput" />
+</van-popup>
+<van-popup show="{{ photoPopup }}" class="123" position="bottom" round closeable custom-style="height: 71%;" bind:close="onClose">
+  <view class="photoPopupTitle">
+    系统默认图
+  </view>
+  <view class="photoPopupContent">
+    <van-grid column-num="2" border="{{ false }}">
+      <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index">
+        <image class="mr-img" bindtap="checkImg" data-url="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg" style="width: 100%; height: 90px;" src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg" />
+      </van-grid-item>
+    </van-grid>
+    <van-button class="photograph-btn" block icon="photograph" bindtap="getPhotograph" round>拍照</van-button>
+    <van-button class="photograph-btn" block round style="margin-top: 10rpx;" bindtap="getAlbum" >手机相册选择</van-button>
+  </view>
+
+</van-popup>
+
+<van-popup show="{{ cateShow }}" bind:close="onClose" round position="bottom" custom-style="height: 90%" class="popup_industry">
+  <!-- <van-picker
+        show-toolbar
+        bind:cancel="onClose"
+        bind:confirm="onConfirm"
+        columns="{{ columns }}"
+        bind:change="onChange"
+        column-class="pickerclass"
+        active-class="pickercheckclass"
+            /> -->
+  <view class="popup_header">
+    <view>当前选择行业</view>
+    <view bindtap="onClose" class="popup_close">关闭</view>
+  </view>
+
+  <view class="popup_show">
+    <van-button plain round type="info">
+      {{nameOne?nameOne:'行业内容'}}{{nameTwo?("—"+nameTwo):''}}{{nameThree?("—"+nameThree):''}}{{nameFour?("—"+nameFour):''}}
+    </van-button>
+  </view>
+
+  <van-tabs wx:if="{{cateShow}}" active="{{ active }}" bind:change="onChangeActive" color="#1559F3" title-active-color="#1559F3">
+    <van-tab title="门类">
+      <view wx:for="{{cateOne}}" wx:key="index">
+        <view class="{{index===activeItemIndexOne?'activeItemBox':'itemBox'}}" style="color:{{color}}" bindtap="onChangeCate" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}" data-level="1">
+          {{item.name}}
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="大类">
+      <view wx:if="{{cateTwo.length>0}}">
+        <view wx:for="{{cateTwo}}" wx:key="index">
+
+          <view class="{{index===activeItemIndexTwo?'activeItemBox':'itemBox'}}" style="color:{{color}}" bindtap="onChangeCate" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}" data-level="2">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+      <view wx:else class="itemnull">
+        请先选择上级分类
+      </view>
+    </van-tab>
+    <van-tab title="中类">
+      <view wx:if="{{cateThree.length>0}}">
+        <view wx:for="{{cateThree}}" wx:key="index">
+
+          <view class="{{index===activeItemIndexThree?'activeItemBox':'itemBox'}}" style="color:{{color}}" bindtap="onChangeCate" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}" data-level="3">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+      <view wx:else class="itemnull">
+        请先选择上级分类
+      </view>
+    </van-tab>
+    <van-tab title="小类">
+      <view wx:if="{{cateFour.length>0}}">
+        <view wx:for="{{cateFour}}" wx:key="index">
+
+          <view class="{{index===activeItemIndexFour?'activeItemBox':'itemBox'}}" style="color:{{color}}" bindtap="onChangeCate" data-id="{{item.id}}" data-index="{{index}}" data-name="{{item.name}}" data-level="4">
+            {{item.name}}
+          </view>
+        </view>
+
+        <view class="footBtn">
+          <van-button type="default" round class="cancle" bindtap="onClose"> 取消</van-button>
+          <van-button type="info" round bindtap="affirmBtn"> 确定</van-button>
+        </view>
+      </view>
+      <view wx:else class="itemnull">
+        请先选择上级分类
+      </view>
+    </van-tab>
+  </van-tabs>
+
+</van-popup>
+
+<!-- 标签弹框 -->
+<van-dialog use-slot showConfirmButton="false" title="新增标签" show="{{ dialogshow }}" bind:close="onClose" show-cancel-button bind:getuserinfo="getUserInfo" cancel-button-color="rgba(102, 102, 102, 1)" confirm-button-color="rgba(10, 163, 239, 1)" closeOnClickOverlay bind:confirm="confirmcreatelabel">
+  <view class="dialog_view">
+    <input class="createlabelipt" bindinput="getlabelipt" placeholder="请输入" value="{{labelname}}" type="text" placeholder-class="createlabelphclass" />
+
+  </view>
+</van-dialog>
+
+<!-- 审核弹框 -->
+<!-- <van-dialog class="shenhe" use-slot title="是否审核" show="{{ isAuditshow }}" bind:confirm="confirmIs" show-cancel-button
+    bind:close="onClose">
+    <van-radio-group value="{{ isExamine }}" bind:change="onChange" direction="horizontal">
+        <van-radio name="0">否</van-radio>
+        <van-radio name="1">是</van-radio>
+    </van-radio-group>
+
+
+</van-dialog> -->
+<van-popup class="shenhe" show="{{ isAuditshow }}" position="bottom" custom-style="height: 50%;" bind:close="onClose" round>
+  <van-picker default-index="{{isExamine }}" show-toolbar title="进圈是否审核" columns="{{ columns }}" bind:cancel="onCancel" bind:confirm="onConCircle" />
+</van-popup>
+
+
+
+
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

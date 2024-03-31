@@ -1,0 +1,19 @@
+<!--pages/ifjoincircle/ifjoincircle.wxml-->
+
+<view class="ifjoincirclecontainer">
+  <view  ></view>
+  <radio-group class="choosemoderadiogroup" bind:change="getRadio">
+    <view class="swcidentity-defalut-container" wx:for="{{mycard}}" wx:for-item="other" wx:key="index" data-index="{{index}}">
+      <radio class="ifjoincirclecontainer-radio" color="rgba(10, 163, 239, 1)" value="{{index}}" ></radio>
+      <image src="{{other.avatar}}" class="swcidentity-defalut-img"></image>
+      <view class="swcidentity-defalut-textbox">
+        <text class="swcidentity-defalut-textbox-name">{{other.name}}</text>
+        <text class="swcidentity-defalut-textbox-company">{{other.position}}|{{other.companyName}}</text>
+      </view>
+    </view>
+  </radio-group>
+  <view wx:if="{{flag}}" class="makebtn" bindtap="confirmjoin">确认并加入</view>
+  <view wx:if="{{!flag}}" class="makebtn" bindtap="jumptocreate">创建名片</view>
+</view >
+
+

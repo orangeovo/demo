@@ -1,0 +1,109 @@
+/* pages/createcircle/createcircle.wxss */
+.createcirclehead{
+  height: 269rpx;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  letter-spacing: 3rpx;
+}
+.portraitbox{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color: rgba(51, 51, 51, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.createcircleinfo{
+  letter-spacing: 3rpx;
+  width: 100vw;
+  height: 675rpx;
+  background-color: white;
+}
+.portraittext{
+  margin-top: 61rpx;
+  width: 100vw;
+  text-align: start;
+  padding-left: 64rpx;
+  color: rgba(153, 153, 153, 1);
+  font-size: 30rpx;
+}
+.createcircleitem{
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+}
+.createcircletext{
+  width: 145rpx;
+
+  font-size: 30rpx;
+}
+.createcircleinput{
+  width: 430rpx;
+  margin-left: 59rpx;
+  color: rgba(102, 102, 102, 1);
+  font-size: 30rpx;
+}
+.createcircleborder{
+  width: 690rpx;
+  background-color: rgba(238, 238, 238, 1);
+  height: 1rpx;
+  margin-left: 31rpx;
+}
+.createcirclebtn{
+  height: 88rpx;
+  width: 630rpx;
+  background-color: rgba(10, 163, 239, 1);
+  border-radius: 20rpx;
+  color: white;
+  text-align: center;
+  line-height: 88rpx;
+  margin-left: 60rpx;margin-right: 60rpx;
+}
+.categorypopup{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(252, 252, 252);
+  letter-spacing: 3rpx;
+}
+.managecbtnbox{
+  height: 210rpx;
+  letter-spacing: 3rpx;
+  background-color: white;
+}
+.deletebtn{
+  display: flex;flex-direction: column;align-items: center;
+  height: 105rpx;
+  width: 100vw;
+}
+.savebtn{
+  width: 100vw;
+  height: 105rpx;
+  color: rgba(10, 163, 239, 1);
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.tipbox{
+  background-color: RGBA(250, 240, 226, 1);
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.tipicon{
+  color: rgba(252, 149, 19, 1);
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.tiptext{
+  color: rgba(252, 149, 19, 1);
+  margin-left: 144rpx;
+  font-size: 26rpx;
+}

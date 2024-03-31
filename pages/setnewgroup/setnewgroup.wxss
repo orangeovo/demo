@@ -1,0 +1,52 @@
+/* pages/setnewgroup/setnewgroup.wxss */
+.avatar{
+  margin: 50rpx;
+}
+.avatar view{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.groupbox{
+  width: 100%;
+  height: 375rpx;
+  background: #fff;
+  padding: 30rpx;
+  font-size: 32rpx;
+  color: #101010;
+}
+.groupmes{
+  margin: 30rpx;
+}
+.groupmes>view{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #F4F4F4;
+  font-size: 28rpx;
+}
+.groupmes>view>view{
+  width: 148rpx;
+}
+.groupmes input{
+  flex: 1;
+}
+.savebtn{
+  width: 630rpx;
+  height: 88rpx;
+  background: #1DB7E1;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  border-radius: 60rpx;
+  font-size: 32rpx;
+  margin: 25rpx auto;
+}
+.savebtn:active{
+  opacity: .7;
+}

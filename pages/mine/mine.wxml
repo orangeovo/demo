@@ -1,0 +1,206 @@
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<import src="../we-cropper/we-cropper.wxml" />
+<view class="imgDisposeBlock" wx:if="{{iscropper}}">
+    <view class='imgDisposeArea'>
+        <template is="we-cropper" data="{{...cropperOpt}}" />
+    </view>
+    <view class='imgDisposeControlLine'>
+        <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+        <view class='editBtn' bindtap="closeTap">取消</view>
+        <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+    </view>
+</view>
+<view class="page" wx:if="{{init}}">
+  <view class="info">
+    <view class="base-info">
+      <!--      创建名片后-->
+      <view wx:if="{{ login && defaultCard }}">
+        <van-image width="120rpx" height="120rpx" src="{{userInfo.avatar}}" bindtap="upavatar" />
+        <view class="name-company">
+          <view class="name">
+            <view class="txt">{{defaultCard.name}}</view>
+            <!--            VIP标识-->
+            <!-- <view class="vip-icon iconfont icon-huiyuan" wx:if="{{userInfo.vipId != 0}}"></view> -->
+            <image class="vip_bg" src="../../images/vip-bg.png" wx:if="{{userInfo.vipId == 1}}" mode="" />
+            <image class="no-vip" src="../../images/no-vip.png" wx:else mode="" />
+            <!--            认证图标 未认证 等待认证 认证成功 认证失败-->
+            <view class="auth-icon iconfont icon-weirenzheng1" wx:if="{{userInfo.authStatus == 0}}"></view>
+            <view class="auth-icon iconfont icon-dengdairenzheng1" wx:if="{{userInfo.authStatus == 5}}"></view>
+            <view class="auth-icon iconfont icon-renzhengchenggong1" wx:if="{{userInfo.authStatus == 10}}"></view>
+            <view class="auth-icon iconfont icon-renzhengshibai1" wx:if="{{userInfo.authStatus == 15}}"></view>
+          </view>
+          <view class="company">{{defaultCard.position}} | {{defaultCard.companyName}}</view>
+        </view>
+        <view class="flex"></view>
+        <view bindtap="toMyCard" class="iconfont icon-jiantou-you"></view>
+      </view>
+      <!--      未创建名片-->
+      <view wx:if="{{ login && !defaultCard }}">
+        <van-image round width="120rpx" height="120rpx" src="{{userInfo.avatar}}" bindtap="upavatar" />
+        <view class="txt">
+          <view class="title">未制作名片</view>
+          <view class="desc">快速制作专属名片</view>
+        </view>
+        <view class="flex"></view>
+        <view class="make-card-btn" bindtap="toNavigation" data-url="/pages/choosemode/choosemode">立即制作</view>
+      </view>
+      <!--      未登录-->
+      <view wx:if="{{ !login }}">
+        <van-image width="120rpx" height="120rpx" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/user-avatar.png" />
+        <view class="txt">
+          <view class="title" bindtap="toLogin">立即登录</view>
+          <view class="desc">登陆即可体验更多内容</view>
+        </view>
+        <view class="flex"></view>
+      </view>
+    </view>
+    <view class="extra-info">
+      <view class="look-me" bindtap="toNavigation" data-url="/pages/wholooksme/wholooksme">
+        <view class="num">{{ lookMeNum }}</view>
+        <view class="txt">谁在看我</view>
+      </view>
+      <view class="look-me" bindtap="toNavigation" data-url="/pages/myconcern/myconcern">
+        <view class="num">{{ watchfulNum }}</view>
+        <view class="txt">特别关注</view>
+      </view>
+      <view class="look-me" bindtap="toNavigation" data-url="/pages/switchidentity/switchidentity">
+        <view class="num">{{ cardNum }}</view>
+        <view class="txt">我的名片</view>
+      </view>
+    </view>
+    <view class="vip" wx:if="{{userInfo.vipId == 1}}" >
+      <!-- <view class="iconfont icon-huiyuan"></view> -->
+      <image class="vip-box-bg" src="../../images/vip_boxbg.png" mode=""/>
+      <view class="info-box">
+        <view class="info">
+        <view class="title">超级会员</view>
+        <view class="desc">会员有效期至 {{userInfo.vipEndTime}}</view>
+        </view>
+      <view class="vip-btn" bindtap="toNavigation" data-url="/pages/vipcenter/vipcenter">立即续费</view>
+      </view>
+     
+      <view class="info-box authority">
+      <view class="vip-flex">
+        <view class="title">视频名片</view>
+        <view class="desc">灵活介绍自己</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">查看名片</view>
+        <view class="desc">查看收到的名片</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">交换名片</view>
+        <view class="desc">交换彼此名片</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">尊贵标志</view>
+        <view class="desc">尊贵身份认证</view>
+      </view>
+      </view>
+    
+    </view>
+
+    <view class="no-vip-box" wx:else>
+      <!-- <view class="iconfont icon-huiyuan"></view> -->
+      <view class="info-box">
+        <view class="info">
+          <view class="title">暂未开通</view>
+          <view class="desc">开通会员可获以下特权</view>
+        </view>
+      <view class="vip-btn" bindtap="toNavigation" data-url="/pages/vipcenter/vipcenter">立即开通</view>
+      </view>
+  
+     
+      <view class="info-box authority">
+      <view class="vip-flex">
+        <view class="title">视频名片</view>
+        <view class="desc">灵活介绍自己</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">查看名片</view>
+        <view class="desc">查看收到的名片</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">交换名片</view>
+        <view class="desc">交换彼此名片</view>
+      </view>
+      <view class="vip-flex">
+        <view class="title">尊贵标志</view>
+        <view class="desc">尊贵身份认证</view>
+      </view>
+      </view>
+    
+    </view>
+
+  </view>
+  <view class="common-menu">
+    <!-- <view class="title">
+      <view class="icon"></view>
+      <view class="txt">名片工具</view>
+    </view> -->
+    <view class="btn-group">
+      <view class="item" bindtap="toNavigation" data-url="/pages/receivecard/receivecard?type=0">
+        <!-- <view class="iconfont icon-dichu"></view> -->
+        <image class="icon-img" src="../../images/dichu.png" mode="" />
+        <view class="txt">我递出的</view>
+        <view wx:if="{{sendnum!=0}}" class="tip">{{sendnum}}</view>
+      </view>
+      <view class="item" bindtap="toNavigation" data-url="/pages/receivecard/receivecard?type=1">
+        <!-- <view class="iconfont icon-shoudaode" >
+        </view> -->
+        <image class="icon-img" src="../../images/shoudao.png" mode="" />
+        <view class="txt">我收到的</view>
+        <view wx:if="{{receivenum!=0}}" class="tip">{{receivenum}}</view>
+      </view>
+      <view class="item" bindtap="toNavigation" data-url="/pages/mycard/mycard">
+        <!-- <view class="iconfont icon-wodemingpian-mianxing">
+        </view> -->
+        <image class="icon-img" src="../../images/kanguo.png" mode="" />
+        <view class="txt">我看过的</view>
+
+      </view>
+      <!-- <view class="item">
+        <view class="iconfont icon-gongxuqiang" bindtap="toNavigation" data-url="/pages/wallCircle/wallCircle">
+        </view>
+        <view class="txt">供需墙</view>
+      </view> -->
+
+    </view>
+  </view>
+
+  <view class="common-menu other-menu">
+    <!-- <view class="title">
+      <view class="icon"></view>
+      <view class="txt">系统设置</view>
+    </view> -->
+    <view class="btn-group">
+      <!-- <view class="item" bindtap="toNavigation" data-url="/pages/myorder/myorder">
+        <view class="iconfont icon-wodedingdan"></view>
+        <view class="txt">我的订单</view>
+      </view> -->
+      <view class="item" bindtap="toNavigation" data-url="/pages/setup/setup">
+        <!-- <view class="iconfont icon-shezhixitongshezhigongnengshezhishuxing"></view> -->
+        <image class="icon-img" src="../../images/shezhi.png" mode="" />
+        <view class="txt">个人设置</view>
+      </view>
+      <button class="service" open-type="contact">
+        <view class="item">
+          <!-- <view class="iconfont icon-kefu"></view> -->
+          <image class="icon-lx" src="../../images/lianxikefu.png" mode="" />
+          <view class="txt">联系客服</view>
+        </view>
+      </button>
+      <view class="item">
+        <!-- <view class="iconfont icon-renzhengchenggong1" bindtap="toNavigation" data-url="/pages/message/message">
+        </view> -->
+        <image class="icon-tz" bindtap="toNavigation" data-url="/pages/message/message" src="../../images/tongzhi.png" mode="" />
+        <text class="msg-tips" wx:if="{{xxtztotal>99}}">99+</text>
+        <text class="msg-tips" wx:else>{{xxtztotal}}</text>
+        <view class="txt">消息通知</view>
+      </view>
+    
+    </view>
+  </view>
+</view>
+
+<van-toast id="van-toast" />

@@ -1,0 +1,26 @@
+<!--pages/authstatus/authstatus.wxml-->
+<view class="container">
+  <block wx:if="{{authStatus == 0}}">
+    <i class="iconfont icon-weirenzheng1" style="font-size:120rpx;color:#FC9513"></i>
+    <view class="txt">当前帐号还未完成实名认证</view>
+    <view class="submitbtn" bindtap="toauthentication">立即认证</view>
+  </block>
+  <block wx:if="{{authStatus == 5}}">
+    <i class="iconfont icon-dengdairenzheng1" style="font-size:120rpx;color:#DDB97A"></i>
+    <view class="txt">账号认证中，耐心等待管理员审核</view>
+  </block>
+  <block wx:if="{{authStatus == 15}}">
+    <i class="iconfont icon-renzhengshibai1" style="font-size:120rpx;color:#FC4F13"></i>
+    <view class="txt">账号审核失败，请重新认证</view>
+    <view class="submitbtn" bindtap="toauthentication">重新认证</view>
+  </block>
+  <block wx:if="{{authStatus == 10}}">
+    <i class="iconfont icon-renzhengchenggong1" style="font-size:120rpx;color:#0AA3EF"></i>
+    <view class="txt">账号已完成认证</view>
+    <view class="auth_mes">
+      <view><view>真实姓名</view><view>{{realName}}</view></view>
+      <view><view>身份证号</view><view>{{idCard}}</view></view>
+      <view><view>手机号码</view><view>{{phone}}</view></view>
+    </view>
+  </block>
+</view>

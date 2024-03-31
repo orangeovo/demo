@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<view  class="container">
+  <view style="margin-bottom: 50rpx;"><span>欢迎使用 </span><span style="font-size: 36rpx;font-weight: bold;"> 好用名片夹 </span><span> 小程序</span></view>
+    <view class="logimg"><image style="width: 140rpx;height: 140rpx;" src="../../images/loginbkg.png"/></view>
+    <view class="txt1">申请获取权限</view>
+    <view class="txt2">获取您的公开信息（昵称、头像等）</view>
+    <view class="logbtn" bindtap="login">微信授权登录</view>
+    <view class="login-text">
+      <van-checkbox value="{{ radio }}" bind:change="onChange">我阅读并同意</van-checkbox>
+          <view class="login-a" bindtap="torule">《使用条款》</view>
+          <view>和</view>
+          <view class="login-a" bindtap="topolicy">《隐私政策》</view>
+      </view>
+  </view>
+<van-toast id="van-toast" />

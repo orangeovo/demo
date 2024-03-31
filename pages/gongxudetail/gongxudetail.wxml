@@ -1,0 +1,156 @@
+<!--pages/gongxudetail/gongxudetail.wxml-->
+<view class="coverTitle" wx:if="{{detail.themeImg}}">
+    <image src="{{detail.themeImg}}"></image>
+</view>
+<view class="page">
+    <view class="title">
+        <text>{{gxTxt}} : {{detail.title}}</text>
+        <image class="more-img" catchtap="doShareCard"  src="../../images/more_all.png" mode=""/>
+    </view>
+    <view class="card-info">
+    <view class="Off-shelf" wx:if="{{OffShelfFlag}}">已下架</view>
+    <view class="text-title">
+       <view>
+        <image wx:if="{{OffShelfFlag}}" class="icon-arrow" round width="30rpx" height="30rpx" src="https://cardcase.obs.cn-east-3.myhuaweicloud.com/nickNameLogo.png" />
+        <text>复合材料界面</text>
+       </view>
+       <view>
+        <van-image width="39rpx" height="39rpx" round src="{{detail.avatar}}" />
+        <view class="name">{{detail.name}}</view>
+       </view>
+    </view>
+    <view class="content">
+        <text>需求方: {{detail.content}} </text>
+        <text>需求描述: {{detail.content}}</text>
+    </view>
+    <view class="tags-box">
+        <view class="tags-item" wx:for="{{tags}}">
+           # {{item}}
+        </view>
+    </view>
+        <!-- <van-image width="80rpx" height="80rpx" round src="{{detail.avatar}}" />
+        <view class="info">
+            <view class="name">{{detail.name}}</view>
+            <view class="position">{{detail.position}} | {{detail.companyName}}</view>
+        </view> -->
+        <!-- <view class="flex"></view> -->
+        <!-- <view wx:if="{{isMyself==1}}" class="abutting" bindtap="toNavigation" data-url="/pages/receivecard/receivecard?type=1&article={{detail.id}}">
+            {{applyNum}}人对接
+        </view>
+        <view wx:else>
+            <view wx:if="{{status==0}}" class="wantButt" bindtap="exchangecard">我要对接</view>
+            <view wx:elif="{{status==1}}" class="inButt"> <text class="iconfont icon-jiaoseqiehuan"></text> 对接中...
+            </view>
+            <view wx:elif="{{status==2}}" class="iconfont icon-jiaoseqiehuan" bindtap="todetail">
+            </view>
+            <view wx:elif="{{status==3}}" class="refuse">被拒绝
+            </view>
+        </view> -->
+
+    </view>
+    <!-- <view class="extra-info">
+        <view class="date">{{detail.createTime}}</view>
+        <view class="view-num">浏览量 {{detail.viewNum}}</view>
+        <view class="view_edit " wx:if="{{isMyself==1}}" bindtap="toNavigation" data-url="/pages/editgongxuissue/editgongxuissue?id={{id}}&&type={{type}}"> <text class="iconfont icon-bianji" ></text> 编辑</view>
+    </view> -->
+    <view class="content">{{detail.content}}</view>
+    <view class="conImage">
+        <view class="itemImage" wx:for="{{contentImgs}}" wx:key="index" wx:if="{{contentImgs.length>0}}">
+            <image bindtap="preview" data-clickimg="{{item}}" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="time-tips">
+       {{timeTip}}·阅读人数{{viewNum}}
+    </view>
+    <view class="line-dom"></view>
+    <view class="recommend-box">
+        <view class="tuijian">相关推荐</view>
+        <view class="child-items" wx:for="{{3}}">
+            <view class="title">
+            <text>{{gxTxt}} : {{detail.title}}</text>
+        </view>
+        <view class="text-title">
+       <view>
+        <image class="icon-arrow" round width="30rpx" height="30rpx" src="https://cardcase.obs.cn-east-3.myhuaweicloud.com/nickNameLogo.png" />
+        <text class="children-tip">复合材料界面</text>
+        <van-image width="39rpx" height="39rpx" round src="{{detail.avatar}}" />
+        <view class="name children-name">{{detail.name}}</view>
+       </view>
+       <view class="time-tipchild">
+        {{timeTip}}·阅读人数{{viewNum}}
+       </view>
+        </view>
+    </view>
+    </view>
+    <view class="bottom-box">
+        <view class="fenxiang" bindtap="doShareCard">
+            <view class="iconfont icon-fenxiang1"></view>
+            <view>分享</view>
+        </view>
+        <view wx:if="{{isMyself==1}}" class="abutting" bindtap="toNavigation" data-url="/pages/receivecard/receivecard?type=1&article={{detail.id}}">
+            {{applyNum}}人对接
+        </view>
+        <view wx:else>
+            <view wx:if="{{status==0}}" class="wantButt" bindtap="exchangecard">我要对接</view>
+            <view wx:elif="{{status==1}}" class="inButt"> <text class="iconfont icon-jiaoseqiehuan"></text> 对接中...
+            </view>
+            <view wx:elif="{{status==2}}" class="iconfont icon-jiaoseqiehuan" bindtap="todetail">
+            </view>
+            <view wx:elif="{{status==3}}" class="refuse">被拒绝
+            </view>
+        </view>  
+    </view>
+
+</view>
+
+
+<van-dialog customStyle="font-size:24rpx" use-slot title="在您递出名片的同时将发起名片索取请求" show="{{ isShow }}" show-cancel-button confirm-button-open-type="submit" class="textCardbox" bind:close="onClose" bind:confirm="submit">
+    <view class="textCard"> 请问继续吗？为提高成功率，您可以填写说明： </view>
+    <view class="textCard" style="font-size: 20rpx;color: rgb(179, 177, 177);">（ 订阅消息可以及时得到反馈，请允许并保持选择 ）</view>
+    <view class="fieldtext">
+        <van-field label-class="label" model:value="{{ linkInfo }}" type="textarea" autosize="{{ {minHeight: 50} }}" maxlength="{{50}}" show-word-limit="{{true}}" placeholder="供需对接" />
+    </view>
+</van-dialog>
+
+
+
+<van-popup show="{{ show }}" bind:close="onCloseShare" overlay="{{true}}" position="bottom" round>
+    <view class="mycard-popup">
+        <view>
+            <text>分享到</text>
+            <icon bindtap="onCloseShare" style="position: relative;left: 37vw;font-size: 25rpx;margin-top: -15rpx;" class="iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="popbody">
+            <button open-type="share" class="share-btn" bindtap="onClose">
+                <view class="popicon righticon">
+                    <view class="popbtn">
+                        <image class="fenx-img" src="../../images/wechat.png"></image>
+                        <!-- <view class="iconfont icon-a-weixin2"></view> -->
+                    </view>
+                    <text class="poptxt">微信好友</text>
+                </view>
+            </button>
+            <!-- <button class="share-btn"  bindtap="pyqfx">
+                <view class="popicon">
+                    <view class="popbtn righticon">
+                        <image class="fenx-img" src="../../images/pyq.png"></image>
+                        <view class="iconfont icon-haibao"></view>
+                    </view>
+                    <text class="poptxt">朋友圈</text>
+                </view>
+            </button> -->
+            <button class="share-btn" bindtap="toPoster">
+                <view class="popicon">
+                    <view class="popbtn oricon">
+                        <image class="fenx-img" src="../../images/haibaofx.png"></image>
+                        <!-- <view class="iconfont icon-haibao"></view> -->
+                    </view>
+                    <text class="poptxt">分享海报</text>
+                </view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" />
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

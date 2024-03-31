@@ -1,0 +1,194 @@
+/* component/cardViewType1/index.wxss */
+@import "../../style/iconfont.wxss";
+
+.flex {
+    flex: 1;
+}
+
+.component {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 3rpx;
+    position: relative;
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bg {
+    position: absolute;
+    width: 750rpx;
+    height: 300rpx;
+    overflow: hidden;
+}
+
+.bg .circle {
+    position: absolute;
+    top: -1700rpx;
+    left: -625rpx;
+    width: 2000rpx;
+    height: 2000rpx;
+    border-radius: 1000rpx;
+    background-color: #1559F3;
+}
+
+.video-box {
+    overflow: hidden;
+    height: 375rpx;
+}
+
+.video {
+    width: 750rpx;
+    height: 375rpx;
+}
+
+.swiper {
+    width: 750rpx;
+    height: 562rpx;
+}
+
+.swiper-item {
+    width: 690rpx;
+    height: 375rpx;
+}
+
+.card {
+    width: 730rpx;
+    margin-left: 10rpx;
+    padding: 50rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url("https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/cardViewBgBig2.png");
+    background-size: 100% 100%;
+    margin-bottom: 20rpx;
+}
+
+.card>view {
+    margin-bottom: 25rpx;
+}
+
+.card .name-viewNum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .name {
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #666666;
+}
+
+.card .viewNum {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+    display: flex;
+    align-items: center;
+}
+
+.card .viewNum .iconfont {
+    margin-right: 5rpx;
+}
+
+.card .position-companyName {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 60rpx;
+}
+
+.card .cell {
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-bottom: 1rpx solid #CCCCCC !important;
+    margin-bottom: 30rpx;
+}
+
+.card .cell-title {
+    display: flex;
+    align-items: start;
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+}
+
+.card .cell-title .iconfont {
+    margin-right: 20rpx;
+}
+
+.card .makePhone {
+    display: flex;
+    align-items: center;
+    color: #1559F3;
+}
+
+.card .makePhone .iconfont {
+    font-size: 36rpx;
+    margin-right: 10rpx;
+}
+
+.card .van-cell-text {
+    word-break: break-all;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30rpx;
+}
+
+.btn-back {
+    width: 150rpx;
+    height: 72rpx;
+    background: #FFFFFF;
+    border: 2rpx solid #1559F3;
+    border-radius: 36rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1559F3;
+    text-align: center;
+    line-height: 72rpx;
+}
+
+.btn-upd {
+    width: 240rpx;
+    height: 72rpx;
+    background: #FFFFFF;
+    border: 2rpx solid #1559F3;
+    border-radius: 36rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1559F3;
+    text-align: center;
+    line-height: 72rpx;
+}
+
+.btn-share {
+    width: 250rpx;
+    height: 72rpx;
+    background: #1559F3;
+    border: 1rpx solid #DDDDDD;
+    border-radius: 36rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 72rpx;
+    box-sizing: border-box;
+}

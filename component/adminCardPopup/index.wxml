@@ -1,0 +1,10 @@
+<!--component/adminCardPopup/index.wxml-->
+<view class="component">
+    <view class="save" bindtap="save">保存到通讯录</view>
+    <view class="colltxt" wx:if="{{obj.isExchange == 0}}" bindtap="doExchanged">交换名片</view>
+    <view class="del" bindtap="del">删除名片</view>
+    <view class="cancel" bindtap="onClose">取消</view>
+</view>
+
+<van-toast id="van-toast" />
+

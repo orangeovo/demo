@@ -1,0 +1,252 @@
+/* pages/receivecard/receivecard.wxss */
+.page{
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+}
+.recetitlebox {
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+
+.recetitle {
+  position: relative;
+  margin: auto;
+  padding: 28rpx 30rpx;
+  width: 690rxp;
+  height: 150rpx;
+  background: rgba(252, 149, 19, 0.1);
+  border: 1px solid #FC9513;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recetitle>view:first-child {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FC9513;
+  line-height: 1;
+}
+
+.recetitle>view:first-child text {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #FC9513;
+  line-height: 1;
+}
+
+.recetitle .desc {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FC9513;
+  line-height: 1;
+}
+
+.recetitle .desc .iconfont {
+  margin-right: 10rpx;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border: 1rpx solid #DF4B00;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 18rpx;
+  color: #DF4B00;
+}
+
+/* .close>i{
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+.recebody {
+  overflow: auto;
+}
+
+.groupitem,
+.date {
+  padding: 15rpx 30rpx;
+}
+
+.date {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.grouplist image {
+  width: 76rpx;
+  height: 76rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+}
+
+.groupitem {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.groupitem>view {
+  display: flex;
+  /* align-items: center; */
+}
+
+.mesbox {
+  /* display: flex; */
+  margin-left: 30rpx;
+}
+
+.groupitem_info {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.mesbox>view:first-child {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.groupitem_info_text {
+  color: #1559F3;
+  margin-top: 10rpx;
+}
+.whitespace{
+  height: 40rpx;
+  width: 100rpx;
+}
+
+.transmit {
+  width: 120rpx;
+  height: 56rpx;
+  background: #0AA3EF;
+  border-radius: 10rpx;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.tl {
+  width: 140rpx;
+}
+
+.confirm {
+  width: 120rpx;
+  height: 56rpx;
+  font-size: 28rpx;
+  color: #FC9513;
+  justify-content: center;
+}
+
+.complete {
+  width: 120rpx;
+  height: 56rpx;
+  font-size: 28rpx;
+  color: #666;
+  justify-content: center;
+}
+
+.bottom-btn{
+  margin-left: 60rpx;
+  margin-top: 30rpx;
+}
+
+.transmit:active,
+.joinvip:active {
+  opacity: .7;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 87vh;
+  background: linear-gradient(#ffffff10, #fff);
+  z-index: 999;
+}
+
+.btn-group {
+  margin-top: 10rpx;
+  display: flex;
+}
+
+.btn-group .btn {
+  width: 100rpx;
+  height: 56rpx;
+  border: 1rpx solid #1559F3;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  background: #1559F3;
+  color: #FFFFFF;
+}
+
+.btn-group .refuse-btn {
+  color: #1559F3;
+  background: none;
+  margin-right: 30rpx;
+}
+
+.pass-txt,
+.refuse-txt {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 36rpx;
+}
+
+.send-pass-txt {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.send-refuse-txt {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #E80000;
+}
+
+.send-wait-txt {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FC9513;
+}
+.loading{
+  min-height: 100vh;
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.extra{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1559F3;
+  margin: 5rpx 15rpx 5rpx 0;
+}
+.extra-group{
+  display: flex;
+}

@@ -1,0 +1,11 @@
+<!--pages/invite/invite.wxml-->
+<customnavbar statusheit="{{statusbarheight}}" title="邀请入圈" lefticon="iconfont icon-zuojiantou"  clickmethod="back" ></customnavbar>
+<view class="invitecontainer" style="margin-top: {{statusbarheight+156}}rpx;">
+    <view class="inviteportraitandtitle">
+        <image class="inviteimg" src="../../images/jiqi.jpg"></image>
+        <text class="invitetitle">2022新材料交流大会</text>  
+    </view>
+    <icon class="inviteicon iconfont icon-erweima"></icon>
+</view>
+<view class="invite_savebtn">保存海报</view>
+<view style="margin-top: 100rpx;">免责声明：破二维码有透明区块突出占大量高度，效果超出边界与本人无关,到时候换成正常的二维码应该没问题</view>

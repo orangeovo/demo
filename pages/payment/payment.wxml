@@ -1,0 +1,18 @@
+<!--pages/payment/payment.wxml-->
+<view class="paytit">订单详情</view>
+<view class="order">
+  <view class="info">
+    <image class="avatar" src="{{order.cover}}"/>
+    <view class="ordermes">
+      <view>{{order.name}}</view>
+      <view>时长:{{order.time}}天</view>
+    </view>
+    <view class="flex"></view>
+    <view class="price">￥{{order.price / 100}}元</view>
+  </view>
+  <view class="pay">
+    <view>支付金额</view>
+    <view>￥{{order.price / 100}}元</view>
+  </view>
+</view>
+<view class="confirmpay"><view bindtap="confirmpay">确认支付</view></view>

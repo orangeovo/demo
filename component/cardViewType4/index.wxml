@@ -1,0 +1,73 @@
+<view class="component">
+    <view class="bg">
+        <view class="circle"></view>
+    </view>
+    <view class="content">
+        <!--        轮播/视频-->
+        <view class="video-box" wx:if="{{view.videoUrl}}">
+            <video class="video" src="{{view.videoUrl}}"></video>
+        </view>
+        <swiper wx:else class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+            <block wx:for="{{view.imgs}}" wx:key="*this">
+                <swiper-item class="swiper-item">
+                    <van-image width="750rpx" height="562rpx" fit="fill" src="{{item}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="card">
+            <view class="name-position">
+                <view class="name">{{view.name}}</view>
+                <view class="position">{{view.position}}</view>
+            </view>
+            <view class="company-name">{{view.companyName}}</view>
+        </view>
+        <view class="base-info">
+            <view class="title">
+                <view class="iconfont icon-gerenxinxi"></view>
+                <view class="txt">基本信息</view>
+                <view class="flex"></view>
+                <!--                // TODO:头像-->
+                <view class="view-num" bindtap="toWhoLookHim">{{view.viewNum}}人看过</view>
+            </view>
+            <scroll-view scroll-x="{{ true }}" class="info-scroll-view">
+                <view class="info-swiper-item" bindtap="makePhone">
+                    <view class="item-title phone">
+                        <view class="iconfont icon-shoujihao1"></view>
+                        <view class="txt">联系电话</view>
+                    </view>
+                    <view class="txt">{{view.phone}}</view>
+                </view>
+                <view class="info-swiper-item">
+                    <view class="item-title email">
+                        <view class="iconfont icon-youxiang"></view>
+                        <view class="txt">电子邮箱</view>
+                    </view>
+                    <view class="txt">{{view.email || '暂未填写'}}</view>
+                </view>
+                <view class="info-swiper-item">
+                    <view class="item-title address">
+                        <view class="iconfont icon-dizhi1"></view>
+                        <view class="txt">公司地址</view>
+                    </view>
+                    <view class="txt">{{(view.companyAddress + view.companyAddressDetail) || '暂未填写' }}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="company-info">
+            <view class="title">
+                <view class="iconfont icon-gongsixinxi"></view>
+                <view class="txt">公司简介</view>
+                <view class="flex"></view>
+            </view>
+            <view class="content-txt">
+                {{view.companyDesc}}
+            </view>
+        </view>
+        <view class="flex"></view>
+        <view class="btn-group" wx:if="{{showShare}}">
+            <view class="btn-back" bindtap="toback">返回</view>
+            <view class="btn-upd" bindtap="toUpdCard">修改名片</view>
+            <view class="btn-share" bindtap="doShareCard">分享我的名片</view>
+        </view>
+    </view>
+</view>

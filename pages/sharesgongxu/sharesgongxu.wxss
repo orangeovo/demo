@@ -1,0 +1,140 @@
+.sharebox {
+  width: 750rpx;
+  height: calc(100vh);
+  position: relative;
+  top: -130rpx;
+  background-color: #fff;
+}
+
+.gongxuimage {
+  margin-top: 120rpx;
+  width: 100%;
+}
+
+.gongxu_share {
+  position: absolute;
+  top: 175rpx;
+  left: 250rpx;
+  color: #F5F6FB;
+  font-size: 28rpx;
+}
+.infotexttoparea{
+  display: flex;
+  flex-direction: row;
+  margin-top: 150rpx;
+}
+.gongxu_share text {
+  color: #36F3FD;
+}
+
+.gongxudetil {
+  position: absolute;
+  top: 480rpx;
+  left: 100rpx;
+  color: #E6E4E4;
+  font-size: 28rpx;
+}
+
+.gongxudcontent {
+  color: #666666;
+  margin-left: -20rpx;
+  word-break: break-all;
+    margin-bottom: 20rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    width: 600rpx;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.title{
+  margin-left: -20rpx;
+  margin-top: 170rpx;
+  font-size: 36rpx  ;
+  color: #000000;
+}
+
+.gongxuinfo {
+  position: absolute;
+  top: 840rpx;
+  left: 100rpx;
+}
+
+.gongxuinfo image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.info {
+  display: flex;
+
+}
+.avatar{
+  margin-top: 150rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.infotext {
+  margin-left: 30rpx;
+  color: rgb(2, 2, 2);
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoname {
+  font-size: 35rpx;
+  line-height: 54rpx;
+  color: #000000;
+}
+.potision{
+  margin-left: 30rpx;
+  line-height: 54rpx;
+  color: #666666;
+}
+.company{
+  margin-top: 10rpx;
+  color: #666666;
+}
+.cardqrcode {
+  position: absolute;
+  top: 1090rpx;
+  left: 100rpx;
+  box-sizing: border-box;
+}
+
+.gongxudfoot {
+  display: flex;
+  align-items: center;
+}
+
+.cardqrcode-img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+  margin-left: 80rpx;
+  margin-top: 50rpx;
+}
+.cardqrcode-img .van-image{
+  z-index: 100;
+}
+
+.txt {
+  color: #0CDBF0;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+}
+
+.cardsaveposter {
+  width: 288rpx;
+  height: 76rpx;
+  background-color: #2061F5;
+  color: #fff;
+  text-align: center;
+  line-height: 76rpx;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+  margin-bottom: -53rpx;
+  margin-top: 140rpx;
+}

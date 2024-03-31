@@ -1,0 +1,60 @@
+<!--pages/switchidentity/switchidentity.wxml-->
+<import src="../we-cropper/we-cropper.wxml" />
+<view class="imgDisposeBlock" wx:if="{{iscropper}}">
+    <view class='imgDisposeArea'>
+        <template is="we-cropper" data="{{...cropperOpt}}" />
+    </view>
+    <view class='imgDisposeControlLine'>
+        <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+        <view class='editBtn' bindtap="closeTap">取消</view>
+        <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+    </view>
+</view>
+<view class="page">
+  <view class="makebtn" bindtap="jumptocreatecard"><van-icon name="add" color="#2C6AF6" style="margin-right: 10px;"/>新建名片</view>
+  <!--有名片-->
+  <view wx:if="{{ifhad}}">
+    <view class="swcidentity-defalut" >默认名片</view>
+    <view class="swcidentity-defalut-container" bindtap="toDetail" data-cid="{{defaultCard.id}}">
+      <image src="{{defaultCard.avatar}}" class="swcidentity-defalut-img"  data-id="{{defaultCard.id}}"catchtap="clickavatar"></image>
+      <view class="swcidentity-defalut-textbox">
+        <text class="swcidentity-defalut-textbox-name">{{defaultCard.name}}</text>
+        <text class="swcidentity-defalut-textbox-company">{{defaultCard.position}}  |  {{defaultCard.companyName}}</text>
+      </view>
+      <image class="more-img" data-cid="{{defaultCard.id}}" catchtap="morePopShow"  src="../../images/more_all.png" mode=""/>
+      </view>
+    <view class="swcidentity-defalut" >其他名片</view>
+    <view class="other-box">
+      <view wx:for="{{list}}" wx:for-item="other" wx:key="index" class="other"
+          bindtap="toDetail" data-cid="{{other.id}}"
+          bindlongpress="deleteCard" data-index="{{index}}">
+      <view wx:if="{{other.idDefault == 0}}" class="swcidentity-defalut-container">
+        <image src="{{other.avatar}}" class="swcidentity-defalut-img" data-id="{{other.id}}" catchtap="clickavatar"></image>
+        <view class="swcidentity-defalut-textbox">
+          <text class="swcidentity-defalut-textbox-name">{{other.name}}</text>
+          <text class="swcidentity-defalut-textbox-company">{{other.position}}  |  {{other.companyName}}</text>
+        </view>
+        <!-- <view class="swcidentity-defalut-container-btn" catchtap="setDefault" data-cid="{{other.id}}">设为默认</view> -->
+        <image class="more-img" data-cid="{{other.id}}" catchtap="morePopShow"  src="../../images/more_all.png" mode=""/>
+      </view>
+    </view>
+    </view>
+  </view>
+  <!--无名片-->
+  <view wx:else>
+    <van-empty description="暂无名片" />
+  </view>
+  <view class="flex"></view>
+ 
+</view>
+
+
+<van-popup show="{{ show }}" custom-style="height: 250rpx;" bind:close="onClose" position="bottom" round>
+    <view class="savecardpopup">
+        <view class="flex" style="display: flex;align-items: center" bindtap="uploadImg">更换头像</view>
+        <view class="line"></view>
+        <view class="flex" bindtap="onClose">取消</view>
+    </view>
+</van-popup>
+
+<van-dialog id="van-dialog" />

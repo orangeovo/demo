@@ -1,0 +1,51 @@
+<view wx:if="{{init}}">
+  <view wx:if="{{login}}">
+    <van-tabs active="{{ active }}" animated="{{ true }}" color="#1559F3" title-active-color="#1559F3">
+      <van-tab title="{{supplier}}">
+        <view wx:for="{{indexBar}}" wx:key="index" wx:if="{{indexBar.length>0}}">
+          <van-index-anchor index="{{item}}" />
+          <view wx:for="{{listData}}" wx:for-item="el" wx:key="index">
+            <van-cell custom-class="cell" wx:if="{{el.firstCode == item}}" is-link value="{{el.supplyArticleNum}}"
+              center="{{ true }}" url="/pages/wall/wall?id={{el.id}}">
+              <view slot="title" class="title-box">
+
+                <van-image custom-class="avatar" width="80rpx" height="80rpx" src="{{el.avatar  }}" class="imagebxo" />
+                <view wx:if="{{el.unReadCount==0}}"></view>
+                <view wx:else>
+                  <view class="cornorMark">
+                    <text>{{el.unReadCount}}</text>
+                  </view>
+                </view>
+
+                <view class="van-cell-text">{{el.name}}</view>
+              </view>
+            </van-cell>
+          </view>
+        </view>
+        <view class="nullCon" wx:if="{{indexBar.length==0}}">
+          <van-empty description="暂无内容，请先加入圈子" />
+        </view>
+      </van-tab>
+      <van-tab title="{{demander}}">
+        <view wx:for="{{indexBar}}" wx:key="index" wx:if="{{indexBar.length>0}}">
+          <van-index-anchor index="{{item}}" />
+          <view wx:for="{{listData}}" wx:for-item="el" wx:key="index">
+            <van-cell custom-class="cell" wx:if="{{el.firstCode == item}}" is-link value="{{el.needArticleNum}}"
+              center="{{ true }}" url="/pages/wall/wall?id={{el.id}}">
+              <view slot="title" class="title-box">
+                <van-image custom-class="avatar" width="80rpx" height="80rpx" src="{{el.avatar  }}" class="imagebxo" />
+                <view class="van-cell-text">{{el.name}}</view>
+              </view>
+            </van-cell>
+          </view>
+        </view>
+        <view class="nullCon" wx:if="{{indexBar.length==0}}">
+          <van-empty description="暂无内容，请先加入圈子" />
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view class="page" wx:else>
+    <view class="bottom-btn" bindtap="toLogin">请先登录</view>
+  </view>
+</view>

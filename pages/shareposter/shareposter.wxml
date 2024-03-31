@@ -1,0 +1,46 @@
+<!--pages/shareposter/shareposter.wxml-->
+<van-skeleton title avatar row="3" loading="{{ loading }}">
+    <view class="page">
+        <view class="sharebox">
+            <view class="cardinfo">
+                <image class="cardavatar" src="{{ view.avatar || view.imgs[0] }}"></image>
+                <view class="cardheader">
+                    <view class="basic-info">
+                        <view class="name">{{view.name}}</view>
+                        <view class="zhiwei">{{view.position || '暂未填写'}}</view>
+                    </view>
+                    <view>{{view.companyName}}</view>
+                    <!-- <view>
+                        <view class="cardcompany">
+                            <view class="txt">{{view.companyName || '暂未填写'}}</view>
+                        </view>
+                        <image class="cardavatar" src="{{ view.avatar || view.imgs[0] }}"></image>
+                    </view> -->
+
+                </view>
+                <!-- <view class="desc">{{view.companyDesc || '暂未填写'}}</view> -->
+            </view>
+            <view class="phone">
+                <image class="phoneimg"  src="../../images/phoneicon.png"></image>
+                {{view.phone}}
+            </view>
+            <view class="check-more">
+                长按扫码查看更多名片信息
+                <view class="cardqrcode-img">
+                        <van-image width="94rpx" height="94rpx" src="{{qrCode}}" />
+                </view>
+            </view>
+            <!-- <image class="imagecard"   src="{{backgroundimg}}"></image> -->
+            <view class="cardqrcode">
+                    <view>
+                        <view class="cardsaveposter" bindtap="onSave">保存图片</view>
+                    </view>
+                  
+                </view>
+        </view>
+    </view>
+</van-skeleton>
+
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" />
+
+<van-toast id="van-toast" />

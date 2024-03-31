@@ -1,0 +1,259 @@
+/* pages/cardholder/cardholder.wxss */
+.imgDisposeBlock {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+}
+
+.imgDisposeArea {
+  height: 88vh;
+  overflow: hidden;
+}
+
+.imgDisposeControlLine {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+}
+
+.editBtn {
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50rpx;
+  font-size: 26rpx;
+}
+
+.no-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.login-btn{
+  width: 630rpx;
+  height: 88rpx;
+}
+.page{
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.holdertitle{
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #1559F3;
+  z-index: 9;
+}
+.search-input{
+  height: 70rpx;
+}
+.search{
+  height: 66rpx;
+  position: relative;
+  margin: 0 70rpx;
+  text-align: center;
+  border-radius: 33rpx;
+  background: #F2F2F2;
+}
+.search input{
+  font-size: 26rpx;
+}
+.search image{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 18rpx;
+  right: 22rpx;
+  z-index: 9;
+}
+.plhc{
+  font-size: 26rpx;
+}
+.nav{
+  border-radius: 20px 20px 0px 0px;
+  background-color: #fff;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+.nav-title{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.nav-title .color{
+  width: 8rpx;
+  height: 26rpx;
+  background: #4678FF;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}
+.nav-title .txt{
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.icons{
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-around;
+}
+.icons>view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icons>view .iconfont{
+  width: 88rpx;
+  height: 88rpx;
+  box-shadow: 1px 1px 16px 0px rgba(33, 98, 245, 0.3);
+  opacity: 0.99;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 88rpx;
+  margin-bottom: 20rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
+.icons .scan-card .iconfont{
+  background: linear-gradient(135deg, #578AFF, #1559F3);
+}
+.icons .entering .iconfont{
+  background: linear-gradient(135deg, #FBC045, #F79A1B);
+}
+.icons .group .iconfont{
+  background: linear-gradient(135deg, #3ED3E2, #41B0EB);
+}
+.icons .circle .iconfont{
+  background: linear-gradient(135deg, #4EE2B3, #3FC7C2);
+}
+.icons>view .txt{
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+.cardlist{
+  height: calc(100vh - 500rpx);
+  box-sizing: border-box;
+  background-color: #F6F6F6;
+}
+.empty{
+  margin-top: 100rpx;
+}
+.title{
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.title .color{
+  width: 8rpx;
+  height: 26rpx;
+  background: #F89F21;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}
+.title .txt{
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.title .sum{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+.cardlist image{
+  width: 76rpx;
+  height: 76rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+}
+.cardlistitem>view{
+  padding: 15rpx 30rpx;
+}
+.datalist{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+  height: 130rpx;
+}
+.initials{
+  font-size: 30rpx;
+  color: #999;
+}
+.datalistitem{
+  margin-left: 30rpx;
+}
+.datalistitem>view:first-child{
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  color: #373737;
+}
+.datalistitem>view:last-child{
+  font-size: 26rpx;
+  color: #666;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #656565;
+}
+.total{
+  margin: 20rpx auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.avatar{
+  width: 76rpx;
+  height: 76rpx;
+  text-align: center;
+  line-height: 76rpx;
+  border-radius: 10rpx;
+}
+.sidebar{
+  position: fixed;
+  right: 10rpx;
+  bottom: 0;
+  height: calc(100vh - 500rpx);
+  z-index: 19;
+  font-size: 22rpx;
+  padding: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.initials{
+  background: #FAFAFA;
+}
+.remarks{
+  background: #42CDBF;
+  border-radius: 10rpx;
+  color: white;
+  text-align: center;
+  width: 66rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  margin-left: 10rpx;
+}

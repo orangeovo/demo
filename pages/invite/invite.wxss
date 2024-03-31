@@ -1,0 +1,50 @@
+/* pages/invite/invite.wxss */
+.invitecontainer{
+    height: 772rpx;
+    width: 630rpx;
+    background-color: white;
+    margin-left: 60rpx;
+    margin-right: 60rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 3rpx;
+}
+.inviteportraitandtitle{
+    display: flex;
+    flex-direction: row;
+    height: 110rpx;
+    width: 100%;
+    margin-top: 50rpx;
+    align-items: center;
+    
+}
+.inviteimg{
+    height: 110rpx;
+    width: 110rpx;
+    border-radius: 10rpx;
+    margin-left: 50rpx;
+    
+    margin-right: 20rpx;
+}
+.inviteicon{
+    font-size: 530rpx;
+    margin-bottom: 52rpx;
+    
+}
+.invitetitle{
+    font-size: 28rpx;
+    color: rgba(51, 51, 51, 1);
+}
+.invite_savebtn{
+    height: 76rpx;
+    width: 360rpx;
+    background-color: rgba(10, 163, 239, 1);
+    color: white;
+    line-height: 76rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin-right: 195rpx;
+    margin-left: 195rpx;
+    margin-top: 30rpx;
+}

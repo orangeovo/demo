@@ -1,0 +1,12 @@
+<!--pages/setnewgroup/setnewgroup.wxml-->
+<view class="avatar">
+  <view><i class="iconfont icon-haoyou" style="font-size:48rpx;color:#000"></i></view>
+</view>
+<view class="groupbox">
+  <view>分组信息</view>
+  <view class="groupmes">
+    <view><view>分组名称</view><input type="text" placeholder="请输入组名"/></view>
+    <view><view>分组用途</view><input type="text" placeholder="分组用途（100字以内）"/></view>
+  </view>
+</view>
+<view class="savebtn">保存</view>

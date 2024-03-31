@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "制作名片",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-picker": "@vant/weapp/picker/index"
+  }
+}

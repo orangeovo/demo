@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "card-item": "../../component/cardItem/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true
+}

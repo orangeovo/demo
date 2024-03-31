@@ -1,0 +1,78 @@
+<view>
+    <!-- <view class="main">
+        <van-image custom-class="avatar" round width="115rpx" height="115rpx" src="{{userInfo.avatar}}" />
+        <view class="name">{{ view.name }}</view>
+        <van-image custom-class="qrcode" round width="208rpx" height="208rpx" src="{{qrCode}}" />
+        <van-button round type="info" custom-class="btn" color="linear-gradient(0deg, #1559F3, #6796FF)" bindtap="onSave">点击保存海报</van-button>
+    </view> -->
+
+    <view class="circlemain">
+        <view class="content">
+        <view class="title">{{view.name}}</view>
+        <image class="card-img" src="../../images/card_bg.jpg" ></image>
+        <view class="quanzi">
+            圈主            
+        </view>
+        <view class="quanzhu">微信用户</view>
+        <view class="address-label">
+            地区 · {{view.address || '暂无'}}
+        </view>
+        <view class="purpose">
+            {{view.purpose || '暂无'}}
+        </view>
+        <view class="label-box">
+            <view>#核心材料</view>
+            <view>#科技</view>
+            <view>#机器人</view>
+        </view>
+        <view class="code-box">
+            <van-image round width="170rpx" height="170rpx" src="{{qrCode}}" />
+        </view>
+        <view class="tips1">
+            长按扫码查看详情
+        </view>
+        <view class="tips2">
+            加入圈子
+        </view>
+        <view class="onSavecir" bindtap="onSave">保存图片</view>
+            <!-- <view class="cirleft">
+                <view class="cirleft_text"> 邀</view>
+                <view class="cirleft_text"> 请</view>
+                <view class="cirleft_text"> 入</view>
+                <view class="cirleft_text"> 圈</view>
+                <view class="cirleft_text2">INVITATION</view>
+                <view class="cirleft_qr">
+                    <van-image round width="200rpx" height="200rpx" src="{{qrCode}}" />
+                </view>
+
+            </view> -->
+            <!-- <view class="cirright">
+                <view class="cirname">{{ view.name }}</view>
+                <view class="cirpurpose">
+                    用途：
+                </view>
+                <view class="cirpurpose">{{view.purpose || '暂未填写'}} </view>
+                <view class="cirtime">
+                    <view class="cirpurpose">
+                        时间：
+                    </view>
+                    <view class="cirpurpose">{{view.createTime}} </view>
+                </view>
+                <view class="ciraddress">
+                    <view>
+                        地址：
+                    </view>
+                    <view>{{view.address || '暂未填写'}} </view>
+                </view>
+                <view class="onSavecir" bindtap="onSave">点击保存海报</view>
+            </view> -->
+        </view>
+                        <!-- <van-button round type="info" color="linear-gradient(0deg, #1559F3, #6796FF)" bindtap="onSave">点击保存海报
+                </van-button> -->
+        <!-- <image class="circlimage" mode="scaleToFill" src="{{backgroundimg}}"></image> -->
+    </view>
+</view>
+
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" />
+
+<van-toast id="van-toast" />

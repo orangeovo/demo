@@ -1,0 +1,35 @@
+<!--pages/wholooksme/wholooksme.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="whohasseen" wx:if="{{list.length != 0}}">
+  <view wx:for="{{dateList}}" wx:key="index" class="grouplist">
+    <view class="date">{{item}}</view>
+    <view wx:for="{{list}}" wx:for-item="card" wx:key="index" bindtap="todetail" data-cid="{{card.cardId}}" data-status="{{card.applyStatus}}">
+      <view wx:if="{{tools.indexOf(item,card.createTime) > -1}}" class="groupitem">
+        <view class="info">
+          <van-image width="80rpx" height="80rpx" src="{{card.avatar}}" />
+          <view class="mesbox">
+            <view class="name">{{card.name}}</view>
+            <view class="position">
+              {{card.position}} | {{card.companyName}}
+            </view>
+          </view>
+        </view>
+        <view class="transmit" wx:if="{{card.isExchange == 0}}" catchtap="apply" data-item="{{card}}">递名片</view>
+        <view class="confirm" wx:else>已交换</view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-empty wx:else description="暂无数据" />
+<view class="noMore" wx:if="{{userInfo.vipId && noMore}}">没有更多了</view>
+<view class="joinvip" wx:if="{{userInfo.vipId == 0}}" bindtap="toVip">
+  <view>加入会员查看更多</view>
+</view>
+<van-dialog customStyle="font-size:24rpx"  id="van-dialog" use-slot title="在您递出名片的同时将发起名片索取请求" show="{{ isShow }}" show-cancel-button confirm-button-open-type="submit" class="textCardbox" bind:close="onClose" bind:confirm="submit">
+  <view class="textCard"> 请问继续吗？为提高成功率，您可以填写说明：</view>
+  <view class="textCard" style="font-size: 20rpx;color: rgb(179, 177, 177);">（ 订阅消息可以及时得到反馈，请允许并保持选择 ）</view>
+  <view class="fieldtext">
+    <van-field label-class="label" model:value="{{ linkInfo }}" type="textarea" autosize="{{ {minHeight: 50} }}" maxlength="{{50}}" show-word-limit="{{true}}" placeholder="分享交换" />
+  </view>
+</van-dialog>
+<van-toast id="van-toast" />

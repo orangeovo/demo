@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-switch": "@vant/weapp/switch/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-toast": "@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText" : "名片管理"
+}

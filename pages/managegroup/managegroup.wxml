@@ -1,0 +1,38 @@
+<!--pages/creategroup/creategroup.wxml-->
+<view class="avatar" bindtap="upload">
+    <view wx:if="{{!avatar}}" class="avatar-icon">
+        <view class="iconfont icon-haoyou"></view>
+    </view>
+    <van-image wx:else round width="100rpx" height="100rpx" src="{{avatar}}" />
+</view>
+<view class="creategroup-infoarea-title">分组信息</view>
+<view class="creategroup-infoarea">
+    <van-field label-class="label" label="分组名称" model:value="{{ groupname }}" placeholder="请输入组名" />
+    <van-field label-class="label" label="分组用途" model:value="{{ grouppurpose }}" placeholder="请描述一下用途（100字以内）"
+        type="textarea" autosize="{{ {minHeight:50 } }}" maxlength="{{ 100 }}" show-word-limit="{{ true }}" />
+</view>
+
+<view class="upd" wx:if="{{groupid}}">
+    <view class="btn-group">
+        <van-button round type="info" custom-class="btn" color="#EF3A0A" bindtap="deletegroup">删除分组</van-button>
+        <van-button round type="info" custom-class="btn" color="#1559F3" bindtap="save">保存修改</van-button>
+    </view>
+    <view class="hint">
+        提示：
+    </view>
+    <view class="hint">
+        1、分组是将名片列表成员进行分类，便于查找；组内成员互不可见
+    </view>
+    <view class="hint">
+        2、删除后，该分组下的名片将移入默认列表，不会删除该分组下的名片
+    </view>
+</view>
+<view class="add" wx:else>
+    <van-button type="info" custom-class="add-btn" color="#1559F3" bindtap="save">立即创建</van-button>
+    <view class="hint">
+        提示：分组是将名片列表成员进行分类，便于查找；组内成员互不可见
+    </view>
+</view>
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

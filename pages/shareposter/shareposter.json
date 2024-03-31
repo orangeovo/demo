@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "van-image": "@vant/weapp/image/index",
+    "painter":"/component/painter/painter"
+  },
+  "navigationBarTitleText": "分享名片"
+}

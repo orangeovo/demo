@@ -1,0 +1,54 @@
+<!--pages/createcircle/createcircle.wxml-->
+<customnavbar statusheit="{{statusbarheight}}" title="管理圈子" lefticon="iconfont icon-zuojiantou" clickmethod="back" ></customnavbar>
+<view class="tipbox" style="margin-top: {{statusbarheight+116}}rpx;">
+  <icon class="tipicon iconfont icon-tishi"></icon>
+  <text class="tiptext">非创建者，不可修改圈子信息</text>
+</view>
+<view class="createcirclehead" >
+    <view class="portraitbox">
+        <icon style="color: white;font-size: 53rpx;" class="iconfont icon-haoyou"></icon>
+    </view>
+    <view class="portraittext">圈子信息</view>
+</view>
+<view class="createcircleinfo">
+    <view class="createcircleitem" style="height: 130rpx;">
+        <text class="createcircletext">圈子名称</text> 
+        <input class="createcircleinput" type="text" placeholder="请输入"/>
+    </view>
+    <view class="createcircleborder"></view>
+    <view class="createcircleitem" style="height: 160rpx;align-items: flex-start;padding-top: 36rpx;">
+        <text class="createcircletext">圈子用途</text> 
+        <textarea class="createcircleinput" type="text" maxlength="100" placeholder="请描述一下用途（100字以内）" style="height: 125rpx;"></textarea>
+    </view>
+    <view class="createcircleborder"></view>
+    <view class="createcircleitem">
+        <text class="createcircletext">行业分类</text> 
+        <text class="createcircleinput" type="text" placeholder="请选择" bindtap="choosecategory">请选择</text>
+    </view>
+    <view class="createcircleborder"></view>
+    <view class="createcircleitem">
+        <text class="createcircletext">创建时间</text> 
+        <input class="createcircleinput" type="text" value="2021年12月26日"/>
+    </view>
+    <view class="createcircleborder"></view>
+    <view class="createcircleitem">
+        <text class="createcircletext">创建地址</text> 
+        <input class="createcircleinput" type="text" value="浙江省宁波市高新区智慧园三期"/>
+        <icon style="color:rgba(10, 163, 239, 1);font-size: 60rpx;" class="iconfont icon-dizhi"></icon>
+    </view>
+    <view class="createcircleborder"></view>
+</view>
+<view class="managecbtnbox">
+ <view class="deletebtn">
+    <text style="color: rgba(239, 58, 10, 1);font-size: 30rpx;">删除并退出</text>
+    <text style="color: rgba(153, 153, 153, 1);font-size: 22rpx;margin-top: 10rpx;">仅删除圈子，不删除相关的名片</text>
+ </view>
+ <view class="savebtn">保存修改</view>
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose"   position="left">
+    <customnavbar statusheit="{{statusbarheight}}" title="新建圈子" lefticon="iconfont icon-zuojiantou" clickmethod="backtocreate" ></customnavbar>
+    <view class="categorypopup" style="margin-top: {{statusbarheight+116}}rpx;">
+    
+    </view>
+</van-popup>

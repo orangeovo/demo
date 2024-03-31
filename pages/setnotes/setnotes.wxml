@@ -1,0 +1,51 @@
+<!--pages/newgroup/newgroup.wxml-->
+<view class="page">
+  <view class="uper">{{card.name[0]}}</view>
+  <view class="filed">
+    <van-field
+      label-class="label"
+      model:value="{{ remark }}"
+      label="备注名"
+      placeholder="请输入备注名"
+      border="{{ true }}"/>
+  </view>
+  <view class="filed">
+    <van-field
+      label-class="label"
+      model:value="{{ description }}"
+      label="描述"
+      placeholder="请输入描述"
+      border="{{ true }}"/>
+  </view>
+
+  <view class="inp">
+    <view class="label">添加名片或相关图片</view>
+    <view class="upload">
+      <van-uploader max-count="1" file-list="{{ fileList }}" bind:delete="delFile"  bind:after-read="uploadSuccess"></van-uploader>
+    </view>
+
+  </view>
+  <view class="inp">
+    <view class="label">标签</view>
+    <view class="cenf tipbox">
+      <van-tag wx:for="{{tags}}" bind:close="closeTag" color="#FC9513" custom-class="tag" data-index="{{index}}" round type="primary" size="large" plain="{{true}}" closeable="{{true}}">{{item}}</van-tag>
+      <van-tag custom-class="tag" round type="primary" size="large" plain="{{true}}" bindtap="showAddTag">新增标签</van-tag>
+    </view>
+  </view>
+</view>
+<view class="submitbtn" bindtap="savechange">保存修改</view>
+
+<van-toast id="van-toast" />
+
+<van-dialog
+    use-slot
+    title="新增标签"
+    show="{{ addTagShow }}"
+    show-cancel-button
+    bind:confirm="onAddTag"
+    bind:close="onClose"
+>
+<view class="dialog_view">
+<input class="createlabelipt" bindinput="getlabelipt" placeholder="请输入" value="{{ tagValue }}" type="text" placeholder-class="createlabelphclass" />
+</view>
+</van-dialog>

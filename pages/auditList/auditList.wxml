@@ -1,0 +1,26 @@
+<view>
+  <view class="cardInfo" wx:for="{{list}}" wx:key="index">
+    <view class="cardHead">
+      <view class="cardavater">
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view class="cardText">
+        <view class="cardName">{{item.name}}</view>
+        <view class="cardCom">{{item.companyName}} | {{item.position}}</view>
+      </view>
+    </view>
+    <view class="cardOsper">
+      <view wx:if="{{item.status==0}}">
+        <van-button class="refuse" plain type="info" size="small" bindtap="refuse" data-eid="{{item.eid}}">拒绝</van-button>
+        <van-button type="info" size="small" bindtap="pass" data-eid="{{item.eid}}">同意</van-button>
+      </view>
+      <view class="cardOsper" wx:elif="{{item.status==5}}">
+        <text class="passtext">已同意</text>
+      </view>
+      <view class="cardOsper" wx:else>
+        <text class="restext">已拒绝</text>
+      </view>
+    </view>
+  </view>
+  <van-empty  wx:if="{{!list.length>0}}" description="暂无申请" />
+</view>

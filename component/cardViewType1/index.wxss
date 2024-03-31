@@ -1,0 +1,288 @@
+/* component/cardViewType1/index.wxss */
+@import "../../style/iconfont.wxss";
+
+.flex {
+    flex: 1;
+}
+
+.component {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    letter-spacing: 3rpx;
+    position: relative;
+    flex: 1;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg {
+    position: absolute;
+    width: 750rpx;
+    height: 300rpx;
+    overflow: hidden;
+}
+
+.bg .circle {
+    position: absolute;
+    top: -1700rpx;
+    left: -625rpx;
+    width: 2000rpx;
+    height: 2000rpx;
+    border-radius: 1000rpx;
+    background-color: #1559F3;
+}
+
+.video-box {
+    overflow: hidden;
+    border-radius: 20rpx 20rpx 0px 0px;
+    height: 345rpx;
+}
+
+.video {
+    width: 690rpx;
+    height: 345rpx;
+}
+
+.content {
+    padding: 30rpx;
+    background-image: url("https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/cardViewBgBig.png");
+    background-size: 100% 100%;
+}
+
+.swiper {
+    width: 690rpx;
+    height: 518rpx;
+}
+
+.swiper-item {
+    width: 690rpx;
+    height: 345rpx;
+    border-radius: 20rpx 20rpx 0 0;
+}
+
+.card {
+    padding: 30rpx 20rpx;
+    border-radius: 0 0 20rpx 20rpx;
+    box-shadow: 1rpx 1rpx 30rpx 0px rgba(11, 116, 212, 0.16);
+    height: 334rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url("https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/cardViewBg.png");
+    background-size: 690rpx 690rpx;
+    background-position-y: -295rpx;
+    margin-bottom: 40rpx;
+}
+
+.name {
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #333333;
+}
+
+.position {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+}
+
+.cell {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    display: flex;
+    align-items: start;
+}
+
+.card .iconfont {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+    background-color: rgba(153, 153, 153, 0.2);
+    color: #999;
+    line-height: 40rpx;
+    text-align: center;
+    margin-right: 15rpx;
+}
+
+.flex {
+    flex: 1;
+}
+
+.base-info {
+    margin-bottom: 15rpx;
+}
+
+.info-scroll-view {
+    width: 690rpx;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    height: 145rpx;
+}
+
+.info-swiper-item {
+    width: 280rpx;
+    height: 128rpx;
+    background: #FFFFFF;
+    box-shadow: 1rpx 1rpx 10rpx 0px rgba(11, 116, 212, 0.16);
+    border-radius: 10rpx;
+    display: inline-block;
+    margin: 0 15rpx;
+    margin-top: 5rpx;
+    box-sizing: border-box;
+    padding: 26rpx;
+}
+
+.info-swiper-item:last-child {
+    /*margin-right: 0;*/
+}
+
+.info-swiper-item .txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.item-title {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-bottom: 5rpx;
+}
+
+.item-title.phone .iconfont {
+    background-color: #1559F3;
+}
+
+.item-title.email .iconfont {
+    background-color: #F79A1B;
+}
+
+.item-title.address .iconfont {
+    background-color: #41B0EB;
+}
+
+.item-title .txt {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+}
+
+.item-title .iconfont {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 18rpx;
+    line-height: 36rpx;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 15rpx;
+}
+
+
+info-swiper-item>.txt {
+    font-size: 26rpx;
+    line-height: 1;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+
+.title {
+    display: flex;
+    margin-bottom: 15rpx;
+}
+
+.title .iconfont {
+    color: #999999;
+    font-size: 26rpx;
+}
+
+.title .txt {
+    margin-left: 15rpx;
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+
+.title .view-num {
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+}
+
+.company-info {
+    margin-bottom: 30rpx;
+}
+
+.content-txt {
+    width: 690rpx;
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    line-height: 48rpx;
+    word-break: break-all;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-upd {
+    width: 240rpx;
+    height: 72rpx;
+    background: #FFFFFF;
+    border: 2rpx solid #1559F3;
+    border-radius: 36rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1559F3;
+    text-align: center;
+    line-height: 72rpx;
+}
+
+.btn-share {
+    width: 250rpx;
+    height: 72rpx;
+    background: #1559F3;
+    border: 1rpx solid #DDDDDD;
+    border-radius: 36rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 72rpx;
+    box-sizing: border-box;
+}
+
+.btn-back {
+    width: 150rpx;
+    height: 72rpx;
+    background: #FFFFFF;
+    border: 2rpx solid #1559F3;
+    border-radius: 36rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1559F3;
+    text-align: center;
+    line-height: 72rpx;
+}

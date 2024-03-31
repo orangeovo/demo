@@ -1,0 +1,102 @@
+<!--pages/gongxuissue/gongxuissue.wxml-->
+<!-- 裁剪蒙版 -->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<import src="../we-cropper/we-cropper.wxml" />
+<view class="imgDisposeBlock" wx:if="{{iscropper}}">
+    <view class='imgDisposeArea'>
+        <template is="we-cropper" data="{{...cropperOpt}}" />
+    </view>
+    <view class='imgDisposeControlLine'>
+        <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+        <view class='editBtn' bindtap="closeTap">取消</view>
+        <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+    </view>
+</view>
+
+<view class="issuecontainer">
+    <view style="background-color: RGBA(250, 250, 250, 1);height: 30rpx; "></view>
+    <view class="articlecover">
+        <input class="articlecover-title" placeholder-class="articlecover-title-placeholder" model:value="{{title}}" placeholder="请输您提供的东西的标题" wx:if="{{type=='1'}}" />
+        <input class="articlecover-title" placeholder-class="articlecover-title-placeholder" model:value="{{title}}" placeholder="请输您需要的东西的标题" wx:else />
+    </view>
+    <view style="padding-left: 30rpx;padding-top: 30rpx;padding-bottom: 30rpx;">
+        <textarea style="height:450rpx;width: 650rpx;" bindinput="countnum" maxlength="140" model:value="{{content}}" placeholder="请您输入提供的东西的数量、价格、名称等信息" placeholder-class="issueplaceholder" wx:if="{{type=='1'}}"></textarea>
+        <textarea style="height:450rpx;width: 650rpx;" bindinput="countnum" maxlength="140" model:value="{{content}}" placeholder="请您输入需要的东西的数量、价格、名称等信息" placeholder-class="issueplaceholder" wx:else></textarea>
+        <view class="issuesadwallcontainer-num">
+            <!-- <text>{{wordnum}}</text>
+            <text class="issuesadwallcontainer-num-text1">/</text>
+            <text class="issuesadwallcontainer-num-text1">140</text> -->
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content1}}" data-num="3">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content1}}" wx:if="{{content1}}" bindlongpress="detecover" data-num="3">
+                    <!-- <van-icon name="delete" class="delete" bindtap="detecover" data-num="3" /> -->
+                </image>
+            </view>
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content2}}" data-num="4">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content2}}" wx:if="{{content2}}" bindlongpress="detecover" data-num="4">
+                    <!-- <van-icon name="delete" class="delete" bindtap="detecover" data-num="4" /> -->
+                </image>
+            </view>
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content3}}" data-num="5">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content3}}" wx:if="{{content3}}" bindlongpress="detecover" data-num="5">
+                    <!-- <van-icon name="delete" class="delete" bindtap="detecover" data-num="5" /> -->
+                </image>
+            </view>
+            <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);"> 最多三张</text>
+        </view>
+    </view>
+    <view style="background-color: RGBA(250, 250, 250, 1);height: 30rpx;"></view>
+    <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;">封面</text>
+        <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);">仅限一张</text>
+    </view>
+    <view class="issueupload">
+        <view class="issueuploadbox" bindtap="uploadcover" wx:if="{{!cover && type=='1'}}" data-num="1">
+            <icon class="iconfont icon-gongyingshangguanli " style="font-size: 50rpx;"></icon>
+            <view class="gongtext">材料供应</view>
+        </view>
+        <view class="issueuploadbox2" bindtap="uploadcover" wx:if="{{!cover && type=='2'}}" data-num="1">
+            <icon class="iconfont icon-fabuxuqiu" style="font-size: 50rpx;"></icon>
+            <view class="gongtext">材料需求</view>
+        </view>
+        <image class="issueuploadimg" src="{{cover}}" wx:if="{{cover}}" bindtap="uploadcover" data-num="1"></image>
+    </view>
+    <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;">题图</text>
+        <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);">仅限一张</text>
+    </view>
+    <view class="tituissueupload">
+        <view class="issueuploadbox" bindtap="uploadcover" wx:if="{{!themeImg}}" data-num="2">
+            <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+        </view>
+        <image class="issueuploadimg" src="{{themeImg}}" wx:if="{{themeImg}}" bindtap="uploadcover" data-num="2"></image>
+    </view>
+
+    <view style="background-color: RGBA(250, 250, 250, 1);height: 30rpx; "></view>
+    <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;color: black;">标签</text>
+    </view>
+    <view class="labelCss" >
+
+        <view bindtap="deletelabel" data-index="{{index}}" wx:key="index" class="newlabel" wx:for="{{labelarray}}" wx:for-item="label">{{tools.zifulengt(label)}} <icon class="newlabelicon iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="createlabel" bindtap="createlabel">新增标签</view>
+
+    </view>
+    <view class="startissue" bindtap="addsad">立即发布</view>
+    <view class="delbtn" bindtap="delarticle">删除</view>
+</view>
+<van-dialog id="van-dialog" />
+
+<van-dialog use-slot showConfirmButton="false" title="新增标签" show="{{ dialogshow }}" bind:close="onClose" show-cancel-button bind:getuserinfo="getUserInfo" cancel-button-color="rgba(102, 102, 102, 1)" confirm-button-color="rgba(10, 163, 239, 1)" closeOnClickOverlay bind:close="cleanup" bind:confirm="confirmcreatelabel">
+    <input class="createlabelipt" bindinput="getlabelipt" placeholder="请输入" value="{{labelname}}" type="text" placeholder-class="createlabelphclass" />
+</van-dialog>
+<van-toast id="van-toast" />

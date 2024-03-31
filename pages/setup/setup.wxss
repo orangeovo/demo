@@ -1,0 +1,63 @@
+/* pages/setup/setup.wxss */
+.setup{
+  margin-top: 30rpx;
+  background: #fff;
+}
+.setup>view{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.line{
+  height: 1rpx;
+  background: #eee;
+  padding: 0 !important;
+  margin: 0 30rpx;
+}
+.txt>view:first-child{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.txt>view:last-child{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+/* 开关按钮样式 */
+.wx-switch-input{width:42px !important;height:22px !important;}
+.wx-switch-input::before{width:40px !important;height: 20px !important;}
+.wx-switch-input::after{width: 20px !important;height: 20px !important;}
+/*  */
+.setup switch{
+  position: relative;
+}
+.setup text{
+  position: absolute;
+  top: 10rpx;
+  font-size: 12px;
+}
+.open{
+  left: 12rpx;
+  color: #FEFEFE;
+}
+.close{
+  right: 22rpx;
+  color: #0AA3EF;
+}
+.logoutbtn{
+  position: fixed;
+  width: 630rpx;
+  height: 88rpx;
+  left: 60rpx;
+  bottom: 60rpx;
+  border-radius: 44rpx;
+  color: #666;
+  font-size: 28rpx;
+  border: 1rpx solid #ddd;
+  text-align: center;
+  line-height: 88rpx;
+}

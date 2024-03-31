@@ -1,0 +1,114 @@
+/* pages/newgroup/newgroup.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dialog_view{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.createlabelipt {
+  width: 480rpx;
+  height: 68rpx;
+  border: 1px solid rgba(221, 221, 221, 1);
+  border-radius: 10rpx;
+  /* margin-left: 60rpx; */
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+  
+  padding-left: 20rpx;
+}
+.uper{
+  margin: 60rpx 0;
+  width: 100rpx;
+  height: 100rpx;
+  background: #333;
+  border-radius: 10rpx;
+  font-size: 48rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+}
+.filed{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.label{
+  font-size: 30rpx!important;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333!important;
+}
+.upload{
+  margin-left: 30rpx;
+}
+.inp{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+}
+.inp .label{
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+.cenf{
+  display: flex;
+  align-items: center;
+}
+.inp input{
+  flex: 1;
+}
+
+h2{
+  width: 160rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.upimg{
+  display: block;
+  width: 160rpx !important;
+  height: 160rpx !important;
+  margin: 20rpx 0 !important;
+}
+.tipbox{
+  margin: 15rpx 0;
+  margin-left: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tips{
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  padding: 10rpx 30rpx;
+}
+.add{
+  border: 1rpx solid #0AA3EF;
+  color: #0AA3EF;
+}
+.submitbtn{
+  margin: 30rpx 60rpx;
+  padding: 20rpx;
+  background: #1559F3;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.submitbtn:active{
+  opacity: .7;
+}
+.img{
+  width: 200rxp;
+  height: 200rpx;
+}
+.tag{
+  margin-right: 20rpx !important;
+  margin-bottom: 10rpx;
+}
+

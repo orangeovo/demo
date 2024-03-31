@@ -1,0 +1,129 @@
+<!--pages/vipcenter/vipcenter.wxml-->
+<view class="page">
+  <view class="bg"></view>
+  <view class="viptitbox">
+    <image class="vip-box-bg" src="../../images/vip_boxbg.png" mode=""/>
+    <image class="avatar" round src="{{userInfo.avatar}}" />
+    <view class="user-box">
+      <view class="user_info">
+        <view class="name">{{userInfo.nickname}}</view>
+        <image wx:if="{{userInfo.vipId == 1}}" class="img" src="../../images/vip-bg.png" alt=""/>
+        <image wx:else src="../../images/no-vip.png" class="no-img" mode=""/>
+      </view>
+      <view class="user-basic">
+        <text>程序员</text>
+        <text class="line">|</text>
+        <text>宁波德泰中研信息科技有限公司</text>
+      </view>
+    </view>
+    <view class="mask-box">
+      <text class="vip-txt">{{userInfo.vipId ? '超级会员' : '开通会员享受更多权益' }}</text>
+      <text wx:if="{{userInfo.vipId == 1}}"> {{userInfo.vipEndTime}} 到期</text>
+    </view>
+  
+    <!-- <view class="date" wx:if="{{userInfo.vipId}}">到期时间：{{userInfo.vipEndTime}}</view>
+    <view class="date" wx:else></view> -->
+    <view class="viparea">
+      <!-- <view class="currentvip">{{userInfo.vipId ? '您已开通会员' : '开通会员享受更多权益' }}</view> -->
+      <!-- <view class="myorder" bindtap="toNavigation" data-url="/pages/myorder/myorder">我的订单></view> -->
+    </view>
+  
+  </view>
+  <view class="package">
+    <view class="packagetit">会员购买套餐</view>
+    <scroll-view scroll-x="{{ true }}">
+      <view class="list" style="width:{{list.length * 220}}rpx">
+        <view wx:for="{{list}}" wx:key="index" class="{{index == currentindex ? 'packageitem choosed' : 'packageitem'}}" bindtap="choosepack" data-index="{{index}}">
+          <view class="name">{{item.name}}</view>
+          <view class="price">￥<text>{{item.price / 100}}</text></view>
+          <!-- <view class="time">{{item.time}}天</view> -->
+          <view class="money-none" wx:if="{{index == 0}}">1</view>
+          <view class="money-month" wx:if="{{index == 1}}">￥14.00 / 月</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="btn-bg">
+    <view class="vipbtn" bindtap="openvip">
+    {{userInfo.vipId ? '确认续费' : '立即开通' }}
+    </view>
+  </view>
+
+  <view class="desc">
+    <view class="title">
+    <view class="left-line"></view>
+      <text>尊享 <text class="bold-vip">VIP</text> 特权</text>
+    <view class="right-line"></view>
+    </view>
+    <view class="icons">
+      <view class="icon">
+        <view class="iconfont icon-shipin"></view>
+        <view class="name">视频名片</view>
+        <view class="txt">灵活介绍自己</view>
+      </view>
+      <view class="icon">
+        <view class="iconfont icon-chakanmingpian"></view>
+        <view class="name">查看名片</view>
+        <view class="txt">查看收到的名片</view>
+      </view>
+      <view class="icon">
+        <view class="iconfont icon-jiaohuanmingpian"></view>
+        <view class="name">交换名片</view>
+        <view class="txt">交换彼此信息</view>
+      </view>
+      <view class="icon">
+        <view class="iconfont icon-huiyuan"></view>
+        <view class="name">尊贵标志</view>
+        <view class="txt">尊贵身份认证</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="equity">
+    <view class="title">VIP权益</view>
+    <view class="equity-info">
+      <view class="equity-info-item classA type1 header" style="background: #F2D5A6;">
+        <image src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/vip-center-icon.png"></image>
+        <view class="txt">VIP会员</view>
+      </view>
+      <view class="equity-info-item classB header" style="background: #EDEDED;">
+        <view class="txt">普通会员</view>
+      </view>
+      <view class="equity-info-item classA content" style="background: #FAE8CA;">
+        <view class="equity-info-item-title">上传视频</view>
+        <view class="txt">视频名片、让名片与众不同</view>
+      </view>
+      <view class="equity-info-item classB content">
+        <view class="txt">--</view>
+      </view>
+      <view class="equity-info-item classA content" style="background: #F6DDB4;">
+        <view class="equity-info-item-title">查看名片</view>
+        <view class="txt">查看收到的名片、交换名片</view>
+      </view>
+      <view class="equity-info-item classB content" style="background: #F7F7F7;">
+        <view class="txt">查看名片≈0张</view>
+      </view>
+      <view class="equity-info-item classA content" style="background: #F3D7AB;">
+        <view class="equity-info-item-title">投递名片</view>
+        <view class="txt">视投递数量、认识更多的人</view>
+      </view>
+      <view class="equity-info-item classB content">
+        <view class="txt">投递名片≈100张</view>
+      </view>
+      <view class="equity-info-item classA content" style="background: #F6DDB4;">
+        <view class="equity-info-item-title">交换名片</view>
+        <view class="txt">与投递者人交换名片</view>
+      </view>
+      <view class="equity-info-item classB content" style="background: #F7F7F7;">
+        <view class="txt">交换名片≈0张</view>
+      </view>
+      <view class="equity-info-item classA content footer" style="background: #F2D5A6;">
+        <view class="equity-info-item-title">预约功能</view>
+        <view class="txt">发送短信告诉他</view>
+      </view>
+      <view class="equity-info-item classB content footer" style="background: #EDEDED;">
+        <view class="txt">预约功能≈3次</view>
+      </view>
+    </view>
+  </view> -->
+</view>

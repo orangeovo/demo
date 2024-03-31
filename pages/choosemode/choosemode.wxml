@@ -1,0 +1,26 @@
+<!--pages/choosemode/choosemode.wxml-->
+
+<view class="page">
+  <van-radio-group value="{{ type }}" bind:change="onChange">
+    <view class="choosemodebox">
+      <view class="formworkfather">
+        <image class="choosemodeimg" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/mode2.png"></image>
+        <van-radio icon-size="42rpx" name="{{ 1 }}"></van-radio>
+      </view>
+      <view class="formworkfather">
+        <image class="choosemodeimg" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/mode1.png"></image>
+        <van-radio icon-size="42rpx" name="{{ 2 }}"></van-radio>
+      </view>
+      <view class="formworkfather">
+        <image class="choosemodeimg" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/mode3.png"></image>
+        <van-radio icon-size="42rpx" name="{{ 3 }}"></van-radio>
+      </view>
+      <view class="formworkfather">
+        <image class="choosemodeimg" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/mode4.png"></image>
+        <van-radio icon-size="42rpx" name="{{ 4 }}"></van-radio>
+      </view>
+    </view>
+  </van-radio-group>
+  <view class="makebtnonchoose" bindtap="jumptomakecard" wx:if="{{dataObj}}">修改名片</view>
+  <view wx:else class="makebtnonchoose" bindtap="jumptomakecard">立即制作</view>
+</view>

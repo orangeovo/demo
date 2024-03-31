@@ -1,0 +1,105 @@
+/* pages/authentication/authentication.wxss */
+
+.reject{
+  text-align: center;
+  font-size: 30rpx;
+  color: #FC9513;
+  line-height: 60rpx;
+  background: rgba(252, 149, 19, .1);
+}
+.tit{
+  font-size: 30rpx;
+  color: #999;
+  margin: 20rpx 30rpx;
+}
+.inputbox{
+  background: #fff;
+  padding: 20rpx;
+}
+.inputbox>view{
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.inputbox input{
+  flex: 1;
+}
+.inputbox h2{
+  font-size: 30rpx;
+  color: #333;
+  width: 200rpx;
+}
+.getcode{
+  font-size: 26rpx;
+  color: #0AA3EF;
+  position: relative;
+}
+.getcode::before{
+  content: '';
+  position: absolute;
+  width: 2rpx;
+  height: 70rpx;
+  background: #0AA3EF;
+  left: -30rpx;
+  top: -20rpx;
+}
+.idcards{
+  background: #fff;
+  text-align: center;
+  padding-top: 30rpx;
+}
+.idcards image{
+  width: 630rpx;
+  height: 328rpx;
+  margin-bottom: 20rpx;
+}
+.enclosure{
+  padding: 30rpx;
+  background: #fff;
+}
+.enclosure image{
+  width: 150rpx;
+  height: 200rpx;
+}
+.enimg{
+  position: relative;
+  display: inline-block;
+  width: 150rpx;
+  height: 200rpx;
+  margin-right: 18rpx;
+}
+.enimg image{
+  box-sizing: border-box;
+  border: 1rpx solid #e2e2e2;
+}
+.clear{
+  position: absolute;
+  width: 35rpx !important;
+  height: 35rpx !important;
+  top: -14rpx;
+  right: -15rpx;
+  border: none !important;
+}
+.submitbtn{
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #1559F3;
+  border-radius: 20rpx;
+  margin: 30rpx auto;
+  text-align: center;
+  color: #fff;
+}
+.submitbtn:active{
+  opacity: .7;
+}
+.send-code{
+  border-left: 1rpx solid #1559F3;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1559F3;
+}

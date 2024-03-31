@@ -1,0 +1,30 @@
+<!--pages/shareposter/shareposter.wxml-->
+<van-skeleton title avatar row="3" loading="{{ loading }}">
+    <view class="shareposterbody">
+        <view class="shareposterbox">
+            <view class="portraitarea">
+                <image class="portraitimg" src="{{userInfo.avatar}}"></image>
+                <view style="display: flex;flex-direction: column;margin-left: 20rpx;">
+                    <text style="font-size:28rpx;height: 55rpx;line-height: 55rpx;" >{{view.name}}</text>
+                    <text style="font-size: 24rpx;color: rgba(102, 102, 102, 1);height: 55rpx;line-height: 55rpx;">{{view.companyName}}</text>
+                </view>
+            </view>
+            <view class="companyintroarea">
+                {{view.companyDesc}}
+            </view>
+            <view class="qrCode">
+                <van-image width="300" height="300" src="{{qrCode}}" />
+            </view>
+        </view>
+    </view>
+
+    <view class="saveposter" bindtap="onSave">保存海报</view>
+</van-skeleton>
+
+<painter
+    wx-if="{{showPainter}}"
+    palette="{{template}}"
+    bind:imgOK="onImgOK"
+/>
+
+<van-toast id="van-toast" />

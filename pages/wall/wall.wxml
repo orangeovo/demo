@@ -1,0 +1,42 @@
+<!--pages/wall/wall.wxml-->
+<view class="page">
+    <view class="tabs">
+        <van-tabs active="{{ active }}" animated="{{ true }}" color="#1559F3" title-active-color="#1559F3" bind:change="onChange">
+            <van-tab title="{{supplier}}" titleStyle="position: relative;">
+                <van-search background="#fff" custom-class="search-custom-class" shape="round" model:value="{{ searchTxt }}" bind:search="search" bind:clear="clear" placeholder="请输入搜索关键词" />
+                <van-empty wx:if="{{supplyList.length == 0}}" description="暂无文章" />
+                <van-cell custom-class="cell" wx:for="{{supplyList}}" url="/pages/gongxudetail/gongxudetail?id={{item.id}}&cid={{id}}&type=1&text={{item.typeTxt}}">
+                    <view slot="title">
+                        <article-item typetxt='{{item.typeTxt}}' item="{{ item }}"></article-item>
+                    </view>
+                </van-cell>
+                <view wx:if="{{supplyNoMore && supplyList.length != 0}}" class="noMore">没有更多了....</view>
+            </van-tab>
+            <van-tab title="{{demander}}" titleStyle="position: relative;">
+                <van-search background="#fff" custom-class="search-custom-class" shape="round" model:value="{{ searchTxt }}" bind:search="search" bind:clear="clear" placeholder="请输入搜索关键词" />
+                <van-empty wx:if="{{needList.length == 0}}" description="暂无文章" />
+                <van-cell custom-class="cell" wx:for="{{needList}}" url="/pages/gongxudetail/gongxudetail?id={{item.id}}&cid={{id}}&type=2&text={{item.typeTxt}}">
+                    <view slot="title">
+                        <article-item typetxt='{{item.typeTxt}}' item="{{ item }}"></article-item>
+                    </view>
+                </van-cell>
+                <view wx:if="{{needNoMore && needList.length != 0}}" class="noMore">没有更多了....</view>
+            </van-tab>
+            <van-tab title="{{collect}}" titleStyle="position: relative;">
+                <van-search background="#fff" custom-class="search-custom-class" shape="round" model:value="{{ searchTxt }}" bind:search="search" bind:clear="clear" placeholder="请输入搜索关键词" />
+                <van-empty wx:if="{{collectList.length == 0}}" description="暂无文章" />
+                <van-cell custom-class="cell" wx:for="{{collectList}}" url="/pages/gongxudetail/gongxudetail?id={{item.id}}&cid={{id}}&type=2">
+                    <view slot="title">
+                        <article-item item="{{ item }}" typetxt='{{item.typeTxt}}' ></article-item>
+                    </view>
+                </van-cell>
+                
+                <view wx:if="{{collectNoMore && collectList.length != 0}}" class="noMore">没有更多了....</view>
+            </van-tab>
+        </van-tabs>
+    </view>
+    <view class="issuebtn bottom-btn" bindtap="issue">我要发布</view>
+</view>
+
+
+<van-toast id="van-toast" />

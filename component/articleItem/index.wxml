@@ -1,0 +1,40 @@
+<view class="component">
+    <view class="item">
+        <!-- <van-image width="170rpx" height="170rpx" src="{{item.cover}}" /> -->
+        <view class="main">
+            <view class="title"><text>{{typetxt}}</text>: {{item.title}}</view>
+          
+            <view class="extra">
+              <view class="cardAvtar">
+                    <image class="icon-arrow" round width="30rpx" height="30rpx" src="https://cardcase.obs.cn-east-3.myhuaweicloud.com/nickNameLogo.png" />
+                    <text class="wallname">{{item.name}}</text>
+                    <view class="viewNum">
+                      <van-image round width="30rpx" height="30rpx" src="{{item.avatar}}" />
+                    <text class="wallname">{{item.name}}</text>
+                 
+                </view>
+                </view>
+               
+            
+              <view class="time">
+                    <!-- <view class="iconfont icon-shijian"></view> -->
+                    <view class="txt">{{  item.createTime}}</view>
+                    <view>
+                       · 阅读人数 {{item.viewNum}}
+                    </view>
+                </view>
+             
+               
+            </view>
+            <view class="content">
+                <text>需求方: {{item.content}}</text>
+                <text>需求描述: {{item.content}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="tags" wx:if="{{item.tagArr.length > 0}}">
+        <van-tag plain color="{{ colors[index%2] }}" custom-class="tag" size="medium" round wx:for="{{item.tagArr}}"
+            wx:for-item="tag" type="danger">{{tag}}</van-tag>
+    </view> -->
+
+</view>

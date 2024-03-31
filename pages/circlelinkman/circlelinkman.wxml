@@ -1,0 +1,34 @@
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:change="onSearch">
+</van-search>
+<van-notify id="van-notify" />
+<view class="pitchBox">
+  <view wx:for="{{pitch}}" wx:key="index">
+    <image class="avatar" wx:if="{{item.avatar}}" src="{{item.avatar}}" data-cid="{{item.cardId}}" bindtap="cancle">
+    </image>
+    <view wx:else class="avatar" data-cid="{{item.cardId}}" bindtap="cancle">
+      {{item.firstName}}
+    </view>
+  </view>
+</view>
+
+<view class="cardlist" wx:if="{{cardList.length > 0}}">
+  <view wx:for="{{cardList}}" wx:key="index" class="cardlistitem">
+    <view class="initials">{{item.initials}}</view>
+    <view wx:for="{{item.data}}" wx:key="index" class="datalist" data-cid="{{item.cardId}}">
+      <van-checkbox-group value="{{ result }}" bind:change="onChange">
+        <van-checkbox  name="{{item.cardId}}"></van-checkbox>
+      </van-checkbox-group>
+      <image class="avatar" wx:if="{{item.avatar}}" src="{{item.avatar}}" data-id="{{item.id}}"
+        data-cid="{{item.cardId}}" />
+      <view wx:else class="avatar" data-id="{{item.id}}" data-cid="{{item.cardId}}">
+        <!-- {{item.firstName}} -->
+        </view>
+      <view class="datalistitem">
+        <view class="name">{{item.name}}</view>
+        <view class="position-companyName">{{item.position}} | {{item.companyName}}</view>
+      </view>
+    </view>
+  </view>
+  <view   class="invisibleblock"></view>
+</view>
+<view class="succc"  bindtap="holding">确定</view>

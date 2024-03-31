@@ -1,0 +1,25 @@
+<!--pages/setup/setup.wxml-->
+<view class="setup">
+  <view>
+    <view class="txt">
+      <view>勿扰模式</view>
+      <view>开启后，将不再接收投递的名片</view>
+    </view>
+    <view>
+      <switch type="switch" checked="{{notdisturb}}" color="#0AA3EF" bindchange="switchchange_notdisturb"><text
+          wx:if="{{notdisturb}}" class="open">开</text><text wx:else class="close">关</text></switch>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view>
+    <view class="txt">
+      <view>自动通过递名片请求</view>
+      <view>开启后，自动与他人交换名片</view>
+    </view>
+    <view>
+      <switch type="switch" checked="{{autorequest}}" color="#0AA3EF" bindchange="switchchange_autorequest"><text
+          wx:if="{{autorequest}}" class="open">开</text><text wx:else class="close">关</text></switch>
+    </view>
+  </view>
+</view>
+<view class="logoutbtn" bindtap="logout">退出登录</view>

@@ -1,0 +1,25 @@
+<!--component/cardItem/index.wxml-->
+<view class="card-item" style="height:{{height ? height + 'rpx' : 'auto'}}" bindtap="toDetail" data-item="{{item}}" data-id="{{item.id}}" >
+<!--    非录入名片显示头像-->
+    <van-image custom-class="avatar" wx:if="{{item.type != 0}}"
+        width="80rpx" height="80rpx" fit="fill" src="{{item.avatar}}"/>
+<!--    录入名片显示首字-->
+    <view class="avatar" wx:else>
+        {{item.name[0]}}
+    </view>
+<!--    名片基础信息  姓名 职位 公司-->
+    <view class="info">
+        <view class="name">{{item.name}}</view>
+        <view class="position">{{item.position || '暂未填写'}}  |  {{item.companyName || '暂未填写'}}</view>
+        <view class="extra-info">
+            <slot name="extra"></slot>
+        </view>
+    </view>
+<!--    flex填充-->
+    <view class="flex"></view>
+<!--    审核状态及操作-->
+    <view class="status">
+        <slot></slot>
+    </view>
+</view>
+

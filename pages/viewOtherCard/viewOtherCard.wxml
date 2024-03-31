@@ -1,0 +1,91 @@
+<!--pages/viewOtherCard/viewOtherCard.wxml-->
+<view class="page">
+    <van-skeleton title row="20" loading="{{ loading }}">
+        <view class="completedcardbody">
+<!--            轮播-->
+            <view class="swiper-box">
+                <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+                    <block wx:for="{{view.imgs}}" wx:key="*this">
+                        <swiper-item class="swiper-item">
+                            <van-image width="750rpx" height="300rpx" fit="fill" src="{{item}}" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <view class="cardinfo">
+                <view style="display: flex; align-items: center;flex-direction: row;justify-content: space-between;margin-top: 30rpx;">
+                    <text style="font-size: 30rpx;margin-left: 29rpx;">{{view.name}}</text>
+                    <view style="margin-right: 29rpx;" bindtap="toseen">
+                        <icon style="font-size: 24rpx;margin-top: -18rpx;" class="cardkanguo iconfont icon-chakan1"></icon>
+                        <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);" >{{view.viewNum}}</text>
+                    </view>
+                </view>
+                <text style="font-size: 26rpx;color: rgba(102, 102, 102, 1);margin-left: 29rpx;">{{view.position}} | {{view.companyName}}</text>
+            </view>
+            <view class="companyintroduction">
+                <view class="companyintroitem">
+                    <text class="introtitle">手机号码</text>
+                    <text class="introdetail">{{view.phone}}</text>
+                    <icon class="introicon iconfont icon-a-8-dadianhua"></icon>
+                    <text class="introicontext" bindtap="doCall">联系他</text>
+                </view>
+                <view class="introbottomborder"></view>
+                <view class="companyintroitem">
+                    <text class="introtitle">电子邮箱</text>
+                    <text class="introdetail">{{view.email}}</text>
+
+                </view>
+                <view class="introbottomborder"></view>
+                <view class="companyintroitem">
+                    <text class="introtitle">公司地址</text>
+                    <text class="introdetail">{{view.companyAddress}}</text>
+
+                </view>
+                <view class="introbottomborder"></view>
+                <view class="companyintroitem1">
+                    <text class="introtitle1">公司简介</text>
+                    <view class="introdetail1" >{{view.companyDesc}}</view>
+
+                </view>
+            </view>
+            
+            <view style="display: flex;">
+                <view class="completedcardbtn_update" wx:if="{{!flag}}"  bindtap="doCollect"><view class="iconbox"><i  class=" {{collectclass==1?'iconfont icon-shoucang collect1':(collectclass==2?'iconfont icon-shoucang cancel2':'iconfont icon-shoucang default1' )}}"></i></view> 收藏名片</view>
+                <view class="completedcardbtn_update2"  wx:else bindtap="doCollect"><view class="iconbox"><i  class=" {{collectclass==1?'iconfont icon-shoucangxiao collect2':(collectclass==2?'iconfont icon-shoucangxiao cancel1':'iconfont icon-shoucangxiao default2')}}"></i></view> 收藏名片</view>
+                <view class="completedcardbtn_fenxiang"  bindtap="doShare"><icon  class="iconfont icon-fenxiang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>分享名片</view>
+                <!-- <view  class="completedcardbtn_fenxiang" bindtap="exchangecard"><icon  class="iconfont icon-fenxiang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>交换名片</view> -->
+            </view>
+        </view>
+    </van-skeleton>
+</view>
+
+<!--分享弹窗-->
+<van-popup show="{{ shareShow }}" bind:close="doClose"   position="bottom" round>
+    <view class="mycard-popup">
+        <view>
+            <text >分享到</text>
+            <icon bindtap="onClose" style="position: relative;left: 37vw;font-size: 25rpx;margin-top: -15rpx;" class="iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="popbody">
+            <button open-type="share" class="share-btn">
+                <view class="popicon righticon">
+                    <view class="popbtn">
+                        <view class="iconfont icon-a-weixin2"></view>
+                    </view>
+                    <text class="poptxt">微信好友</text>
+                </view>
+            </button>
+            <button class="share-btn" bindtap="toPoster">
+                <view class="popicon">
+                    <view class="popbtn oricon">
+                        <view class="iconfont icon-haibao"></view>
+                    </view>
+                    <text class="poptxt">分享海报</text>
+                </view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

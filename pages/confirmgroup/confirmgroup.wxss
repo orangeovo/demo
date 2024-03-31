@@ -1,0 +1,73 @@
+/* pages/switchidentity/switchidentity.wxss */
+.swcidentity-defalut{
+    margin: 20rpx;
+    font-size: 25rpx;
+    color: rgba(153, 153, 153, 1);
+  }
+  .swcidentity-defalut-img{
+    height: 73rpx;
+    width: 73rpx;
+    border-radius: 10rpx;
+    margin-left: 50rpx;
+    margin-right: 20rpx;
+  }
+  .swcidentity-defalut-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    height: 100rpx;
+    letter-spacing: 3rpx;
+    margin-top: 10rpx;
+  }
+  .swcidentity-defalut-textbox{
+    display: flex;
+    flex-direction: column;
+    width: 410rpx;
+  }
+  .swcidentity-defalut-textbox-name{
+    font-size: 26rpx;
+  }
+  .swcidentity-defalut-textbox-company{
+    font-size: 22rpx;
+    color: rgba(153, 153, 153, 1);
+  }
+  .makebtn{
+    background-color: rgba(10, 163, 239, 1);
+    height: 88rpx;
+    width: 530rpx;
+    text-align: center;
+    line-height: 88rpx;
+    color: white;
+    position: fixed;
+    font-size: 32rpx;
+    border-radius: 45rpx;
+    bottom: 2vh;
+    margin-right: 60rpx;
+    margin-left: 60rpx;
+  }
+  .swcidentity-defalut-container-btn{
+    width: 150rpx;
+    height: 50rpx;
+    background-color: rgba(91, 181, 241, 0.699);
+    font-size: 24rpx;
+    border-radius: 10rpx;
+    line-height: 50rpx;
+    text-align: center;
+    color: white;
+  
+  }
+  .swcidentity-defalut-container1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100rpx;
+    letter-spacing: 3rpx;
+    margin-top: 10rpx;
+  }
+.ifjoincirclecontainer{
+  margin-bottom: 100rpx;
+}
+.ifjoincirclecontainer-radio{
+  margin-left: 30rpx;
+}

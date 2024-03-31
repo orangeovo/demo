@@ -1,0 +1,74 @@
+<view class="completedcardbody">
+    <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" current="{{swiperCurrent}}" bindchange="swiperChange">
+        <block wx:for="{{imgs}}" wx:key="*this">
+            <swiper-item class="swiper-item">
+                <van-image width="750rpx" height="300rpx" fit="fill" src="{{item}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="cardinfo">
+        <view style="display: flex; align-items: center;flex-direction: row;justify-content: space-between;margin-top: 30rpx;">
+            <text style="font-size: 30rpx;margin-left: 29rpx;">{{name}}</text>
+            <view style="margin-right: 29rpx;" bindtap="toseen">
+                <icon style="font-size: 24rpx;margin-top: -18rpx;" class="cardkanguo iconfont icon-chakan1"></icon>
+                <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);" >{{viewNum}}</text>
+            </view>
+        </view>
+        <text style="font-size: 26rpx;color: rgba(102, 102, 102, 1);margin-left: 29rpx;">{{position}} | {{companyName}}</text>
+    </view>
+    <view class="companyintroduction">
+        <view class="companyintroitem">
+            <text class="introtitle">手机号码</text>
+            <text class="introdetail">{{phone}}</text>
+            <icon  wx:if="{{isAll==1}}" class="introicon iconfont icon-a-8-dadianhua"></icon>
+            <text class="introicontext" wx:if="{{isAll==1}}" bindtap="call">联系他</text>
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem">
+            <text class="introtitle">电子邮箱</text>
+            <text class="introdetail">{{email}}</text>
+
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem">
+            <text class="introtitle">公司地址</text>
+            <text class="introdetail">{{companyAddress}}</text>
+
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem1">
+            <text wx:if="{{isAll==1}}" class="introtitle1">公司简介</text>
+            <view wx:if="{{isAll==1}}" class="introdetail1">{{companyDesc}}</view>
+
+        </view>
+
+
+    </view>
+    <view class="introductioncover"></view>
+    <view style="display: flex;margin-bottom: 20rpx;">
+        <view class="completedcardbtn_update" wx:if="{{isAll==1}}"bindtap="setAttention"><icon  class="iconfont icon-shoucang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>收藏名片</view>
+        <view class="completedcardbtn_fenxiang" wx:if="{{isAll==1}}" bindtap="share"><icon  class="iconfont icon-fenxiang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>分享名片</view>
+        <view class="completedcardbtn_fenxiang" wx:else bindtap="exchangecard"><icon  class="iconfont icon-fenxiang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>交换名片</view>
+    </view>
+</view>
+<view class="sharebox" animation="{{ani1}}">
+    <view class="sharetitle">
+        <view>分享到</view>
+        <view class="closeshare" bindtap="closeshare">X</view>
+    </view>
+    <view class="sharebody">
+        <button open-type="share">
+            <view><i class="iconfont icon-a-weixin2" style="font-size:100rpx;color:#2FCE39"></i></view>
+            <view>微信好友</view>
+        </button>
+        <button bindtap="toshareposter">
+            <view><i class="iconfont icon-haibao" style="font-size:100rpx;color:#F4A33F"></i></view>
+            <view>海报</view>
+        </button>
+    </view>
+</view>
+<view class="mask" wx:if="{{ismask}}" bindtap="closeshare"></view>
+
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

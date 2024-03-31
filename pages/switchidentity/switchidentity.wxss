@@ -1,0 +1,147 @@
+/* pages/switchidentity/switchidentity.wxss */
+/* 裁剪图片蒙版 */
+.imgDisposeBlock {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+}
+
+.imgDisposeArea {
+  height: 88vh;
+  overflow: hidden;
+}
+
+.imgDisposeControlLine {
+  height:12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+}
+
+.editBtn {
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50rpx;
+  font-size: 26rpx;
+}
+.address-icon {
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+}
+.savecardpopup {
+  height: 250rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.flex{
+  flex: 1;
+  line-height: 80rpx;
+  height: 80rpx;
+  
+}
+.line{
+  height: 1rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+.page{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #F6F6F6;
+}
+.swcidentity-defalut{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 36px;
+  margin-bottom: 20rpx;
+}
+.swcidentity-defalut-container{
+  display: flex;
+  align-items: center;
+  width: 690rpx;
+  height: 130rpx;
+  background-color: #fff;
+  padding: 25rpx 30rpx;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.swcidentity-defalut-img{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.swcidentity-defalut-textbox{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.swcidentity-defalut-textbox-name{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 36rpx;
+  margin-bottom: 10rpx;
+}
+.swcidentity-defalut-textbox-company{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+  line-height: 36rpx;
+}
+.makebtn{
+  background-color: #fff;
+  height: 88rpx;
+  width: 630rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+  color: #313131;
+  top: 2vh;
+  margin: 30rpx;
+}
+.swcidentity-defalut-container-btn{
+  width: 150rpx;
+  height: 50rpx;
+  background-color: rgba(10, 163, 239, 1);
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: white;
+
+}
+.other .swcidentity-defalut-container{
+  border-bottom: 2rpx solid #F7F7F7;
+}
+
+.other-box{
+  background: white;
+  border-radius: 11rpx;
+}
+
+.other-box .more-img{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.more-img{
+  width: 50rpx;
+  height: 50rpx;
+}

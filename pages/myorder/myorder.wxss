@@ -1,0 +1,115 @@
+/* pages/myorder/myorder.wxss */
+.myorder{
+  padding: 30rpx 30rpx 0 30rpx;
+}
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  height: 50rpx;
+  position: relative;
+  background: #fff;
+  font-size: 26rpx;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4rpx solid transparent;
+}
+
+.active {
+  color: #1559F3;
+  border-bottom: 4rpx solid #1559F3;
+}
+
+.content_wrapper{
+  flex: 1;
+}
+.myorder .orderitem:last-child{
+  margin-bottom: 0;
+}
+.orderitem{
+  background: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+}
+.orderitem>view{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.onum{
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.ispay{
+  width: 120rpx;
+  height: 46rpx;
+  background: rgba(21, 89, 243, 0.1);
+  border-radius: 23rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #1559F3;
+  text-align: center;
+  line-height: 46rpx;
+}
+.cancel{
+  width: 120rpx;
+  height: 46rpx;
+  background: rgba(252, 63, 19, 0.1);
+  border-radius: 23rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FC3F13;
+  line-height: 46rpx;
+  text-align: center;
+}
+.ordermes{
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #eee;
+}
+.ordermes image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.ordermes>view:first-child{
+  display: flex;
+  align-items: center;
+}
+.ordermes>view:last-child{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #EC0000;
+}
+.mesbox{
+  margin-left: 20rpx;
+}
+.mesbox>view{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.mesbox>view:first-child{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.mesbox>view:last-child{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+.ctime{
+  font-size: 26rpx;
+  color: #999;
+}

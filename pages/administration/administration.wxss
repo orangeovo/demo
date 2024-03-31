@@ -1,0 +1,116 @@
+
+/* pages/administration/administration.wxss */
+.personal_box{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  /* background: #fff; */
+  height: 150rpx;
+  box-sizing: border-box;
+}
+.personal_box image{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 10rpx;
+}
+.personal_mes{
+  margin-left: 22rpx;
+  flex: 1;
+}
+.per_name{
+  font-size: 28rpx;
+  color: #333;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+.per_about{
+  font-size: 24rpx;
+  color: #666;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+.funclist{
+  margin: 0 30rpx;
+  margin-top: 40rpx;
+  background: #fff;
+  background: slateblue !important;
+}
+.funclist>view{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.funclist h2{
+  font-size: 28rpx;
+  color: #333;
+}
+/* 开关按钮样式 */
+.wx-switch-input{width:42px !important;height:22px !important;}
+.wx-switch-input::before{width:40px !important;height: 20px !important;}
+.wx-switch-input::after{width: 20px !important;height: 20px !important;}
+/*  */
+.issuebtn {
+  position: fixed;
+  left: 60rpx;
+  bottom: 30rpx;
+}
+.deletebtn{
+  position: fixed;
+    /* left: 60rpx; */
+    bottom: 30rpx;
+    /* height: 88rpx; */
+    width: 630rpx;
+  margin: 60rpx 40rpx;
+  padding: 20rpx;
+  background: #fff;
+  color: #F56C6C;
+  text-align: center;
+  border-radius: 50rpx;
+  
+}
+.deletebtn:active{
+  opacity: .7;
+}
+.savebtn{
+  position: fixed;
+  width: 630rpx;
+  bottom: 150rpx;
+  margin: 60rpx 40rpx;
+  padding: 20rpx;
+  background: #326CEC;
+  color: #fff;
+  text-align: center;
+  border-radius: 50rpx;
+}
+.funclist switch{
+  position: relative;
+}
+.funclist text{
+  position: absolute;
+  top: 10rpx;
+  font-size: 12px;
+}
+.open{
+  left: 10rpx;
+  color: #FEFEFE;
+}
+.close{
+  right: 20rpx;
+  color: #0AA3EF;
+}
+.avatar{
+  width: 76rpx;
+  height: 76rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.cell{
+  height: 110rpx;
+  align-items: center;
+}
+.title{
+}

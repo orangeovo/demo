@@ -1,0 +1,31 @@
+<!--pages/industrycategory/industrycategory.wxml-->
+<customnavbar statusheit="{{statusbarheight}}" title="行业分类" lefticon="iconfont icon-zuojiantou" clickmethod="back" ></customnavbar>
+<view class="industrybox">
+  <view class="categorybox" style="margin-top: {{statusbarheight+116}}rpx;" >
+    <view   wx:for="{{category}}" wx:for-item="cg" wx:key="index" id="{{index}}" >
+      <view class="{{cg.ifchose==0?'categoryfather':''}}{{cg.ifchose==2?'categoryfather':''}}{{cg.ifchose==1?'categoryfatherbechose':''}}" bindtap="clickfather" data-index="{{index}}">
+        <text style="margin-right: 38rpx;">{{cg.fathername}}</text>
+        <icon class="{{cg.ifchose==1?'arrowiconback iconfont icon-xiajiantou':''}}{{cg.ifchose==2?'arrowiconopen iconfont icon-xiajiantou':''}}{{cg.ifchose==0?'arrowicon iconfont icon-xiajiantou':''}}" ></icon>
+      </view>
+      <view  wx:if="{{cg.ifchose==1}}"  class="{{son.ifchose==0?'categoryson':''}}{{son.ifchose==2?'categoryson':''}}{{son.ifchose==1?'categorysonbechose':''}}"  wx:for="{{cg.son}}" wx:for-item="son" wx:key="index" id="{{index}}" data-index="{{index}}" bindtap="clickson">
+        {{son.sonname}}
+      </view>
+    </view>
+  </view>
+  <view  class="categorygrandsonbox" style="margin-top: {{statusbarheight+116}}rpx;" >
+      <view wx:for="{{grandsonbox}}" wx:for-item="grand"  wx:key="index" class="grandsonitem" bindtap="clickgrandson" data-grand="{{grand}}">
+        {{grand}}
+      </view>
+  </view>
+</view>
+<view class="industry-category-btnbox">
+  <view class="industry-category-btnbox-addbtn">添加分类</view>
+  <view class="industry-category-btnbox-savebtn">保存</view>
+</view>
+<view class="industry-category-selectedtagbox">
+    <text style="font-size: 26rpx;color: rgba(102, 102, 102, 1);">已选：</text>
+    <view wx:for="{{selectedtag}}" wx:for-item="tag"  wx:key="index" class="industry-category-selectedtagbox-tag">
+    {{tag}}
+      <icon style="font-size: 16rpx;margin-top: -15rpx;margin-left: 10rpx;margin-right: 10rpx;" class="iconfont icon-a-guanbi"></icon>
+    </view>
+</view>

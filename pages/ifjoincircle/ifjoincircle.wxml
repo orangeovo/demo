@@ -1,0 +1,25 @@
+<!--pages/ifjoincircle/ifjoincircle.wxml-->
+
+<view class="page">
+  <van-radio-group value="{{ radio }}" bind:change="getRadio">
+    <view class="item" wx:for="{{list}}" wx:for-item="other" wx:key="index" data-index="{{index}}">
+      <van-image wx:if="{{other.idDefault}}" custom-class="default-icon" width="80rpx" height="80rpx" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/default-icon.png" />
+      <van-radio checked-color="#1559F3" name="{{other.id}}"></van-radio>
+      <van-image custom-class="avatar" width="80rpx" height="80rpx" src="{{other.avatar}}" />
+      <view class="info">
+        <text class="name">{{other.name}}</text>
+        <text class="position">{{other.position}} | {{other.companyName}}</text>
+      </view>
+    </view>
+  </van-radio-group>
+  <van-empty wx:if="{{list.length == 0}}" description="暂无名片" />
+  <view class="flex"></view>
+  <view class="btn-group">
+    <van-button custom-class="btn" wx:if="{{list.length > 0}}" color="#1559F3" square type="primary" bindtap="confirmjoin">确认并加入</van-button>
+    <van-button custom-class="btn" wx:else color="#1559F3" square  type="primary" bindtap="jumptocreate">创建名片</van-button>
+  </view>
+</view >
+
+<van-toast id="van-toast" />
+
+

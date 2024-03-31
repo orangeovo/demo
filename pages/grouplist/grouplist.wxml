@@ -1,0 +1,30 @@
+<!--pages/circleindex/circleindex.wxml-->
+<view class="page">
+    <view class="createcircle"  bindtap="jumptocreate">
+        <view class="circular">
+            <view  class="circleicon iconfont icon-jia"></view>
+        </view>
+        <view class="txt">新建分组</view>
+    </view>
+    <view wx:if="{{ circleArray.length > 0 }}">
+        <view wx:for="{{circleArray}}"  wx:key="index" wx:for-index="index"data-bigindex="{{index}}" wx:for-item="firstcode"  capture-bind:tap="getfirstcd" >
+            <view class="suoxie">
+                <text class="suoxiefont">{{firstcode.firstcd}}</text>
+                <view wx:for="{{firstcode.son}}" wx:for-item="son" wx:key="index" wx:for-index="index1"  data-smallindex="{{son}}" class="suoxieitem"  capture-bind:tap="jumptodetail" >
+                    <view class="circlelist-item" bindtap="toGroupList">
+                        <image class="suoxieiamge" src="{{son.avatar}}"></image>
+                        <view class="circlelist-item-textbox" >
+                            <text class="circlelist-item-textbox-name" >{{son.name}}</text>
+                            <text class="circlelist-item-textbox-time" >{{son.createTime}}</text>
+                        </view>
+                    </view>
+                    <view class="circlelist-item-rightblock" >
+                        <text>{{son.cardNum}}</text>
+                        <icon  class="iconfont icon-jiantou-you circlelist-item-rightblock-icon"></icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <van-empty wx:else description="暂无分组" />
+</view>

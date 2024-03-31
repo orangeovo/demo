@@ -1,0 +1,118 @@
+<!--pages/gongxuissue/gongxuissue.wxml-->
+<!-- 裁剪蒙版 -->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<import src="../we-cropper/we-cropper.wxml" />
+<view class="imgDisposeBlock" wx:if="{{iscropper}}">
+    <view class='imgDisposeArea'>
+        <template is="we-cropper" data="{{...cropperOpt}}" />
+    </view>
+    <view class='imgDisposeControlLine'>
+        <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+        <view class='editBtn' bindtap="closeTap">取消</view>
+        <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+    </view>
+</view>
+
+<view class="issuecontainer">
+    <view style="background-color: RGBA(250, 250, 250, 1);height: 30rpx; "></view>
+    <!-- <van-cell title="进圈是否审核" is-link value="{{isAudit}}" bindtap="isAuditShow" /> -->
+    <view class="qz-box">
+ 
+        <view class="createlabel" bindtap="isAuditShow">
+            <image class="icon-arrow" round width="30rpx" height="30rpx" src="https://cardcase.obs.cn-east-3.myhuaweicloud.com/nickNameLogo.png" />
+            添加圈子
+        </view>
+        <view class="labels" wx:for="{{isAudit}}" wx:key="{{item.id}}">#{{item.name}}  
+            <view data-index="{{index}}" bindtap="closelabel" class="close-tip">X</view>
+        </view>
+        <view class="null-labels" wx:for="{{3}}"></view>
+    </view>
+
+    
+    <!-- <van-cell title="选择圈子" is-link value="{{isAudit}}" bindtap="isAuditShow" /> -->
+    <van-popup class="shenhe" show="{{isAuditshow}}" position="bottom" custom-style="height: 50%;" bind:close="onClose2" round>
+        <van-picker  default-index="{{isExamine }}" show-toolbar title="" columns="{{ columns }}" bind:cancel="onCancel" bind:confirm="onConCircle" />
+    </van-popup>
+    <view class="articlecover">
+        <input class="articlecover-title" placeholder-class="articlecover-title-placeholder" model:value="{{title}}" placeholder="填写标题" wx:if="{{type=='1'}}" />
+        <input class="articlecover-title" placeholder-class="articlecover-title-placeholder" model:value="{{title}}" placeholder="填写标题" wx:else />
+    </view>
+    <view class="text-all" style="padding-left: 30rpx;padding-top: 30rpx;padding-bottom: 30rpx;">
+        <textarea style="height:850rpx;width: 650rpx;" bindinput="countnum" maxlength="1000" model:value="{{content}}" placeholder="请您输入需要购买的物品的数量，价格，其他要求等" placeholder-class="issueplaceholder" wx:if="{{type=='1'}}"></textarea>
+        <textarea style="height:450rpx;width: 650rpx;" bindinput="countnum" maxlength="140" model:value="{{content}}" placeholder="请您输入需要购买的物品的数量，价格，其他要求等" placeholder-class="issueplaceholder" wx:else></textarea>
+        <!-- <view class="issuesadwallcontainer-num">
+         
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content1}}" data-num="3">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content1}}" wx:if="{{content1}}" bindlongpress="detecover" data-num="3">
+                    <van-icon name="delete" class="delete" bindtap="detecover" />
+                </image>
+
+            </view>
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content2}}" data-num="4">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content2}}" wx:if="{{content2}}" bindlongpress="detecover" data-num="4">
+           
+                </image>
+            </view>
+            <view>
+                <view class="issueuploadbox_content" bindtap="uploadcover" wx:if="{{!content3}}" data-num="5">
+                    <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+                </view>
+                <image class="issueuploadimg" src="{{content3}}" wx:if="{{content3}}" bindlongpress="detecover" data-num="5">
+                
+                </image>
+            </view>
+            <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);"> 最多三张</text>
+        </view> -->
+    </view>
+    <!-- <view style="background-color: RGBA(250, 250, 250, 1);height: 30rpx;"></view>
+    <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;">封面</text>
+        <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);">仅限一张</text>
+    </view> -->
+    <!-- <view class="issueupload">
+        <view class="issueuploadbox" bindtap="uploadcover" wx:if="{{!cover && type=='1'}}" data-num="1">
+            <icon class="iconfont icon-gongyingshangguanli " style="font-size: 50rpx;"></icon>
+            <view class="gongtext">材料供应</view>
+        </view>
+        <view class="issueuploadbox2" bindtap="uploadcover" wx:if="{{!cover && type=='2'}}" data-num="1">
+            <icon class="iconfont icon-fabuxuqiu" style="font-size: 50rpx;"></icon>
+            <view class="gongtext">材料需求</view>
+        </view>
+        <image class="issueuploadimg" src="{{cover}}" wx:if="{{cover}}" bindtap="uploadcover" data-num="1"></image>
+    </view> -->
+    <!-- <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;">题图</text>
+        <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);">仅限一张</text>
+    </view>
+    <view class="tituissueupload">
+        <view class="issueuploadbox" bindtap="uploadcover" wx:if="{{!themeImg}}" data-num="2">
+            <icon class="iconfont icon-jia" style="font-size: 50rpx;"></icon>
+        </view>
+        <image class="issueuploadbox" src="{{themeImg}}" wx:if="{{themeImg}}" bindtap="uploadcover" data-num="2"></image>
+    </view> -->
+
+    <view style="background-color: white;height: 30rpx; "></view>
+    <!-- <view class="articlecover">
+        <text style="font-size: 30rpx;margin-right: 20rpx;color: black;">标签</text>
+    </view> -->
+    <view class="labelCss">
+
+        <view bindtap="deletelabel" data-index="{{index}}" wx:key="index" class="newlabel" wx:for="{{labelarray}}" wx:for-item="label">{{tools.zifulengt(label)}} <icon class="newlabelicon iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="createlabel" bindtap="createlabel">新增标签</view>
+
+    </view>
+    <view class="bottom-btn" bindtap="addsad">发布</view>
+</view>
+
+
+<van-dialog use-slot showConfirmButton="false" title="新增标签" show="{{ dialogshow }}" bind:close="onClose" show-cancel-button bind:getuserinfo="getUserInfo" cancel-button-color="rgba(102, 102, 102, 1)" confirm-button-color="rgba(10, 163, 239, 1)" closeOnClickOverlay bind:confirm="confirmcreatelabel">
+    <input class="createlabelipt" bindinput="getlabelipt" placeholder="请输入" model:value="{{labelname}}" type="text" placeholder-class="createlabelphclass" />
+</van-dialog>
+<van-toast id="van-toast" />

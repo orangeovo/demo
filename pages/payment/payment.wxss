@@ -1,0 +1,121 @@
+/* pages/payment/payment.wxss */
+.paytit{
+  width: 750rpx;
+  height: 75rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 75rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.order{
+  width: 750rpx;
+  padding: 25rpx 30rpx 40rpx 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.info{
+  display: flex;
+  align-items: center;
+  padding-bottom: 30rpx;
+  margin-bottom: 40rpx;
+}
+.info .avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx solid #DDDDDD;
+  border-radius: 10rpx;
+}
+.order>view:first-child{
+  border-bottom: 1rpx solid #eee;
+}
+.order>view:last-child{
+  justify-content: space-between;
+}
+.order image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.ordermes{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.ordermes>view:first-child{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.ordermes>view:last-child{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+.info .price{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #EC0000;
+  margin-right: 35rpx;
+}
+.pay{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 35rpx;
+}
+.pay>view:first-child{
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+.pay>view:last-child{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #EC0000;
+}
+.payways{
+  background: #fff;
+}
+.payways label{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+}
+.icon-a-weixin2{
+  font-size:50rpx;
+  color:#39CC00;
+}
+.cen{
+  display: flex;
+  align-items: center;
+}
+.cen>view{
+  font-size: 32rpx;
+  margin-left: 15rpx;
+}
+.confirmpay{
+  position: fixed;
+  left: 60rpx;
+  bottom: 30rpx;
+  background: #fff;
+}
+.confirmpay>view{
+  width: 630rpx;
+  height: 88rpx;
+  background: #1559F3;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 88rpx;
+}

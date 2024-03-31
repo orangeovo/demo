@@ -1,0 +1,52 @@
+/**app.wxss**/
+@import "./style/iconfont.wxss";
+@import "./static/iconfont/iconfont.wxss";
+
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+page{
+  background: #F6F6F6;
+}
+.plhc{
+  font-size: 30rpx;
+  color: #999;
+}
+.noMore{
+  width: 750rpx;
+  padding: 20rpx;
+  text-align: center;
+  color: #666;
+  font-size: 22rpx;
+  box-sizing: border-box;
+}
+.flex{
+  flex: 1;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.line{
+  height: 1rpx;
+  width: 100%;
+  background-color: #efefef;
+}
+
+.bottom-btn{
+  background-color: #1559F3;
+  box-shadow: 1rpx 2rpx 30rpx 0rpx rgba(20, 121, 172, 0.36);
+  height: 88rpx;
+  width: 630rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: white;
+  font-size: 32rpx;
+  border-radius: 15rpx;
+}

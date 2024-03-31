@@ -1,0 +1,74 @@
+<!--pages/mycard/mycard.wxml-->
+
+<van-skeleton title row="10" loading="{{!init}}">
+    <!--    未登录-->
+    <view class="page" wx:if="{{!login}}">
+        <mp-navigation-bar back="{{true}}" title="我的名片" color="#fff" background="#1559F3"></mp-navigation-bar>
+        <image class="vip-desc" src="https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/home.png"></image>
+        <button bindtap="toMakeCard" class="btn">立即制作</button>
+    </view>
+
+    <!--没有名片-->
+    <view class="page" wx:if="{{login && !hasCard}}">
+        <mp-navigation-bar back="{{true}}" title="我的名片" color="#fff" background="#1559F3"></mp-navigation-bar>
+        <image class="vip-desc" src="{{cardcover}}"></image>
+        <button bindtap="toMakeCard" class="btn">立即制作</button>
+    </view>
+
+    <!-- 已经拥有名片 -->
+    <view wx:if="{{login && hasCard}}" class="card-box">
+        <!--        导航栏-->
+        <mp-navigation-bar back="{{false}}" background="#1559F3">
+            <view slot="left" class="changeIdentity" bindtap="changeIdentity">
+                <view class="iconfont icon-qiehuan"></view>
+                <view class="text">切换身份</view>
+            </view>
+        </mp-navigation-bar>
+        <!--        内容区-->
+        <view class="main">
+            <!--            type=1-->
+            <card-view-type1 class="main" wx:if="{{obj.type == 1}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{true}}">
+            </card-view-type1>
+            <!--            type=2-->
+            <card-view-type2 class="main" wx:if="{{obj.type == 2}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{true}}">
+            </card-view-type2>
+            <!--            type=3-->
+            <card-view-type3 class="main" wx:if="{{obj.type == 3}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{true}}">
+            </card-view-type3>
+            <!--            type=4-->
+            <card-view-type4 class="main" wx:if="{{obj.type == 4}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{true}}">
+            </card-view-type4>
+        </view>
+    </view>
+</van-skeleton>
+
+<van-popup show="{{ show }}" bind:close="onClose" overlay="{{true}}" position="bottom" round>
+    <view class="mycard-popup">
+        <view>
+            <text>分享到</text>
+            <icon bindtap="onClose" style="position: relative;left: 37vw;font-size: 25rpx;margin-top: -15rpx;" class="iconfont icon-a-guanbi"></icon>
+        </view>
+
+        <view class="popbody">
+            <button open-type="share" class="share-btn" bindtap="onClose">
+                <view class="popicon righticon">
+                    <view class="popbtn">
+                        <view class="iconfont icon-a-weixin2"></view>
+                    </view>
+                    <text class="poptxt">微信好友</text>
+                </view>
+            </button>
+            <button class="share-btn" bindtap="toPoster">
+                <view class="popicon">
+                    <view class="popbtn oricon">
+                        <view class="iconfont icon-haibao"></view>
+                    </view>
+                    <text class="poptxt">分享海报</text>
+                </view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+<van-toast id="van-toast" />
+
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" />

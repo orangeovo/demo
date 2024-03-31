@@ -1,0 +1,70 @@
+/* pages/shareposter/shareposter.wxss */
+.changebox{
+
+    width: 750rpx;
+    position: fixed;
+    background-color: white;
+}
+.navbar{
+    position: relative;
+    height: 88rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    color: rgb(0, 3, 5);
+    font-size: 36rpx;
+    flex-direction: row;
+    align-items: center;
+
+}
+.changeidentity{
+    font-size: 36rpx;
+    margin-left: 30rpx;
+
+}
+.shareposterbody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+.shareposterbox{
+    width: 630rpx;
+    height: 953rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+.portraitimg{
+
+    width: 110rpx;
+    height: 110rpx;
+}
+.portraitarea{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50rpx;
+    margin-top: 50rpx;
+}
+.companyintroarea{
+    margin-left: 50rpx;
+    margin-right: 59rpx;
+    margin-top: 20rpx;
+    color: rgba(153, 153, 153, 1);
+    font-size: 24rpx;
+
+}
+
+.saveposter{
+    margin-left: 195rpx;
+    height: 76rpx;
+    width: 360rpx;
+    background-color: rgba(10, 163, 239, 1);
+    color: white;
+    line-height: 76rpx;
+    text-align: center;
+    margin-top: 90rpx;
+    /* margin-top: 30rpx;应该是30，二维码图标有空白高度 */
+    border-radius: 15rpx;
+}

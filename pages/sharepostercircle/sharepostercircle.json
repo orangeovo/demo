@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "van-image": "@vant/weapp/image/index",
+    "painter":"/component/painter/painter",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "navigationBarTitleText": "分享圈子"
+}

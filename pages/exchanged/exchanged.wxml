@@ -1,0 +1,121 @@
+<van-skeleton title row="10" loading="{{!init}}">
+    <view class="page {{maskFlag?'hidepage':''}}">
+        <!--        内容区-->
+        <!-- {{maskFlag}} -->
+        <view class="main">
+            <!--            type=1-->
+            <card-view-type1 class="main" gid="{{gid}}" wx:if="{{obj.type == 1 || obj.type == 0}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{obj.isMy==1}}"></card-view-type1>
+            <!--            type=2-->
+            <card-view-type2 class="main" wx:if="{{obj.type == 2}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{obj.isMy==1}}">
+            </card-view-type2>
+            <!--            type=3-->
+            <card-view-type3 class="main" wx:if="{{obj.type == 3}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{obj.isMy==1}}">
+            </card-view-type3>
+            <!--            type=4-->
+            <card-view-type4 class="main" wx:if="{{obj.type == 4}}" bind:shareCard="doShareCard" view="{{ obj }}" showShare="{{obj.isMy==1}}">
+            </card-view-type4>
+        </view>
+        <!--        查看他人名片时-->
+        <view style="z-index: 999;" wx:if="{{obj.isMy == 0}}">
+<!--            交换过名片的，可以查看所有信息，显示名片管理栏-->
+<!--            交换过名片显示权重大于分享-->
+            <view class=" {{obj.isMy == 1?'':'btn-group'}}" wx:if="{{obj.inUserCard == 1 ||isMyCircle == 1}}">
+                <view class="exchange">
+                    <view class="card-list-btn" bindtap="toTabar">
+                        <view class="iconfont icon-shouye"></view>
+                        <view class="txt">首页</view>
+                    </view>
+                    <view class="card-list-btn" bindtap="openAdminCard">
+                        <view class="iconfont icon-mingpianguanli"></view>
+                        <view class="txt">名片管理</view>
+                    </view>
+
+                    <view class="share_TA" color="#1559F3" custom-class="btn" round bindtap="doShareCard">分享TA的名片</view>
+                </view>
+            </view>
+<!--            分享来的,可以查看所有信息，显示分享管理兰-->
+            <view class=" {{obj.isMy == 1?'':'btn-group'}}" wx:elif="{{share == 1}}">
+                <view class="fenxiang">
+                    <view class="card-list-btn" bindtap="toTabar">
+                        <view class="iconfont icon-shouye"></view>
+                        <view class="txt">首页</view>
+                    </view>
+                    <view class="card-list-btn" bindtap="openShare">
+                        <view class="iconfont icon-mingpianguanli"></view>
+                        <view class="txt">更多操作</view>
+                    </view>
+
+                    <view wx:if="{{obj.hasCard == 0}}" class="mymakecard" bindtap="jumptocreatecard">
+                        我要制作
+                    </view>
+                    <view wx:else class="mymakecard" bindtap="toMyCard">
+                        我的名片
+                    </view>
+                </view>
+            </view>
+<!--            未交换过名片，并且不是分享来的，不能显示所有信息，显示递名片按钮-->
+<!-- wx:else -->
+            <view class="shade" wx:else >
+                <view class="flex"></view>
+                <view class="exchanged">
+                    <view class="bottom-btn" bindtap="doExchanged">
+
+                        递名片</view>
+                </view>
+            </view>
+        </view>
+        <view class="shade1" wx:if="{{maskFlag}}">
+        </view>
+    </view>
+</van-skeleton>
+
+<!--管理名片弹窗-->
+<van-popup show="{{ adminShow }}" bind:close="onClose" position="bottom" round custom-style="">
+    <admin-card-popup obj="{{ obj }}" bind:delSuccess="delSuccess" bind:doExchanged="doExchanged" bind:onClose="onClose"></admin-card-popup>
+</van-popup>
+<!--分享名片弹窗-->
+<van-popup  show="{{ shareAdminShow }}" round position="bottom" custom-style="height: 40%" bind:close="onClose">
+    <view class="component">
+        <view class="colltxt" bindtap="doExchanged">交换名片</view>
+        <view class="colltxt" bindtap="doCollect">收藏名片</view>
+        <view class="colltxt"  bindtap="doShareCard">分享名片</view>
+        <view class="cancel" bindtap="onClose">取消</view>
+    </view>
+</van-popup>
+<!--分享弹窗-->
+<van-popup show="{{ show }}" bind:close="onCloseShare" position="bottom" round>
+    <view class="mycard-popup">
+        <view>
+            <text>分享到</text>
+            <icon bindtap="onCloseShare" style="position: relative;left: 37vw;font-size: 25rpx;margin-top: -15rpx;" class="iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="popbody">
+            <button open-type="share" class="share-btn" bindtap="closepopup">
+                <view class="popicon righticon">
+                    <view class="popbtn">
+                        <view class="iconfont icon-a-weixin2"></view>
+                    </view>
+                    <text class="poptxt">微信好友</text>
+                </view>
+            </button>
+            <button class="share-btn" bindtap="toPoster">
+                <view class="popicon">
+                    <view class="popbtn oricon">
+                        <view class="iconfont icon-haibao"></view>
+                    </view>
+                    <text class="poptxt">分享海报</text>
+                </view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+<van-toast id="van-toast" />
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" bind:imgErr="onImgErr" />
+
+<van-dialog customStyle="font-size:24rpx"  id="van-dialog" use-slot title="在您递出名片的同时将发起名片索取请求" show="{{ isShow }}" show-cancel-button confirm-button-open-type="submit" class="textCardbox" bind:close="onClose" bind:confirm="submit">
+    <view class="textCard"> 请问继续吗？为提高成功率，您可以填写说明：</view>
+    <view class="textCard" style="font-size: 20rpx;color: rgb(179, 177, 177);">（ 订阅消息可以及时得到反馈，请允许并保持选择 ）</view>
+    <view class="fieldtext">
+        <van-field label-class="label" model:value="{{ linkInfo }}" type="textarea" autosize="{{ {minHeight: 50} }}" maxlength="{{50}}" show-word-limit="{{true}}" placeholder="分享交换" />
+    </view>
+</van-dialog>

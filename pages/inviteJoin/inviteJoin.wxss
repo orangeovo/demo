@@ -1,0 +1,13 @@
+/* pages/inviteJoin/inviteJoin.wxss */
+.invitejoin-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 200rpx;
+    height: 100vh;
+}
+.invitejoin-container-contentcontainer{
+    height: 500rpx;
+    width: 500rpx;
+    background-color: white;
+}

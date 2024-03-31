@@ -1,0 +1,49 @@
+<!--pages/completedcard/completedcard.wxml-->
+
+<customnavbar  statusheit="{{statusbarheight}}" title="我的名片" lefticon="iconfont icon-zuojiantou" clickmethod="back" ></customnavbar>
+<view class="completedcardbody" style="margin-top:{{statusbarheight+136}}rpx;">
+    <image class="cardimg" src=""></image>
+    <view class="cardinfo">
+        <view style="display: flex; align-items: center;flex-direction: row;justify-content: space-between;margin-top: 30rpx;">
+            <text style="font-size: 30rpx;margin-left: 29rpx;">张耀</text>
+            <view style="margin-right: 29rpx;">
+                <icon style="font-size: 24rpx;margin-top: -18rpx;" class="cardkanguo iconfont icon-chakan1"></icon>
+                <text style="font-size: 24rpx;color: rgba(153, 153, 153, 1);" >125</text>
+            </view>
+        </view>
+        <text style="font-size: 26rpx;color: rgba(102, 102, 102, 1);margin-left: 29rpx;">总经理 | 上海**公司</text>
+    </view>
+    <view class="companyintroduction">
+        <view class="companyintroitem">
+            <text class="introtitle">手机号码</text>
+            <text class="introdetail">12345678911</text>
+            <icon class="introicon iconfont icon-a-8-dadianhua"></icon>
+            <text class="introicontext">联系他</text>
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem">
+            <text class="introtitle">电子邮箱</text>
+            <text class="introdetail">123456789@qq.com</text>
+            
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem">
+            <text class="introtitle">公司地址</text>
+            <text class="introdetail">上海市虹桥区</text>
+          
+        </view>
+        <view class="introbottomborder"></view>
+        <view class="companyintroitem1">
+            <text class="introtitle1">公司简介</text>
+            <view class="introdetail1">上海藤原实业有限责任公司,位于上海嘉定安亭工业区，公司在(上海嘉定安亭工业区、江苏苏州工业园、四川成都轻工业园)分别建有生产基地，其主要品牌有 伊藤YITENG YAMAYITO，安易等。是一家集研发制造、策略投资和经营管理为一体的综合型投资管理公司。</view>
+           
+        </view>
+        
+
+    </view>
+    <view style="display: flex;flex-direction: row;margin-bottom: 30rpx;">
+        <view class="completedcardbtn_update"><icon  class="iconfont icon-xiugai" style="margin-right: 3rpx;margin-top: -15rpx;"></icon >修改名片</view>
+        <view class="completedcardbtn_fenxiang"><icon  class="iconfont icon-fenxiang" style="margin-right: 3rpx;margin-top: -15rpx;"></icon>分享名片</view>
+    </view>
+</view>
+

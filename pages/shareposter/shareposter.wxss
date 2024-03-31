@@ -1,0 +1,293 @@
+/* pages/shareposter/shareposter.wxss */
+.page {
+    box-sizing: border-box;
+    
+}
+
+.main {
+    width: 690rpx;
+    min-height: calc(100vh - 60rpx);
+    border-radius: 30rpx;
+    box-shadow: 0px 0px 22rpx 0px rgba(32, 125, 215, 0.12);
+    padding: 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg {
+    width: 630rpx;
+    height: 360rpx;
+    margin-bottom: 100rpx;
+}
+
+.avatar {
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 65rpx;
+    position: absolute;
+    left: 114rpx;
+    top: 325rpx;
+}
+
+.info {
+    padding: 0 60rpx;
+    box-sizing: border-box;
+}
+
+.name-position {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.name {
+    /* position: absolute; */
+    /* top: 80rpx; */
+    font-size: 36rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #000000;
+    /* left: 25rpx; */
+    /* line-height: 24rpx; */
+}
+
+.position {
+    padding: 0 19rpx;
+    height: 36rpx;
+    border: 1rpx solid #1559F3;
+    border-radius: 18rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20rpx;
+}
+
+.position>view {
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #1559F3;
+    line-height: 24rpx;
+}
+
+
+.cardcompany .iconfont {
+    color: #1559F3;
+
+}
+.companydesc{
+    position: absolute;
+    top: 240rpx;
+    color: #666666;
+}
+.cardcompany .txt {
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    position: relative;
+    top: -10rpx;
+    left:-10rpx;
+
+}
+
+.desc {
+    position: absolute;
+    top: 230rpx;
+    font-size: 24rpx;
+    height: 240rpx;
+    width: 600rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+    line-height: 48rpx;
+    word-break: break-all;
+    margin-bottom: 20rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-overflow:hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.qrcode {
+    width: 480rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-right: 30rpx;
+    margin-bottom: 60rpx;
+}
+
+.qrcode .content {
+    display: flex;
+    align-items: center;
+    color: #FD9D24;
+    font-size: 24rpx;
+    margin-right: 20rpx;
+}
+
+.qrcode-img {
+    width: 180rpx;
+    height: 180rpx;
+    background: #FFFFFF;
+    border: 1rpx solid #EEEEEE;
+    border-radius: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saveposter {
+    margin-left: 135rpx;
+    width: 360rpx;
+    height: 76rpx;
+    background: #1559F3;
+    border-radius: 38rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 76rpx;
+    text-align: center;
+}
+
+.sharebox {
+    width: 750rpx;
+}
+
+.imagecard {
+    width: 750rpx;
+    height: 1140rpx;
+}
+
+.cardinfo {
+    position: relative;
+    width: 90%;
+    height: 605rpx;
+    /* background: seagreen; */
+    padding: 0 25rpx;
+    margin: 0 auto;
+    margin-top: 230rpx;
+}
+
+.cardavatar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    /* width: 120rpx; */
+    /* height: 120rpx; */
+    border-radius: 65rpx;
+    z-index: -1;
+    /* margin-left: 422rpx; */
+}
+
+.cardheader {
+    position: absolute;
+    z-index: 30;
+    width: 90%;
+    bottom: 29rpx;
+    color: white;
+    left: 32rpx;
+}
+
+.cardheader .name {
+    color: white;
+    margin-right: 20rpx;
+    font-size: 36rpx;
+}
+
+.basic-info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12rpx;
+}
+
+
+.carttext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cardheader .zhiwei {
+    font-size: 25rpx;
+}
+
+.cardcompany {
+    color: #FFFFFF;
+    display: flex;
+    position: absolute;
+    top: 200rpx;
+    left: 65rpx;
+}
+
+.cardqrcode {
+    /* display: flex; */
+    /* align-items: center; */
+    /* margin-top: 370rpx; */
+    /* justify-content: space-between; */
+    /* box-sizing: border-box; */
+    /* background: seagreen; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.cardqrcode-img {
+    width: 94rpx;
+    height: 94rpx;
+}
+
+.cardsaveposter {
+    /* margin-top: 120rpx; */
+    margin: 0 auto;
+    margin-bottom: 100rpx;
+    width: 690rpx;
+    height: 80rpx;
+    border: 2rpx solid #E7E7E6;
+    background-color: #326cec;
+    border-radius: 40rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #FFFFFF;
+    z-index: 2;
+    position: relative;
+}
+
+.phone{
+    margin-top: 40rpx;
+    margin-left: 45rpx;
+    color: #2f3336;
+    font-size: 20rpx;
+    height: 30rpx;
+    width: 80%;
+    line-height: 30rpx;
+    /* background-color: seagreen; */
+    display: flex;
+    align-items: center;
+}
+.phone .phoneimg{
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.check-more{
+    background: white;
+    margin: 45rpx 28rpx;
+    padding: 23rpx 40rpx;
+    font-size: 22rpx;
+    color: #686868;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 11rpx;
+}

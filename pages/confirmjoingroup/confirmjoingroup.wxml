@@ -1,0 +1,81 @@
+<van-skeleton title row="10" loading="{{!init}}">
+    <view class="page">
+        <!--        内容区-->
+        <view class="main">
+            <!--            type=1-->
+            <card-view-type1 class="main" wx:if="{{obj.type == 1 || obj.type == 0}}" bind:shareCard="doShareCard" view="{{ obj }}"></card-view-type1>
+            <!--            type=2-->
+            <card-view-type2 class="main" wx:if="{{obj.type == 2}}" bind:shareCard="doShareCard" view="{{ obj }}"></card-view-type2>
+            <!--            type=3-->
+            <card-view-type3 class="main" wx:if="{{obj.type == 3}}" bind:shareCard="doShareCard" view="{{ obj }}"></card-view-type3>
+            <!--            type=4-->
+            <card-view-type4 class="main" wx:if="{{obj.type == 4}}" bind:shareCard="doShareCard" view="{{ obj }}"></card-view-type4>
+        </view>
+        <view wx:if="{{obj.isMy == 0}}">
+<!--            分享组规则-->
+<!--            1 不在名片列表里，不显示全部内容，显示交换名片，无须审核，自动加入分组-->
+<!--            2 在名片列表里，但不在分组里，显示全部内容，显示 加入分组-->
+<!--            3 在名片列表里，也在分组里， 显示全部内容，显示 收藏，分享-->
+            <view class="shade" wx:if="{{obj.inUserCard == 0 }}">
+                <view class="flex"></view>
+                <view class="exchanged">
+                    <van-button color="#1559F3" custom-class="exchanged-btn" bindtap="doExchanged">交换名片</van-button>
+                </view>
+            </view>
+            <view wx:if="{{obj.inUserCard == 1 && obj.inGroup == 0}}">
+                <view class="exchanged">
+                    <van-button color="#1559F3" custom-class="exchanged-btn" bindtap="doExchanged">加入分组</van-button>
+                </view>
+            </view>
+            <view class="btn-group" wx:if="{{obj.inUserCard == 1 && obj.inGroup == 1}}">
+                <view class="card-list-btn" bindtap="openAdminCard">
+                    <view class="iconfont icon-mingpianguanli"></view>
+                    <view class="txt">名片管理</view>
+                </view>
+                <view class="collect">
+                    <van-button wx:if="{{obj.isCollect == 0}}" color="#1559F3" custom-class="btn" round plain bindtap="doCollect">收藏名片</van-button>
+                    <van-button wx:else color="#f79a1b" custom-class="btn" round plain bindtap="doCollect">已收藏</van-button>
+                </view>
+                <view class="share">
+                    <van-button color="#1559F3" custom-class="btn" round bindtap="doShareCard">分享TA的名片</van-button>
+                </view>
+            </view>
+        </view>
+    </view>
+</van-skeleton>
+
+<!--管理名片弹窗-->
+<van-popup show="{{ adminShow }}" bind:close="onClose" position="bottom" round custom-style="height: 30%">
+    <admin-card-popup obj="{{ obj }}" showDel="{{ obj.inUserCard == 1 }}" bind:delSuccess="delSuccess"  bind:onClose="onClose"></admin-card-popup>
+</van-popup>
+<!--分享弹窗-->
+<van-popup show="{{ show }}" bind:close="onClose"  position="bottom" round>
+    <view class="mycard-popup">
+        <view>
+            <text >分享到</text>
+            <icon bindtap="onClose" style="position: relative;left: 37vw;font-size: 25rpx;margin-top: -15rpx;" class="iconfont icon-a-guanbi"></icon>
+        </view>
+        <view class="popbody">
+            <button open-type="share" class="share-btn" bindtap="closepopup">
+                <view class="popicon righticon">
+                    <view class="popbtn">
+                        <view class="iconfont icon-a-weixin2"></view>
+                    </view>
+                    <text class="poptxt">微信好友</text>
+                </view>
+            </button>
+            <button class="share-btn" bindtap="toPoster">
+                <view class="popicon">
+                    <view class="popbtn oricon">
+                        <view class="iconfont icon-haibao"></view>
+                    </view>
+                    <text class="poptxt">分享海报</text>
+                </view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+

@@ -1,0 +1,10 @@
+<!--component/customnavbar.wxml-->
+
+<view class="changebox" style="height:{{statusheit+100}}rpx;line-height: {{statusheit+100}}rpx;top: 0rpx;">
+    <view class="navbar" style="margin-top: {{statusheit}}rpx;">
+        <icon class="changeidentity {{lefticon}}" bindtap="{{clickmethod}}"></icon>
+        <text  bindtap="{{clickmethod}}">{{title}}</text>  
+      
+    </view>
+        
+</view>

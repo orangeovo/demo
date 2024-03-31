@@ -1,0 +1,41 @@
+/* pages/login/login.wxss */
+page{
+  background: #fff;
+}
+.logimg{
+  margin-bottom: 60rpx;
+}
+.logimg image{
+  width: 486rpx;
+  height: 351rpx;
+}
+.txt1{
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+.txt2{
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 60rpx;
+}
+.logbtn{
+  width: 630rpx;
+  height: 88rpx;
+  color: #fff;
+  background: #1559F3;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 88rpx;
+  letter-spacing: 5rpx;
+}
+.login-text{
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  align-items: center;
+}
+.login-a{
+  color: rgb(15, 111, 236);
+}

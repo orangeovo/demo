@@ -1,0 +1,163 @@
+/* pages/industrycategory/industrycategory.wxss */
+.industrybox{
+  height: calc(100vh - 200rpx );
+  background-color: white;
+  letter-spacing: 2rpx;
+  display: flex;
+  flex-direction: row;
+}
+.categorybox{
+  width: 34.6vw;
+  background-color: RGBA(250, 250, 250, 1);
+  height: 100vh;
+}
+.categoryfather{
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: RGBA(242, 242, 242, 1);
+  color: rgba(51, 51, 51, 1);
+}
+.categoryfatherbechose{
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  background-color:RGBA(230, 246, 253, 1);
+  color: rgba(10, 163, 239, 1);
+}
+
+@keyframes turnup {
+  from {rotate: 0deg;}
+  to {rotate: 180deg;}
+}
+@keyframes turndown {
+  from {rotate: 180deg;}
+  to {rotate: 0deg;}
+}
+.arrowiconopen{
+  color: rgba(102, 102, 102, 1);
+  animation-name: turndown;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+}
+.arrowiconback{
+  color: rgba(102, 102, 102, 1);
+  animation-name: turnup;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+}
+.arrowicon{
+  color: rgba(102, 102, 102, 1);
+ 
+}
+.categoryson{
+  height: 100rpx;
+  background: RGBA(250, 250, 250, 1);
+  color:rgba(102, 102, 102, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+}
+.categorysonbechose{
+  height: 100rpx;
+  background: RGBA(255, 255, 255, 1);
+  color: rgba(252, 149, 19, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+}
+.categorygrandsonbox{
+  width: 65.4vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 0;
+}
+.grandsonitem{
+  text-align: center;
+  font-size: 26rpx;
+  color: rgba(102, 102, 102, 1);
+  width: 32.7vw;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.industry-category-btnbox{
+  height: 100rpx;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  border-top: RGBA(242, 242, 242, 1) solid 1rpx;
+  align-items: center;
+  justify-content: center;
+}
+.industry-category-btnbox-addbtn{
+  height: 66rpx;
+  width: 260rpx;
+  border: rgba(10, 163, 239, 1) solid 1rpx;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 35rpx;
+  color: rgba(10, 163, 239, 1);
+  font-size: 30rpx;
+  margin-right: 30rpx;
+}
+.industry-category-btnbox-savebtn{
+  height: 66rpx;
+  width: 300rpx;
+  background: rgba(10, 163, 239, 1) ;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 35rpx;
+  color: white;
+  font-size: 30rpx;
+  
+}
+.industry-category-selectedtagbox{
+  min-height: 100rpx;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  bottom: 100rpx;
+  display: flex;
+  flex-direction: row;
+  border-top: RGBA(242, 242, 242, 1) solid 1rpx;
+  border-bottom: RGBA(242, 242, 242, 1) solid 1rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  flex-wrap: wrap;
+}
+.industry-category-selectedtagbox-tag{
+  height: 50rpx;
+  background: RGBA(255, 244, 231, 1);
+  color: rgba(252, 149, 19, 1);
+  font-size: 24rpx;
+  border-radius: 35rpx;
+  line-height: 50rpx;
+  padding: 0 15rpx 0rpx 15rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.grandsonitem-selected{
+  text-align: center;
+  font-size: 26rpx;
+  color: rgba(252, 149, 19, 1);
+  width: 32.7vw;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+}

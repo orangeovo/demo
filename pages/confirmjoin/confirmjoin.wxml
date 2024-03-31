@@ -1,0 +1,2 @@
+<!--pages/confirmjoin/confirmjoin.wxml-->
+<customnavbar statusheit="{{statusbarheight}}" title="确认加入" lefticon="iconfont icon-zuojiantou"  clickmethod="back"  ></customnavbar>

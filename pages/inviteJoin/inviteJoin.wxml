@@ -1,0 +1,7 @@
+<!--pages/confirmjoin/confirmjoin.wxml-->
+<customnavbar statusheit="{{statusbarheight}}" title="邀请入圈" lefticon="iconfont icon-zuojiantou"  clickmethod="back"  ></customnavbar>
+<view class="invitejoin-container" >
+    <view class="invitejoin-container-contentcontainer">
+        
+    </view>
+</view>

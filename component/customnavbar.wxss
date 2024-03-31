@@ -1,0 +1,27 @@
+/* component/customnavbar.wxss */
+.changebox{
+    width: 750rpx;
+    position: fixed;
+    background-color: white;
+    top: 0rpx;
+    
+}
+.navbar{
+    position: relative;
+    height: 88rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    color: rgb(0, 3, 5);
+    font-size: 36rpx;
+    flex-direction: row;
+    align-items: center;
+    letter-spacing: 3rpx;
+    
+}
+.changeidentity{
+    font-size: 46rpx;
+    margin-left: 20rpx;
+    margin-right: 5rpx;
+    margin-top: 3rpx;
+
+}

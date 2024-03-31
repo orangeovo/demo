@@ -1,0 +1,37 @@
+
+<view class="sharebox">
+  <view class="gongxubox">
+    <view class="gongxudetil">
+      <view class="title">{{view.title}}</view>
+      <view class="gongxudcontent">{{view.content}}</view>
+    </view>
+    <view class="gongxuinfo">
+      <view class="info">
+        <image class="avatar" src="{{view.avatar}}"></image>
+        <view class="infotext">
+          <view class="infotexttoparea">
+            <view class="infoname"> {{name}}**</view>
+            <view class="potision">职位：{{view.position}}</view>
+          </view>
+          <view class="company">公司：{{view.companyName}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cardqrcode">
+      <view class="gongxudfoot">
+        
+        <view class="gongxudfootright">
+          <view class="cardsaveposter" bindtap="onSave">保存海报</view>
+        </view>
+        <view class="cardqrcode-img">
+          <van-image width="210rpx" height="210rpx" src="{{qrCode}}" />
+        </view>
+      </view>
+    </view>
+    <image wx:if="{{type==1}}" class="gongxuimage" mode='widthFix' src="{{backgroundimg}}"></image>
+    <image wx:else class="gongxuimage" mode='widthFix' src="{{backgroundimg}}"></image>
+  </view>
+</view>
+<painter wx-if="{{showPainter}}" scaleRatio="{{5}}" palette="{{template}}" bind:imgOK="onImgOK" />
+<van-toast id="van-toast" />

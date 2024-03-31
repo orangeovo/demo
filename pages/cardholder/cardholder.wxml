@@ -1,0 +1,90 @@
+<!--pages/cardholder/cardholder.wxml-->
+<import src="../we-cropper/we-cropper.wxml" />
+<view class="imgDisposeBlock" wx:if="{{iscropper}}">
+    <view class='imgDisposeArea'>
+        <template is="we-cropper" data="{{...cropperOpt}}" />
+    </view>
+    <view class='imgDisposeControlLine'>
+        <view class='editBtn reelectBtn' bindtap="uploadTap">选择图片</view>
+        <view class='editBtn' bindtap="closeTap">取消</view>
+        <view class='editBtn editPerfectBtn' bindtap="getCropperImage">上传</view>
+    </view>
+</view>
+<view class="page">
+<!--  操作栏-->
+  <view class="holdertitle">
+    <van-search value="{{ searchText }}" shape="round" background="#1559F3" placeholder="搜索" custom-class="search-input"
+      bind:search="doSearch" bind:clear="clearstxt" />
+    <view class="nav">
+      <view class="nav-title">
+        <view class="color"></view>
+        <view class="txt">常用功能</view>
+      </view>
+      <view class="icons">
+        <view bindtap="doScanCard" class="scan-card">
+          <view class="iconfont icon-saoyisao"></view>
+          <view class="txt">扫名片</view>
+        </view>
+        <view bindtap="tomakecard" class="entering">
+          <view class="iconfont icon-luru"></view>
+          <view class="txt">手动录入</view>
+        </view>
+        <view bindtap="togroup" class="group">
+          <view class="iconfont icon-renqunfenzu"></view>
+          <view class="txt">名片分组</view>
+        </view>
+        <view bindtap="tocircle" class="circle">
+          <view class="iconfont icon-quanzix"></view>
+          <view class="txt">圈子</view>
+        </view>
+      </view>
+    </view>
+    <view class="title">
+      <view class="color"></view>
+      <view class="txt">我的名片夹</view>
+      <view class="flex"></view>
+      <view class="sum">共{{num}}张</view>
+    </view>
+  </view>
+<!--  已登录-->
+  <view wx:if="{{login}}">
+    <!--  名片列表-->
+    <scroll-view class="cardlist" wx:if="{{cardList.length > 0}}" scroll-into-view="{{cardiniId}}" scroll-y scroll-with-animation>
+      <view wx:for="{{cardList}}" wx:key="index" class="cardlistitem" id="{{item.initials}}">
+        <view class="initials">{{item.initials}}</view>
+        <view wx:for="{{item.data}}" wx:key="index" class="datalist" bindtap="todetail" data-id="{{item.id}}"
+              data-cid="{{item.cardId}}">
+          <image class="avatar" wx:if="{{item.type != 0}}" src="{{item.avatar}}" catchtap="tomanage" data-id="{{item.id}}"
+                 data-cid="{{item.cardId}}" />
+          <view wx:else class="avatar" catchtap="tomanage" data-id="{{item.id}}" data-cid="{{item.cardId}}">
+            {{item.firstName}}</view>
+          <view class="datalistitem">
+            <view style="display: flex;flex-direction: row;align-items: center;">
+              <view class="name">{{item.name}}</view>
+              <!-- <view wx:if="{{item.remark}}" class="remarks">备注</view> -->
+            </view>
+
+            <view class="position-companyName">{{item.position || '暂未填写'}} | {{item.companyName || '暂未填写'}}</view>
+          </view>
+        </view>
+      </view>
+     
+
+    </scroll-view>
+    <view class="empty" wx:else>
+      <van-empty description="暂无名片" />
+    </view>
+    <!--  侧边栏-->
+    <view class="sidebar">
+      <view wx:for="{{cardList}}" wx:key="index" bindtap="scrollinto" data-iniid="{{item.initials}}">{{item.initials}}</view>
+    </view>
+  </view>
+<!--  未登录-->
+  <view wx:if="{{!login}}" class="no-login">
+    <view class="bottom-btn" bindtap="toLogin">请先登录</view>
+  </view>
+</view>
+<!--  <view class="bottom-btn" bindtap="toLogin">请先登录</view>-->
+
+
+<van-toast id="van-toast" />

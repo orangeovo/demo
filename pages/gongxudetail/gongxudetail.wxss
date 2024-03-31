@@ -1,0 +1,425 @@
+/* pages/gongxudetail/gongxudetail.wxss */
+.page {
+    box-sizing: border-box;
+    width: 750rpx;
+    padding: 30rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-info {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    /* align-items: center; */
+}
+
+.Off-shelf{
+    position: absolute;
+    right: 0;
+    top: -20rpx;
+    /* background: sienna; */
+    z-index: -1;
+}
+
+.info {
+    margin-left: 15rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 20rpx;
+}
+
+.name {
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+
+.position {
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+}
+
+.inButt {
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    /* text-align: center; */
+    vertical-align: top;
+}
+
+.wantButt {
+    width: 586rpx;
+    height: 79rpx;
+    line-height: 79rpx;
+    background-color: #326CEC;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 24rpx;
+    border-radius: 40rpx;
+}
+
+.iconfont {
+    font-size: 40rpx;
+}
+
+.inButt>.icon-jiaoseqiehuan {
+    color: #999999;
+}
+
+.icon-jiaoseqiehuan {
+    color: #1559F3;
+}
+
+.extra-info {
+    display: flex;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+}
+
+.date,
+.view-num {
+    padding: 10rpx 30rpx;
+    background-color: rgba(74, 96, 142, 0.06);
+    border-radius: 5px;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+}
+
+.view_edit {
+    font-size: 24rpx;
+    color: #1559F3;
+
+}
+
+.icon-bianji {
+    vertical-align: middle;
+}
+
+.date {
+    margin-right: 30rpx;
+}
+
+.content {
+    padding: 30rpx 0;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #666666;
+}
+
+.textCard {
+    /* margin-left: 20rpx; */
+    text-align: center;
+}
+
+view .van-field__control {
+    border: 2rpx solid #EEEEEE;
+    color: #ccc;
+
+}
+
+view .van-field__word-limit {
+    position: absolute;
+    bottom: 30rpx;
+    right: 36rpx;
+}
+
+.abutting {
+    width: 586rpx;
+    height: 79rpx;
+    background-color: #F38315;
+    text-align: center;
+    border-radius: 40rpx;
+    color: #FFFFFF;
+    font-size: 25rpx;
+    line-height: 79rpx;
+
+}
+
+
+.icon-fenxiang1 {
+    margin-bottom: -16rpx;
+}
+
+.mycard-popup {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30rpx;
+    padding-top: 20rpx;
+    background: #f6f6f6;
+    /* background: red; */
+}
+
+.share-btn {
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.share-btn::after {
+    border: none;
+}
+
+.swiper {
+    width: 690rpx;
+    height: 300rpx;
+}
+
+.swiper-item {
+    width: 690rpx;
+    border-radius: 20rpx 20rpx 0 0;
+}
+
+.popbody {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 70rpx;
+    background: #f6f6f6;
+}
+
+.popicon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.righticon {
+    /* margin-right: 200rpx; */
+}
+
+.popbtn {
+    height: 93rpx;
+    width: 93rpx;
+    border-radius: 20.5rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26rpx;
+    margin-bottom: 17rpx;
+    background: white;
+    padding: 10rpx;
+}
+
+.oricon {
+    /* background-color: RGB(252, 149, 19); */
+}
+
+.poptxt {
+    font-size: 26rpx;
+    color: rgba(51, 51, 51, 1);
+}
+
+.icon-a-weixin2 {
+    color: RGB(40, 196, 69);
+    font-size: 93rpx;
+}
+
+.icon-haibao {
+    color: white;
+    font-size: 55rpx;
+}
+
+.refuse {
+    color: red;
+}
+
+.fieldtext .van-field__control {
+    padding: 10rpx;
+}
+
+.conImage {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.itemImage {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.itemImage image {
+    width: 100%;
+    height: 100%;
+}
+.coverTitle{
+    width: 100%;
+    height: 300rpx;
+}
+.coverTitle image{
+    width: 100%;
+    height: 100%;
+}
+
+.more-img{
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.icon-arrow{
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.text-title{
+    width: 100%;
+    /* background: sandybrown; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-items: flex-start; */
+}
+.text-title view{
+    display: flex;
+    align-items: center;
+}
+.text-title view:nth-child(2){
+    margin-left: 10rpx;
+}
+.text-title text{
+    margin-left: 10rpx;
+    font-size: 24rpx;
+}
+
+.card-info .content{
+    padding-bottom: 0;
+    margin-bottom: 30rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    font-size: 28rpx;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+.content{
+    width: 100%;
+}
+
+.bottom-box{
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    /* padding-bottom: 27rpx; */
+    padding: 21rpx 25rpx 27rpx 48rpx;
+    align-items: center;
+    box-shadow: 0px -5px 11px 2px rgba(0, 0, 0, 0.16);
+
+}
+
+.fenxiang {
+    /* position: fixed; */
+    /* bottom: 50rpx; */
+    /* right: 50rpx; */
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: -20rpx;
+    border-radius: 50%;
+    text-align: center;
+    color: #696969;
+    font-size: 24rpx;
+    /* background: linear-gradient(-40deg, #1559F3, #A7C0F9); */
+    /* box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.abutting{
+
+}
+.line-dom{
+    height: 30rpx;
+    width: 100%;
+    padding-right: 60rpx;
+    background: #f6f6f6;
+    margin-left: -30rpx;
+    margin-bottom: 20rpx;
+}
+
+.tags-box{
+    display: flex;
+    flex-wrap: wrap;
+    /* background: sienna; */
+    /* height: auto; */
+}
+
+.tags-item{
+    background: #f6f6f6;
+    color: #636363;
+    border-radius: 24rpx;
+    font-size: 25rpx;
+    line-height: 47rpx;
+    height: 47rpx;
+    padding: 0 10rpx;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.time-tips{
+    color: #AAAAAC;
+    font-size: 22rpx;
+    text-align: right;
+    padding-bottom: 20rpx;
+}
+
+.recommend-box .tuijian{
+    margin-bottom: 20rpx;
+}
+
+.recommend-box .text-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.children-tip{
+    margin-right: 20rpx;
+}
+
+.children-name{
+    margin-left: 10rpx;
+}
+
+.time-tipchild{
+    color: #AAAAAC;
+    font-size: 22rpx;
+    text-align: right;
+}
+
+.child-items{
+    margin-bottom: 30rpx;
+}
+
+.fenx-img{
+    width: 75rpx;
+    height: 75rpx;
+}

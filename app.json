@@ -1,0 +1,136 @@
+{
+  "pages": [
+    "pages/cardholder/cardholder",
+    "pages/policy/policy",
+    "pages/rule/rule",
+    "pages/mine/mine",
+    "pages/mycard/mycard",
+    "pages/wall/wall",
+    "pages/confirmjoingroup/confirmjoingroup",
+    "pages/choosecardjoingroup/choosecardjoingroup",
+    "pages/grouplist/grouplist",
+    "pages/managegroup/managegroup",
+    "pages/confirmgroup/confirmgroup",
+    "pages/circlecarddetail/circlecarddetail",
+    "pages/ifjoincircle/ifjoincircle",
+    "pages/switchidentity/switchidentity",
+    "pages/inviteJoin/inviteJoin",
+    "pages/confirmjoin/confirmjoin",
+    "pages/groupdetail/groupdetail",
+    "pages/industrycategory/industrycategory",
+    "pages/managecircle/managecircle",
+    "pages/message/message",
+    "pages/circledetail/circledetail",
+    "pages/gongxuissue/gongxuissue",
+    "pages/gongxudetail/gongxudetail",
+    "pages/result/result",
+    "pages/invite/invite",
+    "pages/createcircle/createcircle",
+    "pages/circleindex/circleindex",
+    "pages/shareposter/shareposter",
+    "pages/sharepostercircle/sharepostercircle",
+    "pages/sharepostergroup/sharepostergroup",
+    "pages/choosemode/choosemode",
+    "pages/exchanged/exchanged",
+    "pages/unexchange/unexchange",
+    "pages/completedcard/completedcard",
+    "pages/makecard/makecard",
+    "pages/authentication/authentication",
+    "pages/authstatus/authstatus",
+    "pages/login/login",
+    "pages/setnotes/setnotes",
+    "pages/administration/administration",
+    "pages/setgroup/setgroup",
+    "pages/setnewgroup/setnewgroup",
+    "pages/receivecard/receivecard",
+    "pages/wholooksme/wholooksme",
+    "pages/savetomail/savetomail",
+    "pages/photographcard/photographcard",
+    "pages/myconcern/myconcern",
+    "pages/setup/setup",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/vipcenter/vipcenter",
+    "pages/payment/payment",
+    "pages/myorder/myorder",
+    "pages/viewOtherCard/viewOtherCard",
+    "pages/wallCircle/wallCircle",
+    "pages/editgongxuissue/editgongxuissue",
+    "pages/linkman/linkman",
+    "pages/circlelinkman/circlelinkman",
+    "pages/auditList/auditList",
+    "pages/sharesgongxu/sharesgongxu"
+  ],
+  "requiredPrivateInfos":[
+    "getFuzzyLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于小程序定位"
+    },
+    "scope.userFuzzyLocation": {
+      "desc": "您的位置信息将用于小程序定位"
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#1559F3",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
+   
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1559F3",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/cardholder_c.png",
+        "iconPath": "images/cardholder.png",
+        "pagePath": "pages/cardholder/cardholder",
+        "text": "名片夹"
+      },
+      {
+        "selectedIconPath": "images/acquanzi.png",
+        "iconPath": "images/quanzi.png",
+        "pagePath": "pages/circleindex/circleindex",
+        "text": "圈子"
+      },
+      {
+        "selectedIconPath": "images/acgongxu.png",
+        "iconPath": "images/gongxu.png",
+        "pagePath": "pages/wallCircle/wallCircle",
+        "text": "供需墙"
+      },
+      {
+        "selectedIconPath": "images/mine_c.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.6",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  }
+}

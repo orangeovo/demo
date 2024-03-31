@@ -1,0 +1,199 @@
+/* pages/wall/wall.wxss */
+.page{
+    padding-bottom: 120rpx;
+    box-sizing: border-box;
+}
+.search-box{
+    background: #FAFAFA;
+    height: 105rpx;
+    width: 750rpx;
+
+}
+.wallsearchipt{
+    height: 66rpx;
+    width: 630rpx;
+    background-color: rgba(242, 242, 242, 1);
+    border-radius:45rpx;
+    padding-left: 25rpx;
+}
+.wallsearchplacehd{
+    text-align: center;
+}
+
+.walllist{
+    height: 10000px;
+    width: 100vw;
+    background-color: red;
+}
+.walltabcontainer{
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+.walltab{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.tabselected{
+    color: rgba(10, 163, 239, 1);
+    font-size: 30rpx;
+    line-height: 90rpx;
+
+}
+.tabunselected{
+    color:rgba(102, 102, 102, 1);
+    font-size: 30rpx;
+    line-height: 90rpx;
+
+}
+.tabborder{
+    margin-top: -10rpx;
+    width: 58rpx;
+    height: 6rpx;
+    background-color: rgba(10, 163, 239, 1);
+    border-radius:15rpx;
+
+
+}
+.tabbordermove{
+    margin-top: -10rpx;
+    width: 58rpx;
+    height: 6rpx;
+    background-color: rgba(10, 163, 239, 1);
+    border-radius:15rpx;
+    animation-name: bordermove;
+    animation-duration:  0.6s;
+    animation-fill-mode:forwards
+}
+.tabborderback{
+    margin-top: -10rpx;
+    width: 58rpx;
+    height: 6rpx;
+    background-color: rgba(10, 163, 239, 1);
+    border-radius:15rpx;
+    animation-name: borderback;
+    animation-duration: 0.6s;
+    animation-fill-mode:forwards
+}
+@keyframes bordermove {
+    from {}
+    to {margin-left: 748rpx;}
+}
+@keyframes borderback {
+    from {margin-left: 748rpx;}
+    to {margin-left: 0rpx;}
+}
+.gonglist{
+    background-color: white;
+    margin-top: -20rpx;
+    width: 100vw;
+    letter-spacing: 2rpx;
+
+}
+.gonglistimg{
+    width: 170rpx;
+    height: 170rpx;
+    margin-right: 20rpx;
+    margin-top: 38rpx;
+    border-radius: 5rpx;
+}
+.gonglistrow{
+    margin-left: 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+.text1{
+    font-size: 24rpx;
+    color: rgba(153, 153, 153, 1);
+}
+.gonglistitem{
+    margin-top: 20rpx;
+}
+.gonglistlabel1{
+    white-space: pre;
+    height: 42rpx;
+    background-color: RGBA(255, 244, 231, 1);
+    color: rgba(252, 149, 19, 1);
+    border-radius: 45rpx;
+    line-height: 42rpx;
+    text-align: center;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    padding-bottom: 10rpx;
+    padding-top: 10rpx;
+    margin-right: 30rpx;
+}
+.gonglistlabel2{
+    white-space: pre;
+    height: 42rpx;
+    background-color: RGBA(230, 246, 253, 1);
+    color: rgba(10, 163, 239, 1);
+    border-radius: 45rpx;
+    line-height: 42rpx;
+    text-align: center;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    padding-bottom: 10rpx;
+    padding-top: 10rpx;
+    margin-right: 30rpx;
+}
+.labelbox{
+    display: flex;flex-direction: row;margin-top: 20rpx;border-bottom: rgba(238, 238, 238, 1) solid 1px;
+    margin-left: 30rpx;
+    padding-bottom: 30rpx;
+    margin-right: 30rpx;
+}
+.issuebtn{
+    position: fixed;
+    left: 60rpx;
+    bottom: 30rpx;
+    border-radius: 50rpx;
+}
+.tabs{
+    /* width: 750rpx */
+}
+.item{
+    display: flex;
+}
+.item .main{
+    padding: 10rpx 20rpx;
+    height: 200rpx;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.item .main .content{
+    color: #666;
+    font-size: 24rpx;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.extra{
+    display: flex;
+    justify-content: space-between;
+}
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tag{
+    margin-right: 15rpx;
+}
+.cell{
+    padding: 0!important;
+}
+
+.van-search{
+    /* background: sandybrown !important; */
+    /* border-bottom: 4rpx solid #F7F7F7 !important; */
+}
+.van-ellipsis{
+    /* display: flex;
+    justify-content: start;
+    align-items: start; */
+}

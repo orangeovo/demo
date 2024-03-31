@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-index-bar": "@vant/weapp/index-bar/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-image": "@vant/weapp/image/index",
+    "painter":"/component/painter/painter"
+  },
+  "navigationBarTitleText" : "圈子详情"
+
+}

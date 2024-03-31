@@ -1,0 +1,255 @@
+/* pages/gongxuissue/gongxuissue.wxss */
+.issuecontainer {
+  background-color: white;
+}
+
+.articlecover {
+  height: 88rpx;
+  padding-left: 30rpx;
+
+  border-bottom: rgba(238, 238, 238, 1) solid 1rpx;
+  display: flex;
+  align-items: center;
+}
+
+.issueupload {
+  height: 200rpx;
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+
+}
+
+.tituissueupload {
+  padding: 30rpx;
+}
+
+.tituissueupload>.issueuploadbox {
+  height: 140rpx;
+  width: 240rpx;
+  border: rgba(221, 221, 221, 1) dashed 1px;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(238, 238, 238, 1);
+  background-color: #ffffff;
+}
+
+.issueuploadbox {
+  background-color: #79460A;
+  height: 140rpx;
+  width: 140rpx;
+  border: rgba(221, 221, 221, 1) dashed 1px;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #7F7F7F;
+}
+
+.issueuploadbox2 {
+  background-color: #1559F3;
+  height: 140rpx;
+  width: 140rpx;
+  border: rgba(221, 221, 221, 1) dashed 1px;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+.issueuploadbox_content {
+  height: 140rpx;
+  width: 140rpx;
+  border: rgba(221, 221, 221, 1) dashed 1px;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(238, 238, 238, 1);
+  background-color: #ffffff;
+}
+
+.gongtext {
+  font-size: 24rpx;
+}
+
+.issueuploadimg {
+  position: relative;
+  height: 140rpx;
+  width: 140rpx;
+  border-radius: 15rpx;
+}
+
+.delete {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 10;
+  color: #333333;
+}
+
+.issueplaceholder {
+  font-size: 30rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.createlabel {
+  width: 160rpx;
+  height: 56rpx;
+  border: 1rpx solid rgba(10, 163, 239, 1);
+  border-radius: 45rpx;
+  color: rgba(10, 163, 239, 1);
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.newlabel {
+  height: 56rpx;
+  border: 1rpx solid rgba(252, 149, 19, 1);
+  border-radius: 45rpx;
+  background-color: RGBA(255, 244, 231, 1);
+  color: rgba(252, 149, 19, 1);
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.createlabelipt {
+  width: 480rpx;
+  height: 68rpx;
+  border: 1px solid rgba(221, 221, 221, 1);
+  border-radius: 10rpx;
+  margin-left: 60rpx;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+  padding-left: 20rpx;
+}
+
+.createlabelphclass {
+
+  font-size: 26rpx;
+}
+
+.newlabelicon {
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  margin-top: -5rpx;
+}
+
+.startissue {
+  height: 88rpx;
+  width: 630rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #1559F3;
+  color: white;
+  border-radius: 25rpx;
+  font-size: 32rpx;
+  letter-spacing: 3rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  margin-bottom: 33rpx;
+}
+.delbtn{
+  margin-bottom: 30rpx;
+  color: #1559F3;
+  border-radius: 20rpx;
+  border: #1559F3 solid 1rpx;
+  text-align: center;
+  width: 630rpx;
+  height: 88rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+
+.issuesadwallcontainer-num {
+  letter-spacing: 2rpx;
+  display: flex;
+  /* margin-left: 76vw; */
+}
+
+.issuesadwallcontainer-num>view {
+  margin-right: 10rpx;
+}
+
+.issuesadwallcontainer-num>text {
+  position: relative;
+  right: -3rpx;
+  bottom: -112rpx;
+}
+
+.issuesadwallcontainer-contentarea-textarea {
+  padding-top: 20rpx;
+  height: 300rpx;
+  padding-left: 30rpx;
+  width: 90vw;
+}
+
+.issuesadwallcontainer-num-text1 {
+  color: rgb(179, 177, 177);
+}
+
+.articlecover-title {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+
+.articlecover-title-placeholder {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 裁剪图片蒙版 */
+.imgDisposeBlock {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+}
+
+.imgDisposeArea {
+  height: 90vh;
+  overflow: hidden;
+}
+
+.imgDisposeControlLine {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 1);
+  color: #fff;
+}
+
+.editBtn {
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50rpx;
+  font-size: 26rpx;
+}
+
+.labelCss {
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,27 @@
+<!--pages/setgroup/setgroup.wxml-->
+<view class="newgroup" bindtap="setnewgroup">
+    <view class="iconfont icon-jia"></view>
+    <view>新建分组</view>
+</view>
+<van-radio-group value="{{ currentGid }}" bind:change="onChange">
+    <view class="suoxie" >
+        <view wx:for="{{dataList}}" wx:for-item="son" wx:key="index" wx:for-index="index1"  data-smallindex="{{index1}}" class="suoxieitem">
+            <view class="circlelist-item">
+                <image class="suoxieiamge" src="{{son.avatar}}"></image>
+                <view class="circlelist-item-textbox" >
+                    <text class="circlelist-item-textbox-name" >{{son.name}}</text>
+                    <text class="circlelist-item-textbox-time" >{{son.createTime}}</text>
+                </view>
+            </view>
+            <view class="circlelist-item-rightblock" >
+                <van-radio name="{{son.id}}" checked-color="#1559F3"></van-radio>
+            </view>
+        </view>
+        <view   class="invisibleblock"></view>
+
+    </view>
+</van-radio-group>
+<view class="savebtn" bindtap="setgroup"><view>保存修改</view></view>
+
+
+<van-toast id="van-toast" />

@@ -1,0 +1,49 @@
+/* pages/result/result.wxss */
+.page{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://hangbang.obs.cn-east-3.myhuaweicloud.com/businessCard/share-circle-bg.png");
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+.avatar{
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    margin-top: 215rpx;
+    margin-bottom: 20rpx;
+}
+.name{
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 45rpx;
+}
+.purpose,.purpose-txt,.address,.address-txt{
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 30rpx;
+    max-width: 80vw;
+    overflow: hidden;
+}
+.join{
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #4678FF;
+    margin-bottom: 50rpx;
+    width: 600rpx;
+    word-break:break-all
+}
+
+.btn{
+    width: 560rpx;
+    height: 88rpx!important;
+}

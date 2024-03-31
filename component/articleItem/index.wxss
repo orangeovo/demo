@@ -1,0 +1,94 @@
+/* component/articleItem/index.wxss */
+
+@import "../../style/iconfont.wxss";
+
+.component{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx;
+    margin-bottom: 15rpx;
+}
+.item{
+    height: 170rpx;
+    display: flex;
+}
+.main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20rpx;
+
+}
+.title{
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 600;
+    color: #333333;
+}
+.content{
+    width: 605rpx;
+    height: 56rpx;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    line-height: 56rpx;
+    color: #999999;
+    overflow: hidden;
+    /* background-color: aqua; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.content text{
+    margin-right: 10rpx;
+}
+.extra{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #B4B5BA;
+}
+.extra >view{
+    display: flex;
+    align-items: center;
+}
+.extra >view .iconfont{
+    margin-right: 10rpx;
+}
+.extra .time .iconfont{
+    font-size: 22rpx;
+}
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20rpx;
+}
+.tag{
+    margin-right: 15rpx;
+}
+
+.cardAvtar{
+    vertical-align: middle;
+}
+.viewNum{
+  display: flex;
+  margin-left:10rpx ;
+  align-items: center;
+}
+.wallname{
+    margin-left: 20rpx;
+}
+.van-image{
+  vertical-align: -5px;
+}
+.icon-arrow{
+  vertical-align: -5px;
+  display: inline-block;
+  width: 30rpx;
+        height: 30rpx;
+}

@@ -1,0 +1,90 @@
+/* pages/circleindex/circleindex.wxss */
+.page{
+    padding: 30rpx 0;
+}
+.createcircle{
+    height: 100rpx;
+    background-color: white;
+    width: 750rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.circleicon{
+    font-size: 28rpx;
+    color: #fff;
+}
+.circular{
+    width: 52rpx;
+    height: 52rpx;
+    background: linear-gradient(135deg, #6B98FF, #1559F3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20rpx;
+}
+.createcircle .txt{
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #333333;
+}
+.suoxie{
+    letter-spacing: 3rpx;
+    height: auto;
+    line-height: 71rpx;
+}
+.suoxiefont{
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+}
+.suoxieiamge{
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+.suoxieitem{
+    display: flex;
+    align-items: center;
+    height: 130rpx;
+    width: 750rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: white;
+}
+.circlelist-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.circlelist-item-textbox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rpx;
+
+
+}
+.circlelist-item-textbox-name{
+    font-size: 28rpx;
+
+}
+.circlelist-item-textbox-time{
+    font-size: 24rpx;
+    color: rgba(102, 102, 102, 1);
+    margin-top: -30rpx;
+
+}
+.circlelist-item-rightblock{
+    color: rgba(153, 153, 153, 1
+    );font-size: 26rpx;
+}
+.circlelist-item-rightblock-icon{
+    margin-top: -4rpx;margin-right: 30rpx;font-size: 30rpx;
+}

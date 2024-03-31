@@ -1,0 +1,60 @@
+<view class="component">
+    <view class="content">
+        <!--        轮播/视频-->
+        <view class="video-box" wx:if="{{view.videoUrl}}">
+            <video class="video" src="{{view.videoUrl}}"></video>
+        </view>
+        <swiper wx:else class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+            <block wx:for="{{view.imgs}}" wx:key="*this">
+                <swiper-item class="swiper-item">
+                    <van-image width="750rpx" height="562rpx" fit="fill" src="{{item}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="card base-info">
+            <view class="name-viewNum">
+                <view class="name">{{view.name}}</view>
+                <view class="viewNum" bindtap="toWhoLookHim">
+                    <view class="iconfont icon-chakan1"></view>谁在看{{view.isMy ? '我' : '他'}}
+                </view>
+            </view>
+            <view class="position-companyName">{{view.position}} | {{view.companyName}}</view>
+        </view>
+        <view class="card detail-info">
+            <van-cell custom-class="cell">
+                <view slot="title" class="cell-title">
+                    <view class="iconfont icon-shoujihao1"></view>
+                    <view class="van-cell-text">{{view.phone}}</view>
+                </view>
+                <view slot="right-icon" class="makePhone" bindtap="makePhone">
+                    <view class="iconfont icon-a-8-dadianhua"></view>
+                    <view class="van-cell-text">联系他</view>
+                </view>
+            </van-cell>
+            <van-cell custom-class="cell">
+                <view slot="title" class="cell-title">
+                    <view class="iconfont icon-youxiang"></view>
+                    <view class="van-cell-text">{{view.email || '暂未填写'}}</view>
+                </view>
+            </van-cell>
+            <van-cell custom-class="cell">
+                <view slot="title" class="cell-title">
+                    <view class="iconfont icon-dizhi1"></view>
+                    <view class="van-cell-text">{{(view.companyAddress + view.companyAddressDetail) || '暂未填写'}}</view>
+                </view>
+            </van-cell>
+            <van-cell custom-class="cell">
+                <view slot="title" class="cell-title">
+                    <view class="iconfont icon-huiyijianjie"></view>
+                    <view class="van-cell-text">{{view.companyDesc}}</view>
+                </view>
+            </van-cell>
+        </view>
+        <view class="flex"></view>
+        <view class="btn-group" wx:if="{{showShare}}">
+            <view class="btn-back" bindtap="toback">返回</view>
+            <view class="btn-upd" bindtap="toUpdCard">修改名片</view>
+            <view class="btn-share" bindtap="doShareCard">分享我的名片</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,239 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: #1559F3; */
+}
+
+.main {
+    width: 750rpx;
+    height: 1334rpx;
+    /* background-image: url("../../images/quanzibeijing.png"); */
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar {
+
+    margin-top: 100rpx;
+    margin-bottom: 40rpx;
+}
+
+.name {
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 530rpx;
+}
+
+.qrcode {
+    position: relative;
+    left: 160rpx;
+    margin-bottom: 115rpx;
+}
+
+.btn {
+    width: 560rpx;
+    height: 88rpx !important;
+    border: 2rpx solid #E7E7E6 !important;
+}
+
+
+.circlemain {
+    width: 750rpx;
+    height: 1rpx;
+    position: relative;
+    /* top: -100rpx; */
+}
+
+.circlimage {
+    height:calc(100vh + 100rpx);    
+    width: 100vw;
+}
+
+.content {
+    /* position: absolute; */
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    top: 130rpx;
+    background: #F7FBFE;
+    /* background: seagreen; */
+}
+
+.cirleft_text {
+    color: #FFFFFF;
+    writing-mode: vertical-lr;
+    /* -webkit-writing-mode: vertical-lr; */
+    font-size: 196rpx;
+    font-family: HYDaHeiJ;
+}
+
+.cirleft_text2 {
+    color: #FFFFFF;
+    font-size: 30rpx;
+    margin-left: 73rpx;
+    margin-top: 20rpx;
+}
+
+.cirleft_qr {
+    margin-left: 73rpx;
+    width: 224rpx;
+    height: 224rpx;
+    background-color: #fff;
+    margin-top: 40rpx;
+    padding: 12rpx;
+    box-sizing: border-box;
+    border: 2rpx dashed #cccccc;
+
+    box-shadow: 0px 0.5px 10px #ffffff;
+}
+
+.cirright {
+    margin-left: 100rpx;
+    margin-top: 100rpx;
+}
+
+.cirname {
+    width: 259rpx;
+    color: #FFFFFF;
+    font-size: 46rpx;
+    margin-bottom: 150rpx;
+}
+
+.cirpurpose {
+    width: 325rpx;
+    color: #D1D1F7;
+    font-size: 24rpx;
+}
+
+.cirtime {
+    margin: 150rpx 0;
+}
+
+.ciraddress {
+    width: 250rpx;
+    color: #D1D1F7;
+    font-size: 24rpx;
+}
+
+.onSavecir {
+    position: fixed;
+    bottom: 108rpx;
+    width: 690rpx;
+    height: 80rpx;
+
+    /* background: linear-gradient(0deg, #0103D7, #5772F7); */
+    background: #326cec;
+    border: 2rpx solid #E7E7E6;
+    border-radius: 40rpx;
+    text-align: center;
+    line-height: 80rpx;
+    color: #FFFFFF;
+    font-size: 30rpx;
+    left: 30rpx;
+    /* margin-top: 80rpx; */
+}
+
+.title{
+    position: absolute;
+    top: 105rpx;
+    left: 56rpx;
+    color: #414141;
+    font-weight: bold;
+    font-size: 36rpx;
+}
+
+.card-img{
+    position: absolute;
+    top: 177rpx;
+    width: 646rpx;
+    height: 367rpx;
+    left: 56rpx;
+}
+
+.quanzi{
+    
+border-radius: 5rpx;
+background: #EDCBA6;
+height: 33rpx;
+line-height: 33rpx;
+color: #613F1C;
+padding: 0 10rpx;
+font-size: 22rpx;
+position: absolute;
+left: 56rpx;
+top: 565rpx;
+}
+
+.quanzhu{
+    position: absolute;
+    left: 130rpx;
+    top: 568rpx;
+    font-size: 20rpx;
+    color: #232323;
+}
+
+.address-label{
+    color: #232323;
+    font-size: 20rpx;
+    position: absolute;
+    right: 55rpx;
+    top: 568rpx;
+}
+
+.purpose{
+    color: #2F3336;
+    font-size: 20rpx;
+    position: absolute;
+    top: 634rpx;
+    width: 630rpx;
+    left: 63rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    height: 70rpx;
+}
+
+.label-box{
+    display: flex;
+    left: 63rpx;
+    position: absolute;
+    top: 730rpx;
+    font-size: 22rpx;
+    color: #3E3E3E;
+    width: 646rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px dashed #BBBBBB;
+}
+.label-box view{
+    margin-right: 10rpx;
+}
+.code-box{
+    position: absolute;
+    right: 70rpx;
+    top: 815rpx;
+}
+
+.tips1{
+    font-size: 20rpx;
+    color: #879093;
+    position: absolute;
+    left: 56rpx;
+    top: 865rpx;
+}
+
+.tips2{
+    position: absolute;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #326CEC;
+    top: 903rpx;
+    left: 56rpx;
+}

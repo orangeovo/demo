@@ -1,0 +1,32 @@
+<!--pages/myorder/myorder.wxml-->
+<view class="myorder">
+  <view class="navBar">
+    <block wx:for="{{tabs}}" wx:key="item">
+      <view id="{{index}}" class="navItem {{tabIndex == index ? 'active' : '' }}" bindtap="onTabClick">
+        <view class="navItemTitle">{{item}}</view>
+      </view>
+    </block>
+  </view>
+  <view wx:for="{{orderlist}}" wx:key="index" class="orderitem"  bindtap="confirmpay" data-value="{{item}}">
+    <!-- <view  bindtap="confirmpay(item.isPay)"> -->
+    <view>
+      <view class="onum">订单编号：{{item.onumber}}</view>
+      <view wx:if="{{item.isPay == 1}}" class="ispay">已支付</view>
+      <view wx:if="{{item.isPay == 0 && item.status == 0}}" class="cancel">未支付</view>
+      <view wx:if="{{item.isPay == 0 && item.status == 10}}" class="cancel">已取消</view>
+    </view>
+    <view class="ordermes">
+      <view>
+        <image src="{{item.cover || 'https://img2.baidu.com/it/u=2050411650,4170573126&fm=26&fmt=auto'}}"/>
+        <view class="mesbox">
+          <view>{{item.vipName}}</view>
+          <view>会员时长：{{item.time}}天</view>
+        </view>
+      </view>
+      <view>￥{{item.payPrice / 100}}</view>
+    </view>
+    <view class="ctime">创建时间：{{item.createTime}}</view>
+  </view>
+</view>
+
+<view class="noMore" wx:if="{{noMore}}">没有更多了</view>

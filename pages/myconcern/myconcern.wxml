@@ -1,0 +1,19 @@
+<!--pages/myconcern/myconcern.wxml-->
+<view class="page">
+  <van-search value="{{ conditions }}"
+              bind:search="doSearch"
+              bind:clear="doClear"
+              use-action-slot="{{true}}" background="#FFFFFF" input-align="center" placeholder="请输入搜索关键词" >
+    <view slot="action" class="add" bindtap="toAdd">
+      <view class="iconfont icon-tianjia"></view>
+      <view class="txt">添加</view>
+    </view>
+  </van-search>
+  <view class="concernbody" wx:if="{{list.length != 0}}">
+    <view wx:for="{{list}}" wx:key="index" class="item" bindtap="todetail" data-id="{{item.cardId}}">
+      <card-item item="{{item}}"></card-item>
+    </view>
+  </view>
+  <van-empty wx:else description="暂无数据" />
+</view>
+

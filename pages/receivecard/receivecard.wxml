@@ -1,0 +1,61 @@
+<!--pages/receivecard/receivecard.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view wx:if="{{init}}" class="page">
+    <view class="recetitlebox">
+        <view class="recetitle">
+            <view>{{type == 0 ? '已投递' : '共收到'}}：<text>{{totNum}}</text>张</view>
+            <!--    递出-->
+            <view class="desc" wx:if="{{type == 0}}">
+                <view class="iconfont icon-tishi"></view>
+                会员每日可投递次数不限制，非会员仅可投递{{totalNum}}张
+            </view>
+            <!--    接收-->
+            <view class="desc" wx:else>
+                <view class="iconfont icon-tishi"></view>
+                非会员仅可收到{{totalNum}}张名片
+            </view>
+        </view>
+    </view>
+    <view class="recebody">
+        <!--  日期列表-->
+        <view wx:for="{{initList}}" wx:key="index" class="grouplist">
+            <view class="date">{{index}}</view>
+            <!--    对应日期的名片列表-->
+            <view wx:for="{{initList[index]}}" wx:for-item="card" wx:key="index"  data-cid="{{card.cid}}" data-status="{{card.applyStatus}}">
+                <card-item item="{{card}}">
+                    <view slot="extra">
+                        <view class="extra" wx:if="{{card.circleName}}">来源:{{ card.circleName }}</view>
+                        <view class="extra" wx:if="{{card.linkInfo}}">事由:{{ card.linkInfo }}</view>
+                    </view>
+                    <!--        相同状态，递出和接收显示文字不同-->
+                    <!--        递出操作-->
+                    <view wx:if="{{type == 0}}">
+                        <view wx:if="{{card.status == 0}}" class="send-wait-txt">确认中</view>
+                        <view wx:if="{{card.status == 5}}" class="send-pass-txt">已交换</view>
+                        <view wx:if="{{card.status == 10}}" class="send-refuse-txt">未通过</view>
+                    </view>
+                    <!--        接收操作-->
+                    <view wx:if="{{type == 1}}"  class="btn-group">
+                        <view wx:if="{{card.status == 0}}" data-id="{{ card.cardApplyId }}" catchtap="doRefuse" class="refuse-btn btn">拒绝</view>
+                        <view wx:if="{{card.status == 0}}" data-id="{{ card.cardApplyId }}" catchtap="transmit" class="pass-btn btn">通过</view>
+                        <view wx:if="{{card.status == 5}}" class="pass-txt">已交换</view>
+                        <view wx:if="{{card.status == 10}}" class="refuse-txt">已拒绝</view>
+                    </view>
+                </card-item>
+            </view>
+        </view>
+    </view>
+<!--    为空-->
+    <van-empty wx:if="{{list.length == 0}}" description="暂无内容"></van-empty>
+    <view wx:else>
+        <!--递出列表，直接显示没有更多-->
+        <view class="noMore" wx:if="{{type == 0 && noMore}}">没有更多了</view>
+        <!--收到列表，开通会员情况下，显示没有更多-->
+        <view class="noMore" wx:if="{{type == 1 && userInfo.vipId && noMore}}">没有更多了</view>
+        <!--收到列表，未开通会员下，由于最多查看10条，显示加入会员-->
+        <view class="joinvip bottom-btn" wx:if="{{type == 1 && userInfo.vipId == 0}}" bindtap="toVip">加入会员查看更多</view>
+    </view>
+</view>
+<view class="loading" wx:else>
+    <van-loading size="24px">加载中...</van-loading>
+</view>

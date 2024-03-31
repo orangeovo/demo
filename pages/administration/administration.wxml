@@ -1,0 +1,26 @@
+<!--pages/administration/administration.wxml-->
+<view class="personal_box">
+  <image wx:if="{{avatar}}" src="{{avatar}}" class="avatar"/>
+  <view wx:else class="avatar">{{view.name[0]}}</view>
+  <view class="personal_mes">
+    <view class="per_name">{{view.name}}</view>
+    <view class="per_about">{{view.position}} | {{view.companyName}}</view>
+  </view>
+</view>
+<view class="funclist">
+  <van-cell custom-class="cell" title="谁在看他" bindtap="toVisitorList" is-link value="{{view.viewNum}}" />
+  <van-cell custom-class="cell" bindtap="tosetmark" title="设置备注与标签" is-link  />
+  <van-cell custom-class="cell" bindtap="tosetgroup" title="设置分组" is-link  />
+  <van-cell custom-class="cell" title="特别关注">
+    <van-switch slot="right-icon" checked="{{ isWatchful }}" bind:change="switchchange" size="34rpx" />
+  </van-cell>
+</view>
+
+  <view class="savebtn" bindtap="deletecard">保存到通讯录</view>
+<view class="deletebtn" bindtap="deletecard">删除名片</view>
+
+
+
+
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

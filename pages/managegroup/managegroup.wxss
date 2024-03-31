@@ -1,0 +1,150 @@
+/* pages/creategroup/creategroup.wxss */
+.avatar{
+    height: 320rpx;
+    width: 750rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFAFA;
+}
+.createcircleinfo{
+    letter-spacing: 3rpx;
+    width: 100vw;
+    height: 675rpx;
+    background-color: white;
+}
+.portraittext{
+    margin-top: 61rpx;
+    width: 100vw;
+    text-align: start;
+    padding-left: 64rpx;
+    color: rgba(153, 153, 153, 1);
+    font-size: 30rpx;
+}
+.creategroup-infoarea-title{
+    background: #FAFAFA;
+    font-size: 30rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    margin-bottom: 20rpx;
+    padding-left: 30rpx;
+}
+.creategroup-infoarea-item{
+
+    display: flex;
+    flex-direction: row;
+    margin-left: 50rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid rgb(238, 235, 235);
+    align-items: center;
+    margin-right: 30rpx;
+}
+.creategroup-infoarea-item2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 50rpx;
+    height: 200rpx;
+    border-bottom: 1rpx solid rgb(238, 235, 235);
+
+    margin-right: 30rpx;
+}
+
+.creategroup-infoarea-item-input{
+    margin-left: 30rpx;
+    height:100rpx;
+
+}
+.creategroup-infoarea-item-input2{
+    margin-top: 8rpx;
+    margin-left: 30rpx;
+    min-height: 60rpx;
+
+}
+.creategroup-infoarea-text{
+
+    white-space: nowrap;
+}
+.createcircle-portraitbox-img{
+    height: 100rpx;width: 100rpx;
+}
+.creategroup-savebtn{
+    width: 84vw;
+    height: 100rpx;
+    background-color: rgba(10, 163, 239, 1);
+    border-radius: 50rpx;
+    color: white;
+    margin-left: 8vw;
+    text-align: center;
+    line-height: 100rpx;
+}
+.managecircle-deletecontainer{
+    width: 100vw;
+    height: 100rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+  }
+  .managecircle-deletecontainer-text1{
+    font-size: 30rpx;
+   margin-left: 30rpx;
+  }
+
+  .managecircle-deletecontainer-text2{
+   font-size: 22rpx;
+   color: rgb(107, 107, 107);
+   margin-left: 30rpx;
+ }
+
+
+.creategroup-infoarea{
+  box-sizing: border-box;
+    padding: 30rpx;
+    background-color: #fff;
+    margin-bottom: 30rpx;
+}
+.label{
+    color: #333333!important;
+}
+.btn-group{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20rpx;
+}
+.btn{
+    width: 320rpx;
+    height: 78rpx;
+}
+.hint{
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    width: 750rpx;
+    padding: 0 50rpx;
+    font-size: 22rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    letter-spacing: 3rpx;
+}
+.avatar-icon{
+    width: 100rpx;
+    height: 100rpx;
+    background: #333333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100rpx;
+}
+.avatar-icon .iconfont{
+    font-size: 53rpx;
+    color: #fff;
+}
+.add-btn{
+    margin-left: 60rpx;
+    border-radius: 20rpx!important;
+    width: 630rpx;
+    height: 88rpx;
+}

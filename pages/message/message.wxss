@@ -1,0 +1,148 @@
+/* pages/setup/setup.wxss */
+page{
+  background: #F6F6F6;
+}
+.message{
+  /* background: #fff; */
+  border-radius: 18rpx;
+  margin: 41rpx 29rpx 29rpx 29rpx;
+  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+}
+.message>view{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* .message>view{
+  margin-bottom: 20rpx;
+} */
+.message .txt{
+  width: 98%;
+  margin-bottom: 20rpx;
+  padding: 25rpx 16rpx 21rpx 16rpx;
+  background: white;
+  border-radius: 18rpx;
+}
+.line{
+  height: 1rpx;
+  background: #eee;
+  padding: 0 !important;
+  /* margin: 0 30rpx; */
+}
+.txt .txt_title{
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 600;
+  display: flex;
+  color: #363135;
+  padding-bottom: 10rpx;
+  align-items: center;
+}
+.txt .txt_title .dot{
+  width: 16rpx;
+    min-width: 0;
+    height: 16rpx;
+    border-radius: 100%;
+    background-color: #E93D46;
+    margin-right:10rpx ;
+
+}
+.txt .txt_desc{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+  line-height: 40rpx;
+}
+.txt_content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.txt_content .txt_time{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #ACACAC;
+}
+.txt_content .txt_check{
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #326CEC;
+}
+/* 开关按钮样式 */
+.wx-switch-input{width:42px !important;height:22px !important;}
+.wx-switch-input::before{width:40px !important;height: 20px !important;}
+.wx-switch-input::after{width: 20px !important;height: 20px !important;}
+/*  */
+.setup switch{
+  position: relative;
+}
+.setup text{
+  position: absolute;
+  top: 10rpx;
+  font-size: 12px;
+}
+.open{
+  left: 12rpx;
+  color: #FEFEFE;
+}
+.close{
+  right: 22rpx;
+  color: #0AA3EF;
+}
+.logoutbtn{
+  position: fixed;
+  width: 630rpx;
+  height: 88rpx;
+  left: 60rpx;
+  bottom: 60rpx;
+  border-radius: 44rpx;
+  color: #666;
+  font-size: 28rpx;
+  border: 1rpx solid #ddd;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+/* .read-on{
+  color: red !important;
+} */
+
+.message .read-on view{
+  color:  #989898 !important;
+}
+
+.navigation-bar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:148rpx;
+  background:white;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-around !important;
+  border-top: 1px solid rgb(215, 215, 215);
+}
+.navigation-bar .bar{
+  margin-bottom: 62rpx;
+  /* background: slateblue; */
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(114, 102, 102);
+}
+.activebar text{
+  color: #326CEC;
+}
+.navigation-bar image{
+  width: 25px;
+  height: 25px;
+}

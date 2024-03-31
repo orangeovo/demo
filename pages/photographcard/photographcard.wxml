@@ -1,0 +1,5 @@
+<!--pages/photographcard/photographcard.wxml-->
+<view class="photograph">
+  <image src="{{photographUrl}}"/>
+  <view class="extract"><i class="iconfont icon-tiquwenzi" style="font-size:48rpx;"></i><view style="font-size: 26rpx;">提取文字</view></view>
+</view>

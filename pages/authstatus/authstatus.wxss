@@ -1,0 +1,39 @@
+/* pages/authstatus/authstatus.wxss */
+.txt{
+  font-size: 26rpx;
+  color: #999;
+  margin: 20rpx 0 40rpx 0;
+}
+.submitbtn{
+  width: 500rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background: #1559F3;
+  border-radius: 10rpx;
+  margin: 30rpx auto;
+  text-align: center;
+  color: #fff;
+}
+.submitbtn:active{
+  opacity: .7;
+}
+.auth_mes{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+.auth_mes>view{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+  font-size: 28rpx;
+}
+.auth_mes>view>view:first-child{
+  color: #333;
+}
+.auth_mes>view>view:last-child{
+  color: #999;
+}

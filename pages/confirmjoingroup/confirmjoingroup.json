@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index",
+    "card-view-type1": "../../component/cardViewType1/index",
+    "card-view-type2": "../../component/cardViewType2/index",
+    "card-view-type3": "../../component/cardViewType3/index",
+    "card-view-type4": "../../component/cardViewType4/index",
+    "admin-card-popup": "../../component/adminCardPopup/index"
+  },
+  "navigationBarTitleText": "名片详情"
+}
